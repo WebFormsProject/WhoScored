@@ -394,6 +394,7 @@
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\DatabaseConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\MvpNinjectModule.cs" />
     <Compile Include="App_Start\NinjectWeb.cs" />
@@ -447,6 +448,12 @@
   <ItemGroup>
     <Folder Include="Presenters\" />
     <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WhoScored.Data\WhoScored.Data.csproj">
+      <Project>{bd385fba-a232-48d7-9440-6626b8162249}</Project>
+      <Name>WhoScored.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

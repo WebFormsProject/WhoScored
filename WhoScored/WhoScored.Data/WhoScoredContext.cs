@@ -19,6 +19,14 @@ namespace WhoScored.Data
 
         public IDbSet<User> Users { get; set; }
 
+        public IDbSet<FootballPlayer> FootballPlayers { get; set; }
+
+        public IDbSet<Team> Teams { get; set; }
+
+        public IDbSet<Title> Titles { get; set; }
+
+        public IDbSet<TrollPhoto> TrollPhotos { get; set; } 
+
         public void Create()
         {
             this.Users.Count();

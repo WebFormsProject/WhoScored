@@ -52,6 +52,11 @@
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Enums\TitleType.cs" />
+    <Compile Include="Models\FootballPlayer.cs" />
+    <Compile Include="Models\Team.cs" />
+    <Compile Include="Models\Title.cs" />
+    <Compile Include="Models\TrollPhoto.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -6,6 +6,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using WhoScored.WebFormsClient.App_Start;
 
 namespace WhoScored.WebFormsClient
 {
@@ -16,6 +17,7 @@ namespace WhoScored.WebFormsClient
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            DatabaseConfig.InitializeDatabase();
         }
     }
 }

@@ -1,10 +1,20 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WhoScored.Models.Models
 {
     public class User
     {
+        private ICollection<TrollPhoto> pinnedTrollPhotos;
+        private ICollection<Article> pinnedArticles;
+         
+        public User()
+        {
+            this.PinnedTrollPhotos = new HashSet<TrollPhoto>();
+            this.PinnedArticles = new HashSet<Article>();
+        }
+
         public int Id { get; set; }
 
         [Index(IsUnique = true)]
@@ -32,5 +42,17 @@ namespace WhoScored.Models.Models
         public string AvatarPath { get; set; }
 
         public string[] Roles { get; set; }
+
+        public virtual ICollection<TrollPhoto> PinnedTrollPhotos
+        {
+            get { return this.pinnedTrollPhotos; }
+            set { this.pinnedTrollPhotos = value; }
+        }
+
+        public virtual ICollection<Article> PinnedArticles
+        {
+            get { return this.pinnedArticles; }
+            set { this.pinnedArticles = value; }
+        }
     }
 }

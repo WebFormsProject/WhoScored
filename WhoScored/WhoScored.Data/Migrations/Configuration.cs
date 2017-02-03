@@ -11,7 +11,7 @@ namespace WhoScored.Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            this.AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(WhoScored.Data.WhoScoredContext context)
