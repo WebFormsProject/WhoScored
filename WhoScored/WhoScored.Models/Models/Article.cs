@@ -24,7 +24,7 @@ namespace WhoScored.Models.Models
         [MinLength(5)]
         public string Context { get; set; }
 
-        public ICollection<Comment> Comments
+        public virtual ICollection<Comment> Comments
         {
             get { return this.comments; }
             set { this.comments = value; }
@@ -32,7 +32,7 @@ namespace WhoScored.Models.Models
 
         public int Likes { get; set; }
 
-        public string ArticlePath { get; set; }
+        public string ImagePath { get; set; }
 
         public int CategoryId { get; set; }
 
@@ -44,6 +44,8 @@ namespace WhoScored.Models.Models
         public virtual User User { get; set; }
 
         public bool IsDeleted { get; set; }
+
+        public bool IsApproved { get; set; }
 
         public DateTime CreatedOn { get; set; }
     }
