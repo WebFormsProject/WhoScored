@@ -11,7 +11,7 @@ namespace WhoScored.WebFormsClient
 {
 
 
-    public partial class About
+    public partial class Home
     {
     }
 }
