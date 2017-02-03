@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WhoScored.Account {
+namespace WhoScored.WebFormsClient.Account {
     
     
     public partial class ManagePassword {

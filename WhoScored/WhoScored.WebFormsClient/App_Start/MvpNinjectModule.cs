@@ -1,4 +1,4 @@
-﻿using EmployeesLiveDemoWithMvpAndNinject.Factories;
+﻿using WhoScored.WebFormsClient.Factories;
 using Ninject;
 using Ninject.Activation;
 using Ninject.Extensions.Factory;
@@ -9,7 +9,7 @@ using System.Linq;
 using WebFormsMvp;
 using WebFormsMvp.Binder;
 
-namespace EmployeesLiveDemoWithMvpAndNinject.App_Start
+namespace WhoScored.WebFormsClient
 {
     public class MvpNinjectModule : NinjectModule
     {

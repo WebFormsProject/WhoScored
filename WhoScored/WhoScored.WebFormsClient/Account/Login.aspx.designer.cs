@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WhoScored.Account {
+namespace WhoScored.WebFormsClient.Account {
     
     
     public partial class Login {
@@ -73,6 +73,6 @@ namespace WhoScored.Account {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::WhoScored.Account.OpenAuthProviders OpenAuthLogin;
+        protected global::WhoScored.WebFormsClient.Account.OpenAuthProviders OpenAuthLogin;
     }
 }

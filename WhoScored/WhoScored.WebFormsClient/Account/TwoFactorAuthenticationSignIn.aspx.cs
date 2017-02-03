@@ -7,9 +7,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using WhoScored.Models;
+using WhoScored.WebFormsClient.Models;
 
-namespace WhoScored.Account
+namespace WhoScored.WebFormsClient.Account
 {
     public partial class TwoFactorAuthenticationSignIn : System.Web.UI.Page
     {

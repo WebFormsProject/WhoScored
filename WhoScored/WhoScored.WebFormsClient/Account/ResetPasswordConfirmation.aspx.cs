@@ -1,6 +1,6 @@
 ﻿using System.Web.UI;
 
-namespace WhoScored.Account
+namespace WhoScored.WebFormsClient.Account
 {
     public partial class ResetPasswordConfirmation : Page
     {

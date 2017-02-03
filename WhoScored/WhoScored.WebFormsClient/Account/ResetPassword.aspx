@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Reset Password" Language="C#" MasterPageFile="~/Public.Master" AutoEventWireup="true" CodeBehind="ResetPassword.aspx.cs" Inherits="WhoScored.Account.ResetPassword" Async="true" %>
+﻿<%@ Page Title="Reset Password" Language="C#" MasterPageFile="~/Public.Master" AutoEventWireup="true" CodeBehind="ResetPassword.aspx.cs" Inherits="WhoScored.WebFormsClient.Account.ResetPassword" Async="true" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <h2><%: Title %>.</h2>

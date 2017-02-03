@@ -1,6 +1,6 @@
-﻿[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(EmployeesLiveDemoWithMvpAndNinject.App_Start.NinjectWeb), "Start")]
+﻿[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(WhoScored.WebFormsClient.App_Start.NinjectWeb), "Start")]
 
-namespace EmployeesLiveDemoWithMvpAndNinject.App_Start
+namespace WhoScored.WebFormsClient.App_Start
 {
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 

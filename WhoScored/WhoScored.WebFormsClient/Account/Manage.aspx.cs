@@ -8,9 +8,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
-using WhoScored.Models;
+using WhoScored.WebFormsClient.Models;
 
-namespace WhoScored.Account
+namespace WhoScored.WebFormsClient.Account
 {
     public partial class Manage : System.Web.UI.Page
     {

@@ -4,9 +4,8 @@ using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Owin;
-using WhoScored.Models;
 
-namespace WhoScored.Account
+namespace WhoScored.WebFormsClient.Account
 {
     public partial class Confirm : Page
     {

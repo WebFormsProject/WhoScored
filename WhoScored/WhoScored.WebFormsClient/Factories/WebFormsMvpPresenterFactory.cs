@@ -2,7 +2,7 @@
 using WebFormsMvp;
 using WebFormsMvp.Binder;
 
-namespace EmployeesLiveDemoWithMvpAndNinject.Factories
+namespace WhoScored.WebFormsClient.Factories
 {
     public class WebFormsMvpPresenterFactory : IPresenterFactory
     {

@@ -7,9 +7,9 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.DataProtection;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using WhoScored.Models;
+using WhoScored.WebFormsClient.Models;
 
-namespace WhoScored
+namespace WhoScored.WebFormsClient
 {
     public partial class Startup
     {

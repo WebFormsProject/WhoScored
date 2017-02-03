@@ -1,7 +1,7 @@
 ﻿using System;
 using WebFormsMvp;
 
-namespace EmployeesLiveDemoWithMvpAndNinject.Factories
+namespace WhoScored.WebFormsClient.Factories
 {
     public interface ICustomPresenterFactory
     {

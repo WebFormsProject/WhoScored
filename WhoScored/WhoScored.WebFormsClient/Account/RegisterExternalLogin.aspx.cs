@@ -4,9 +4,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
-using WhoScored.Models;
+using WhoScored.WebFormsClient.Models;
 
-namespace WhoScored.Account
+namespace WhoScored.WebFormsClient.Account
 {
     public partial class RegisterExternalLogin : System.Web.UI.Page
     {
