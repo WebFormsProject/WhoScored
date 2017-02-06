@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using WhoScored.Data;
+//using WhoScored.Data;
 
 namespace WhoScored.WebFormsClient.App_Start
 {
@@ -11,9 +11,9 @@ namespace WhoScored.WebFormsClient.App_Start
     {
         public static void InitializeDatabase()
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<WhoScoredContext, Data.Migrations.Configuration>());
-            var context = new WhoScoredContext();
-            context.Create();
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<WhoScoredContext, Data.Migrations.Configuration>());
+            //var context = new WhoScoredContext();
+            //context.Create();
         }
     }
 }
