@@ -2,6 +2,8 @@
 using Ninject.Web.Common;
 using System.Data.Entity;
 using WhoScored.Data;
+using WhoScored.Data.Contracts;
+using WhoScored.Models.Models;
 using WhoScored.WebFormsClient.Presenters;
 
 namespace WhoScored.WebFormsClient.App_Start
@@ -13,8 +15,7 @@ namespace WhoScored.WebFormsClient.App_Start
             this.Bind<DbContext>().To<WhoScoredContext>().InRequestScope();
 
             this.Bind<StatisticsPresenter>().ToSelf();
-
-            //this.Bind<IDataProvider>().To<DataProvider>();
+            this.Bind<IWhoScoredRepository<Team>>().To<WhoScoredRepository<Team>>();
         }
     }
 }

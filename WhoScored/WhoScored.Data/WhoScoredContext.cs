@@ -1,14 +1,16 @@
 ﻿using System.Data.Entity;
 using System.Linq;
+using WhoScored.Data.Contracts;
 using WhoScored.Models.Models;
 
 namespace WhoScored.Data
 {
-    public class WhoScoredContext : DbContext
+    public class WhoScoredContext : DbContext, IWhoScoredContext
     {
         public WhoScoredContext()
             : base("WhoScored")
         {
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<WhoScoredContext>());
         }
 
         public IDbSet<Article> Articles
@@ -51,9 +53,19 @@ namespace WhoScored.Data
             get; set;
         }
 
+        public new IDbSet<T> Set<T>() where T : class
+        {
+            return base.Set<T>();
+        }
+
         public void Create()
         {
             this.Users.Count();
+        }
+
+        public new void SaveChanges()
+        {
+            base.SaveChanges();
         }
     }
 }

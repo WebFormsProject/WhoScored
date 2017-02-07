@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Bytes2you.Validation;
+using System.Collections.Generic;
 using WebFormsMvp;
+using WhoScored.Data.Contracts;
 using WhoScored.Models.Models;
 using WhoScored.WebFormsClient.Models;
 using WhoScored.WebFormsClient.Views;
@@ -8,11 +10,12 @@ namespace WhoScored.WebFormsClient.Presenters
 {
     public class StatisticsPresenter : Presenter<IStatisticsView>
     {
-        //private readonly IDataProvider dataProvider;
+        private readonly IWhoScoredRepository<Team> dataProvider;
 
         public StatisticsPresenter(IStatisticsView view)
             : base(view)
         {
+            Guard.WhenArgument(this.dataProvider, "dataProvider").IsNull();
             //this.dataProvider = dataProvider;
 
             this.View.MyInit += this.View_MyInit;
@@ -20,31 +23,11 @@ namespace WhoScored.WebFormsClient.Presenters
 
         private void View_MyInit(object sender, StatisticsEventArgs e)
         {
-            //this.View.Model.Names = this.dataProvider.GetTeamNamesById(e.Id);
-            this.View.Model.Teams = new List<Team>()
+            this.View.Model.Teams = new List<Team> //this.dataProvider.GetAll()
             {
                 new Team
                 {
-                    Id = 1,
-                    Name = "test",
-                    FootballPlayers=new HashSet<FootballPlayer>
-                     {
-                         new FootballPlayer
-                         {
-                              LastName = "test name"
-                         },
-                         new FootballPlayer
-                         {
-                             LastName = "name test"
-                         }
-                     },
-                     Titles = new HashSet<Title>
-                     {
-                         new Title
-                         {
-                              TitleName = "test title"
-                         }
-                     }
+                    Name = "test"
                 }
             };
         }
