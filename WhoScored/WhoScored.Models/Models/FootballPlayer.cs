@@ -21,7 +21,9 @@ namespace WhoScored.Models.Models
         [Required]
         public string LastName { get; set; }
 
-        public string Nationality { get; set; }
+        public int CountryId { get; set; }
+
+        public virtual Country Country { get; set; }
 
         [Required]
         [ForeignKey("CurrentTeam")]
