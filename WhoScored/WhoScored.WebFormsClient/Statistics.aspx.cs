@@ -1,17 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using WebFormsMvp;
+using WebFormsMvp.Web;
+using WhoScored.WebFormsClient.Models;
+using WhoScored.WebFormsClient.Presenters;
+using WhoScored.WebFormsClient.Views;
 
 namespace WhoScored.WebFormsClient
 {
-    public partial class Statistics : System.Web.UI.Page
+    [PresenterBinding(typeof(StatisticsPresenter))]
+    public partial class Statistics : MvpPage<StatisticsViewModel>, IStatisticsView
     {
+        public event EventHandler<StatisticsEventArgs> MyInit;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.MyInit?.Invoke(sender, new StatisticsEventArgs());
 
+            this.StatisticsFormView.DataSource = this.Model.Teams;
+            this.StatisticsFormView.DataBind();
         }
     }
 }

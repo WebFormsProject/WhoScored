@@ -210,6 +210,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.aspx" />
     <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
@@ -225,6 +226,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Contacts.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -288,6 +290,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\AddPhoneNumber.aspx.cs">
       <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -401,6 +410,14 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WhoScoredNinjectModel.cs" />
+    <Compile Include="Contacts.aspx.cs">
+      <DependentUpon>Contacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacts.aspx.designer.cs">
+      <DependentUpon>Contacts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Factories\ICustomPresenterFactory.cs" />
     <Compile Include="Factories\WebFormsMvpPresenterFactory.cs" />
     <Compile Include="Global.asax.cs">
@@ -414,6 +431,9 @@
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\StatisticsEventArgs.cs" />
+    <Compile Include="Models\StatisticsViewModel.cs" />
+    <Compile Include="Presenters\StatisticsPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Public.Master.cs">
       <DependentUpon>Public.Master</DependentUpon>
@@ -444,15 +464,17 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\IStatisticsView.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presenters\" />
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\WhoScored.Data\WhoScored.Data.csproj">
       <Project>{bd385fba-a232-48d7-9440-6626b8162249}</Project>
       <Name>WhoScored.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WhoScored.Models\WhoScored.Models.csproj">
+      <Project>{8EB1E289-5218-4171-A916-B1C3852914FD}</Project>
+      <Name>WhoScored.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

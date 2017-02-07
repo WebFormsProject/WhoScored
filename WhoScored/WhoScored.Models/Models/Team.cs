@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace WhoScored.Models.Models
 {
@@ -14,6 +15,8 @@ namespace WhoScored.Models.Models
         }
 
         public int Id { get; set; }
+
+        public string Name { get; set; }
 
         public string EmblemImagePath { get; set; }
 
