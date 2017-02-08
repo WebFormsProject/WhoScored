@@ -5,9 +5,13 @@ namespace WhoScored.Models.Models
 {
     public class LeagueTable
     {
+        public LeagueTable()
+        {
+            this.TeamStatistics = new HashSet<TeamStatistic>();
+        }
+
         public int Id { get; set; }
 
-        [Required]
         public int LeagueId { get; set; }
 
         public virtual League League { get; set; }

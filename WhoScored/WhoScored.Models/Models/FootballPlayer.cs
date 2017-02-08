@@ -1,16 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using WhoScored.Models.Models.Enums;
 
 namespace WhoScored.Models.Models
 {
     public class FootballPlayer
     {
         private ICollection<Team> previousTeams;
+        private ICollection<Game> gamesScored; 
 
         public FootballPlayer()
         {
-            this.PreviousTeams = new HashSet<Team>();
+            this.previousTeams = new HashSet<Team>();
+            this.gamesScored = new HashSet<Game>();
         }
 
         public int Id { get; set; }
@@ -21,12 +23,14 @@ namespace WhoScored.Models.Models
         [Required]
         public string LastName { get; set; }
 
+        public string ImagePath { get; set; }
+
+        public PlayerPositionType Position { get; set; }
+
         public int CountryId { get; set; }
 
         public virtual Country Country { get; set; }
 
-        [Required]
-        [ForeignKey("CurrentTeam")]
         public int CurrentTeamId { get; set; }
 
         public virtual Team CurrentTeam { get; set; }
@@ -35,6 +39,12 @@ namespace WhoScored.Models.Models
         {
             get { return this.previousTeams; }
             set { this.previousTeams = value; }
+        }
+
+        public virtual ICollection<Game> GamesScored
+        {
+            get { return this.gamesScored; }
+            set { this.gamesScored = value; }
         }
     }
 }

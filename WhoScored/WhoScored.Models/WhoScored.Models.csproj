@@ -56,9 +56,15 @@
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Enums\PlayerPositionType.cs" />
     <Compile Include="Models\Enums\TitleType.cs" />
     <Compile Include="Models\FootballPlayer.cs" />
+    <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\League.cs" />
+    <Compile Include="Models\LeagueTable.cs" />
     <Compile Include="Models\Team.cs" />
+    <Compile Include="Models\TeamStatistic.cs" />
     <Compile Include="Models\Title.cs" />
     <Compile Include="Models\TrollPhoto.cs" />
     <Compile Include="Models\User.cs" />

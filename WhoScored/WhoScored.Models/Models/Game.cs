@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace WhoScored.Models.Models
 {
     public class Game
     {
-        private ICollection<FootballPlayer> homeTeamScorers; 
-        private ICollection<FootballPlayer> awayTeamScorers;
+        private ICollection<FootballPlayer> goalScorers; 
 
         public Game()
         {
-            this.HomeTeamScorers = new HashSet<FootballPlayer>();
-            this.AwayTeamScorers = new HashSet<FootballPlayer>();
+            this.goalScorers = new HashSet<FootballPlayer>();
         }
 
         public int Id { get; set; }
@@ -24,26 +17,18 @@ namespace WhoScored.Models.Models
 
         public int AwayTeamGoals { get; set; }
 
-        [ForeignKey("HomeTeam")]
         public int HomeTeamId { get; set; }
 
         public virtual Team HomeTeam { get; set; }
-
-        [ForeignKey("AwayTeam")]
+        
         public int AwayTeamId { get; set; }
 
         public virtual Team AwayTeam { get; set; }
 
-        public virtual ICollection<FootballPlayer> HomeTeamScorers
+        public virtual ICollection<FootballPlayer> GoalScorers
         {
-            get { return this.homeTeamScorers; }
-            set { this.homeTeamScorers = value; }
-        }
-
-        public virtual ICollection<FootballPlayer> AwayTeamScorers
-        {
-            get { return this.awayTeamScorers; }
-            set { this.awayTeamScorers = value; }
+            get { return this.goalScorers; }
+            set { this.goalScorers = value; }
         }
     }
 }

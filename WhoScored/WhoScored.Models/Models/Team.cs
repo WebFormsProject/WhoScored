@@ -1,17 +1,18 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace WhoScored.Models.Models
 {
     public class Team
     {
-        private ICollection<FootballPlayer> footballPlayers; 
+        private ICollection<FootballPlayer> currentFootballPlayers; 
+        private ICollection<FootballPlayer> previousFootballPlayers;
         private ICollection<Title> titles;
 
         public Team()
         {
-            this.FootballPlayers = new HashSet<FootballPlayer>();
-            this.Titles = new HashSet<Title>();
+            this.currentFootballPlayers = new HashSet<FootballPlayer>();
+            this.previousFootballPlayers = new HashSet<FootballPlayer>();
+            this.titles = new HashSet<Title>();
         }
 
         public int Id { get; set; }
@@ -20,11 +21,22 @@ namespace WhoScored.Models.Models
 
         public string EmblemImagePath { get; set; }
 
-        public virtual ICollection<FootballPlayer> FootballPlayers
+        public int CountryId { get; set; }
+
+        public virtual Country Country { get; set; }
+
+        public virtual ICollection<FootballPlayer> CurrentFootballPlayers
         {
-            get { return this.footballPlayers; }
-            set { this.footballPlayers = value; }
+            get { return this.currentFootballPlayers; }
+            set { this.currentFootballPlayers = value; }
         }
+
+        public virtual ICollection<FootballPlayer> PreviousFootballPlayers
+        {
+            get { return this.previousFootballPlayers; }
+            set { this.previousFootballPlayers = value; }
+        }
+
 
         public virtual ICollection<Title> Titles
         {
