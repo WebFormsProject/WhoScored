@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -27,6 +28,9 @@ namespace WhoScored.Data
         {
             get; set;
         }
+
+
+        public IDbSet<Coach> Coaches { get; set; }
 
         public IDbSet<Comment> Comments
         {
@@ -91,6 +95,7 @@ namespace WhoScored.Data
                 });
 
             SeedCountries();
+            SeedCoaches();
             this.SaveChanges();
             SeedTeams();
             this.SaveChanges();
@@ -229,6 +234,61 @@ namespace WhoScored.Data
             });
         }
 
+        private void SeedCoaches()
+        {
+            var france = this.Countries.SingleOrDefault(x => x.Name == "France");
+
+            this.Coaches.AddOrUpdate(new Coach()
+            {
+                FirstName = "Zinedine",
+                LastName = "Zidane",
+                Country = france,
+                BirthDate = DateTime.Now
+            },
+            new Coach()
+            {
+                FirstName = "Arsene",
+                LastName = "Wenger",
+                Country = france,
+                BirthDate = DateTime.Now
+            },
+            new Coach()
+            {
+                FirstName = "Carlo",
+                LastName = "Ancelotti",
+                Country = france,
+                BirthDate = DateTime.Now
+            },
+            new Coach()
+            {
+                FirstName = "Leonardo",
+                LastName = "Jardim",
+                Country = france,
+                BirthDate = DateTime.Now
+            },
+            new Coach()
+            {
+                FirstName = "Luis",
+                LastName = "Enrique",
+                Country = france,
+                BirthDate = DateTime.Now
+            },
+            new Coach()
+            {
+                FirstName = "Jose",
+                LastName = "Mourinho",
+                Country = france,
+                BirthDate = DateTime.Now
+            },
+            new Coach()
+            {
+                FirstName = "Nuno",
+                LastName = "Santo",
+                Country = france,
+                BirthDate = DateTime.Now
+            });
+        }
+
         private void SeedTeams()
         {
             var spain = this.Countries.SingleOrDefault(x => x.Name == "Spain");
@@ -237,41 +297,56 @@ namespace WhoScored.Data
             var france = this.Countries.SingleOrDefault(x => x.Name == "France");
             var portugal = this.Countries.SingleOrDefault(x => x.Name == "Portugal");
 
+            var zidane = this.Coaches.SingleOrDefault(x => x.FirstName == "Zinedine");
+            var arsene = this.Coaches.SingleOrDefault(x => x.FirstName == "Arsene");
+            var jose = this.Coaches.SingleOrDefault(x => x.FirstName == "Jose");
+            var carlo = this.Coaches.SingleOrDefault(x => x.FirstName == "Carlo");
+            var leonardo = this.Coaches.SingleOrDefault(x => x.FirstName == "Leonardo");
+            var nuno = this.Coaches.SingleOrDefault(x => x.FirstName == "Nuno");
+            var luis = this.Coaches.SingleOrDefault(x => x.FirstName == "Luis");
+
             this.Teams.AddOrUpdate(x => x.Name,
                 new Team()
                 {
                     Name = "Real Madrid",
-                    CountryId = spain.Id
+                    CountryId = spain.Id,
+                    Coach = zidane
                 },
                 new Team()
                 {
                     Name = "Arsenal",
-                    CountryId = england.Id
+                    CountryId = england.Id,
+                    Coach = arsene
                 },
                 new Team()
                 {
                     Name = "Bayern Munich",
-                    CountryId = germany.Id
+                    CountryId = germany.Id,
+                    Coach = carlo
                 },
                 new Team()
                 {
                     Name = "Monaco",
-                    CountryId = france.Id
+                    CountryId = france.Id,
+                    Coach = leonardo
                 },
                 new Team()
                 {
                     Name = "FC Porto",
-                    CountryId = portugal.Id
+                    CountryId = portugal.Id,
+                    Coach = nuno
 
                 }, new Team()
                 {
                     Name = "Chelsea",
-                    CountryId = england.Id
+                    CountryId = england.Id,
+                    Coach = jose
                 },
                 new Team()
                 {
                     Name = "Barcelona",
-                    CountryId = spain.Id
+                    CountryId = spain.Id,
+                    Coach = luis
                 });
         }
 

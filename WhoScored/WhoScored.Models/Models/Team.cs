@@ -6,12 +6,14 @@ namespace WhoScored.Models.Models
     {
         private ICollection<FootballPlayer> currentFootballPlayers; 
         private ICollection<FootballPlayer> previousFootballPlayers;
+        private ICollection<Coach> previousCoaches;
         private ICollection<Title> titles;
 
         public Team()
         {
             this.currentFootballPlayers = new HashSet<FootballPlayer>();
             this.previousFootballPlayers = new HashSet<FootballPlayer>();
+      //      this.previousCoaches = new HashSet<Coach>();
             this.titles = new HashSet<Title>();
         }
 
@@ -25,6 +27,10 @@ namespace WhoScored.Models.Models
 
         public virtual Country Country { get; set; }
 
+        public int CoachId { get; set; }
+
+        public virtual Coach Coach { get; set; }
+
         public virtual ICollection<FootballPlayer> CurrentFootballPlayers
         {
             get { return this.currentFootballPlayers; }
@@ -37,6 +43,11 @@ namespace WhoScored.Models.Models
             set { this.previousFootballPlayers = value; }
         }
 
+        //public virtual ICollection<Coach> PreviousCoaches
+        //{
+        //    get { return this.previousCoaches; }
+        //    set { this.previousCoaches = value; }
+        //}
 
         public virtual ICollection<Title> Titles
         {

@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Coach.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\Enums\PlayerPositionType.cs" />

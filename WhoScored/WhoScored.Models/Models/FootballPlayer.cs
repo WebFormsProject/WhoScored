@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using WhoScored.Models.Models.Enums;
 
@@ -26,6 +27,14 @@ namespace WhoScored.Models.Models
         public string ImagePath { get; set; }
 
         public PlayerPositionType Position { get; set; }
+
+        public int ShirtNumber { get; set; }
+
+        public DateTime? BirthDate { get; set; }
+
+        public int Height { get; set; }
+
+        public int Weight { get; set; }
 
         public int CountryId { get; set; }
 
