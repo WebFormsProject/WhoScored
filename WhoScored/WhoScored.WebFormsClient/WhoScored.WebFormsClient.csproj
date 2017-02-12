@@ -477,7 +477,7 @@
       <Name>WhoScored.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\WhoScored.Models\WhoScored.Models.csproj">
-      <Project>{8EB1E289-5218-4171-A916-B1C3852914FD}</Project>
+      <Project>{8eb1e289-5218-4171-a916-b1c3852914fd}</Project>
       <Name>WhoScored.Models</Name>
     </ProjectReference>
   </ItemGroup>

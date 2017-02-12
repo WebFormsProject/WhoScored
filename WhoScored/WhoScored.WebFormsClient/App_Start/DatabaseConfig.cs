@@ -10,7 +10,7 @@ namespace WhoScored.WebFormsClient.App_Start
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<WhoScoredContext, Data.Migrations.Configuration>());
             IWhoScoredContext context = new WhoScoredContext();
-            context.Create();
+            context.InitializeDb();
         }
     }
 }

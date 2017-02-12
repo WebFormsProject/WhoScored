@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
+using Microsoft.AspNet.Identity.EntityFramework;
 using WhoScored.Data.Contracts;
 using WhoScored.Models;
 using WhoScored.Models.Models;
@@ -11,7 +12,7 @@ using WhoScored.Models.Models.Enums;
 
 namespace WhoScored.Data
 {
-    public class WhoScoredContext : DbContext, IWhoScoredContext
+    public class WhoScoredContext : IdentityDbContext<User>, IWhoScoredContext
     {
         public WhoScoredContext()
             : base("WhoScored")
@@ -19,38 +20,22 @@ namespace WhoScored.Data
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<WhoScoredContext>());
         }
 
-        public IDbSet<Article> Articles
-        {
-            get; set;
-        }
+        public IDbSet<Article> Articles { get; set; }
 
-        public IDbSet<Category> Categories
-        {
-            get; set;
-        }
-
+        public IDbSet<Category> Categories { get; set; }
 
         public IDbSet<Coach> Coaches { get; set; }
 
-        public IDbSet<Comment> Comments
-        {
-            get; set;
-        }
+        public IDbSet<Comment> Comments { get; set; }
 
-        public IDbSet<Country> Countries
-        {
-            get; set;
-        }
+        public IDbSet<Country> Countries { get; set; }
 
-        public IDbSet<User> Users
-        {
-            get; set;
-        }
+        //public IDbSet<User> Users
+        //{
+        //    get; set;
+        //}
 
-        public IDbSet<FootballPlayer> FootballPlayers
-        {
-            get; set;
-        }
+        public IDbSet<FootballPlayer> FootballPlayers { get; set; }
 
         public IDbSet<Game> Games { get; set; }
 
@@ -58,43 +43,39 @@ namespace WhoScored.Data
 
         public IDbSet<LeagueTable> LeagueTables { get; set; }
 
-        public IDbSet<Team> Teams
-        {
-            get; set;
-        }
+        public IDbSet<Team> Teams { get; set; }
 
         public IDbSet<TeamStatistic> TeamStatistics { get; set; }
 
-        public IDbSet<Title> Titles
-        {
-            get; set;
-        }
+        public IDbSet<Title> Titles { get; set; }
 
-        public IDbSet<TrollPhoto> TrollPhotos
-        {
-            get; set;
-        }
+        public IDbSet<TrollPhoto> TrollPhotos { get; set; }
 
         public new IDbSet<T> Set<T>() where T : class
         {
             return base.Set<T>();
         }
 
-        public void Create()
+        public static WhoScoredContext Create()
         {
-            this.Users.AddOrUpdate(
-                x => x.Username,
-                new User
-                {
-                    FirstName = "admin",
-                    LastName = "admin",
-                    Password = "admin",
-                    Email = "admin",
-                    Username = "admin",
-                    Roles = new[] { "admin", "user" }
-                });
+            return new WhoScoredContext();
+        }
+
+        public void InitializeDb()
+        {
+            //this.Users.AddOrUpdate(
+            //    x => x.Username,
+            //    new User
+            //    {
+            //        FirstName = "admin",
+            //        LastName = "admin",
+            //        Email = "admin",
+            //        Username = "admin",
+            //        Roles = new[] { "admin", "user" }
+            //    });
 
             SeedCountries();
+            this.SaveChanges();
             SeedCoaches();
             this.SaveChanges();
             SeedTeams();
@@ -236,7 +217,7 @@ namespace WhoScored.Data
 
         private void SeedCoaches()
         {
-            var france = this.Countries.SingleOrDefault(x => x.Name == "France");
+            var france = this.Countries.FirstOrDefault(x => x.Name == "France");
 
             this.Coaches.AddOrUpdate(new Coach()
             {
@@ -297,13 +278,13 @@ namespace WhoScored.Data
             var france = this.Countries.SingleOrDefault(x => x.Name == "France");
             var portugal = this.Countries.SingleOrDefault(x => x.Name == "Portugal");
 
-            var zidane = this.Coaches.SingleOrDefault(x => x.FirstName == "Zinedine");
-            var arsene = this.Coaches.SingleOrDefault(x => x.FirstName == "Arsene");
-            var jose = this.Coaches.SingleOrDefault(x => x.FirstName == "Jose");
-            var carlo = this.Coaches.SingleOrDefault(x => x.FirstName == "Carlo");
-            var leonardo = this.Coaches.SingleOrDefault(x => x.FirstName == "Leonardo");
-            var nuno = this.Coaches.SingleOrDefault(x => x.FirstName == "Nuno");
-            var luis = this.Coaches.SingleOrDefault(x => x.FirstName == "Luis");
+            var zidane = this.Coaches.FirstOrDefault(x => x.FirstName == "Zinedine");
+            var arsene = this.Coaches.FirstOrDefault(x => x.FirstName == "Arsene");
+            var jose = this.Coaches.FirstOrDefault(x => x.FirstName == "Jose");
+            var carlo = this.Coaches.FirstOrDefault(x => x.FirstName == "Carlo");
+            var leonardo = this.Coaches.FirstOrDefault(x => x.FirstName == "Leonardo");
+            var nuno = this.Coaches.FirstOrDefault(x => x.FirstName == "Nuno");
+            var luis = this.Coaches.FirstOrDefault(x => x.FirstName == "Luis");
 
             this.Teams.AddOrUpdate(x => x.Name,
                 new Team()

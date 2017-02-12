@@ -6,13 +6,6 @@ namespace WhoScored.Models.Models
 {
     public class Coach
     {
-        //private ICollection<Team> previousTeams;
-
-        public Coach()
-        {
-            //this.previousTeams = new HashSet<Team>();
-        }
-
         public int Id { get; set; }
 
         [Required]
@@ -28,15 +21,5 @@ namespace WhoScored.Models.Models
         public int CountryId { get; set; }
 
         public virtual Country Country { get; set; }
-
-        //public int CurrentTeamId { get; set; }
-
-        //public virtual Team CurrentTeam { get; set; }
-
-        //public virtual ICollection<Team> PreviousTeams
-        //{
-        //    get { return this.previousTeams; }
-        //    set { this.previousTeams = value; }
-        //}
     }
 }
