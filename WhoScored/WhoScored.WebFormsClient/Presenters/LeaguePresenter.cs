@@ -1,7 +1,6 @@
 ﻿using System;
 using Bytes2you.Validation;
 using WebFormsMvp;
-using WhoScored.Data;
 using WhoScored.Data.Contracts;
 using WhoScored.Models.Models;
 using WhoScored.WebFormsClient.Views;

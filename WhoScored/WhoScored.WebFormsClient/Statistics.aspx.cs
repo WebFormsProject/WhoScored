@@ -12,14 +12,14 @@ namespace WhoScored.WebFormsClient
     [PresenterBinding(typeof(StatisticsPresenter))]
     public partial class Statistics : MvpPage<StatisticsViewModel>, IStatisticsView
     {
-        public event EventHandler<StatisticsEventArgs> MyInit;
+        public event EventHandler GetTeams;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.MyInit?.Invoke(sender, new StatisticsEventArgs());
+            this.GetTeams?.Invoke(sender, e);
 
-            this.StatisticsFormView.DataSource = this.Model.Teams;
-            this.StatisticsFormView.DataBind();
+            this.StatisticsGridView.DataSource = this.Model.Teams.ToList();
+            this.StatisticsGridView.DataBind();
         }
     }
 }

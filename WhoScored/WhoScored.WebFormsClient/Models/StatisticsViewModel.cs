@@ -5,10 +5,6 @@ namespace WhoScored.WebFormsClient.Models
 {
     public class StatisticsViewModel
     {
-        public IEnumerable<Team> Teams
-        {
-            get;
-            set;
-        }
+        public IEnumerable<Team> Teams { get; set; }
     }
 }

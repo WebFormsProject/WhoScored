@@ -4,8 +4,8 @@ using WhoScored.WebFormsClient.Models;
 
 namespace WhoScored.WebFormsClient.Views
 {
-    public interface IStatisticsView :IView<StatisticsViewModel>
+    public interface IStatisticsView : IView<StatisticsViewModel>
     {
-        event EventHandler<StatisticsEventArgs> MyInit;
+        event EventHandler GetTeams;
     }
 }

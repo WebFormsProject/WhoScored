@@ -444,7 +444,6 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LeaguesViewModel.cs" />
-    <Compile Include="Models\StatisticsEventArgs.cs" />
     <Compile Include="Models\StatisticsViewModel.cs" />
     <Compile Include="Presenters\LeaguePresenter.cs" />
     <Compile Include="Presenters\StatisticsPresenter.cs" />
