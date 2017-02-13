@@ -74,16 +74,16 @@ namespace WhoScored.Data
             //        Roles = new[] { "admin", "user" }
             //    });
 
-            SeedCountries();
-            this.SaveChanges();
-            SeedCoaches();
-            this.SaveChanges();
-            SeedTeams();
-            this.SaveChanges();
-            SeedFootballPlayers();
-            SeedLeagues();
-            SeedGames();
-            this.SaveChanges();
+            //SeedCountries();
+            //this.SaveChanges();
+            //SeedCoaches();
+            //this.SaveChanges();
+            //SeedTeams();
+            //this.SaveChanges();
+            //SeedFootballPlayers();
+            //SeedLeagues();
+            //SeedGames();
+            //this.SaveChanges();
         }
 
         public new void SaveChanges()

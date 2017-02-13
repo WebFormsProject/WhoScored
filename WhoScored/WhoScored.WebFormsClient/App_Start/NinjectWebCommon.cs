@@ -1,3 +1,5 @@
+using WebFormsMvp.Binder;
+
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(WhoScored.WebFormsClient.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(WhoScored.WebFormsClient.App_Start.NinjectWebCommon), "Stop")]
 
@@ -61,6 +63,10 @@ namespace WhoScored.WebFormsClient.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Load(new WhoScoredNinjectModule());
+            kernel.Load(new MvpNinjectModule());
+
+            PresenterBinder.Factory = kernel.Get<IPresenterFactory>();
         }        
     }
 }

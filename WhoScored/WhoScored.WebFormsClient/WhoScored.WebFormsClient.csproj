@@ -241,6 +241,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Leagues.aspx" />
     <Content Include="Public.Master" />
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -414,7 +415,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="App_Start\WhoScoredNinjectModel.cs" />
+    <Compile Include="App_Start\WhoScoredNinjectModule.cs" />
     <Compile Include="Contacts.aspx.cs">
       <DependentUpon>Contacts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -434,9 +435,18 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Leagues.aspx.cs">
+      <DependentUpon>Leagues.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Leagues.aspx.designer.cs">
+      <DependentUpon>Leagues.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LeaguesViewModel.cs" />
     <Compile Include="Models\StatisticsEventArgs.cs" />
     <Compile Include="Models\StatisticsViewModel.cs" />
+    <Compile Include="Presenters\LeaguePresenter.cs" />
     <Compile Include="Presenters\StatisticsPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Public.Master.cs">
@@ -468,6 +478,7 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\ILeaguesView.cs" />
     <Compile Include="Views\IStatisticsView.cs" />
   </ItemGroup>
   <ItemGroup />
