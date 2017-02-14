@@ -259,6 +259,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="LeaguesTable.aspx" />
     <Content Include="Leagues.aspx" />
     <Content Include="photos\sky.jpg" />
     <Content Include="photos\train.jpg" />
@@ -480,6 +481,13 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LeaguesTable.aspx.cs">
+      <DependentUpon>LeaguesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LeaguesTable.aspx.designer.cs">
+      <DependentUpon>LeaguesTable.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Leagues.aspx.cs">
       <DependentUpon>Leagues.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -487,10 +495,13 @@
     <Compile Include="Leagues.aspx.designer.cs">
       <DependentUpon>Leagues.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CustomEvents\LeagueTableEventArgs.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LeaguesViewModel.cs" />
+    <Compile Include="Models\LeagueTablesViewModel.cs" />
     <Compile Include="Models\StatisticsViewModel.cs" />
     <Compile Include="Presenters\LeaguePresenter.cs" />
+    <Compile Include="Presenters\LeagueTablePresenter.cs" />
     <Compile Include="Presenters\StatisticsPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Public.Master.cs">
@@ -523,6 +534,7 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
     <Compile Include="Views\ILeaguesView.cs" />
+    <Compile Include="Views\ILeagueTableView.cs" />
     <Compile Include="Views\IStatisticsView.cs" />
   </ItemGroup>
   <ItemGroup />
