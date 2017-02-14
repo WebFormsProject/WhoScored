@@ -84,6 +84,7 @@ namespace WhoScored.Data
             //SeedLeagues();
             //SeedGames();
             //this.SaveChanges();
+            this.SeedStatisitcs();
         }
 
         public new void SaveChanges()
@@ -133,6 +134,46 @@ namespace WhoScored.Data
             modelBuilder.Entity<FootballPlayer>()
                .HasRequired(x => x.CurrentTeam)
                .WithMany(x => x.CurrentFootballPlayers);
+        }
+
+        private void SeedStatisitcs()
+        {
+            var realMadrid = this.Teams.SingleOrDefault(x => x.Name == "Real Madrid");
+            var arsenal = this.Teams.SingleOrDefault(x => x.Name == "Arsenal");
+            var barcelona = this.Teams.SingleOrDefault(x => x.Name == "Barcelona");
+            var bayern = this.Teams.SingleOrDefault(x => x.Name == "Bayern Munich");
+            var chelsea = this.Teams.SingleOrDefault(x => x.Name == "Chelsea");
+
+            var rmSt = new TeamStatistic {Team = realMadrid};
+            var barcelonaStatistics = new TeamStatistic {Team = barcelona};
+            var arsenalStatistics = new TeamStatistic {Team = arsenal};
+            var chelseaStatistics = new TeamStatistic {Team = chelsea};
+            this.TeamStatistics.Add(rmSt);
+            this.TeamStatistics.Add(barcelonaStatistics);
+            this.TeamStatistics.Add(arsenalStatistics);
+            this.TeamStatistics.Add(chelseaStatistics);
+            this.TeamStatistics.Add(new TeamStatistic { Team = bayern });
+
+            this.SaveChanges();
+
+            var premier = this.Leagues.SingleOrDefault(x => x.Name == "Premier League");
+            var laLiga = this.Leagues.SingleOrDefault(x => x.Name == "La Liga");
+            var bundesliga = this.Leagues.SingleOrDefault(x => x.Name == "Bundesliga");
+
+            this.LeagueTables.Add(new LeagueTable()
+            {
+                League = premier,
+                TeamStatistics = new HashSet<TeamStatistic>() {arsenalStatistics, chelseaStatistics }
+            });
+
+            this.LeagueTables.Add(new LeagueTable()
+            {
+                League = laLiga,
+                TeamStatistics = new HashSet<TeamStatistic>() {rmSt, barcelonaStatistics}
+            });
+
+            this.SaveChanges();
+
         }
 
         private void SeedCountries()
