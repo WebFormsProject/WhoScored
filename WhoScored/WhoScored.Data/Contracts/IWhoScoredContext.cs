@@ -6,45 +6,21 @@ namespace WhoScored.Data.Contracts
 {
     public interface IWhoScoredContext
     {
-        IDbSet<Article> Articles
-        {
-            get; set;
-        }
+        IDbSet<Article> Articles { get; }
 
-        IDbSet<Category> Categories
-        {
-            get; set;
-        }
+        IDbSet<Category> Categories { get; }
 
-        IDbSet<Comment> Comments
-        {
-            get; set;
-        }
+        IDbSet<Comment> Comments { get; }
 
-        IDbSet<User> Users
-        {
-            get; set;
-        }
+        IDbSet<User> Users { get; }
 
-        IDbSet<FootballPlayer> FootballPlayers
-        {
-            get; set;
-        }
+        IDbSet<FootballPlayer> FootballPlayers { get; }
 
-        IDbSet<Team> Teams
-        {
-            get; set;
-        }
+        IDbSet<Team> Teams { get; }
 
-        IDbSet<Title> Titles
-        {
-            get; set;
-        }
+        IDbSet<Title> Titles { get; }
 
-        IDbSet<TrollPhoto> TrollPhotos
-        {
-            get; set;
-        }
+        IDbSet<TrollPhoto> TrollPhotos { get; }
 
         IDbSet<T> Set<T>() where T : class;
 

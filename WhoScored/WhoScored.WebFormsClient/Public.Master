@@ -1,7 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Public.master.cs" Inherits="WhoScored.WebFormsClient.Public" %>
 
-<!DOCTYPE html>
-
 <html lang="en">
 <head runat="server">
     <meta charset="utf-8" />
@@ -17,6 +15,32 @@
 </head>
 <body>
     <form runat="server">
+<%--        <asp:ToolkitScriptManager id="ToolkitScriptManager" runat="server" />
+
+        <hr />
+        <p>
+            <asp:Image ID="ImageControl" runat="server" Height="440" />
+            <asp:SlideShowExtender
+                runat="server"
+                BehaviorID="SSBehaviorID"
+                TargetControlID="ImageControl"
+                SlideShowServiceMethod="GetImages"
+                AutoPlay="true"
+                PreviousButtonID="ButtonPrevious"
+                PlayButtonID="ButtonPlay"
+                NextButtonID="ButtonNext"
+                PlayButtonText="Play"
+                StopButtonText="Stop"
+                Loop="true"></asp:SlideShowExtender>
+        </p>
+        <hr />
+
+        <div class="text-center">
+            <asp:Button ID="ButtonPrevious" runat="server" Text="Previous" CssClass="btn btn-default" />
+            <asp:Button ID="ButtonPlay" runat="server" Text="Play" CssClass="btn btn-warning" />
+            <asp:Button ID="ButtonNext" runat="server" Text="Next" CssClass="btn btn-default" />
+        </div>--%>
+
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
