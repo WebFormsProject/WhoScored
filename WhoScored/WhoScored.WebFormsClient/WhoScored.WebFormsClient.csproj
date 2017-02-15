@@ -242,6 +242,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="animations\ajax-loader.gif" />
     <Content Include="Contacts.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -500,9 +501,11 @@
     <Compile Include="Models\LeaguesViewModel.cs" />
     <Compile Include="Models\LeagueTablesViewModel.cs" />
     <Compile Include="Models\StatisticsViewModel.cs" />
+    <Compile Include="Models\TrollPhotosViewMode.cs" />
     <Compile Include="Presenters\LeaguePresenter.cs" />
     <Compile Include="Presenters\LeagueTablePresenter.cs" />
     <Compile Include="Presenters\StatisticsPresenter.cs" />
+    <Compile Include="Presenters\TrollPhotosPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Public.Master.cs">
       <DependentUpon>Public.Master</DependentUpon>
@@ -511,6 +514,8 @@
     <Compile Include="Public.Master.designer.cs">
       <DependentUpon>Public.Master</DependentUpon>
     </Compile>
+    <Compile Include="Services\Contracts\ITrollPhotosService.cs" />
+    <Compile Include="Services\TrollPhotosService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Statistics.aspx.cs">
       <DependentUpon>Statistics.aspx</DependentUpon>
@@ -536,6 +541,7 @@
     <Compile Include="Views\ILeaguesView.cs" />
     <Compile Include="Views\ILeagueTableView.cs" />
     <Compile Include="Views\IStatisticsView.cs" />
+    <Compile Include="Views\ITrollPhotosView.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

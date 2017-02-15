@@ -5,6 +5,8 @@ using WhoScored.Data;
 using WhoScored.Data.Contracts;
 using WhoScored.Models.Models;
 using WhoScored.WebFormsClient.Presenters;
+using WhoScored.WebFormsClient.Services;
+using WhoScored.WebFormsClient.Services.Contracts;
 
 namespace WhoScored.WebFormsClient.App_Start
 {
@@ -23,6 +25,8 @@ namespace WhoScored.WebFormsClient.App_Start
             this.Bind(typeof(IWhoScoredRepository<League>)).To(typeof(WhoScoredRepository<League>));
            // this.Bind<LeagueTablePresenter>().ToSelf();
             this.Bind(typeof(IWhoScoredRepository<LeagueTable>)).To(typeof(WhoScoredRepository<LeagueTable>));
+            this.Bind<TrollPhotosPresenter>().ToSelf();
+            this.Bind<ITrollPhotosService>().To<TrollPhotosService>();
 
             //  this.Bind<IWhoScoredRepository<League>>().To<WhoScoredRepository<League>>();
         }
