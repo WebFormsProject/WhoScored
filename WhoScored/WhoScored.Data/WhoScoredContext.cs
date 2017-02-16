@@ -84,7 +84,7 @@ namespace WhoScored.Data
             //SeedLeagues();
             //SeedGames();
             //this.SaveChanges();
-            this.SeedStatisitcs();
+            //this.SeedStatisitcs();
         }
 
         public new void SaveChanges()
@@ -375,9 +375,9 @@ namespace WhoScored.Data
         private void SeedLeagues()
         {
             this.Leagues.AddOrUpdate(x => x.Name,
-                new League() { Name = "Premier League", CountryId = 2 },
-                new League() { Name = "La Liga", CountryId = 1 },
-                new League() { Name = "Bundesliga", CountryId = 4 });
+                new League() { Name = "Premier League", CountryId = 2, LeaugeLogo = "/photos/Leagues/premier-league.png" },
+                new League() { Name = "La Liga", CountryId = 1, LeaugeLogo = "/photos/Leagues/la-liga.png" },
+                new League() { Name = "Bundesliga", CountryId = 4, LeaugeLogo = "/photos/Leagues/bundesliga.png" });
         }
 
         private void SeedGames()

@@ -18,6 +18,6 @@ namespace WhoScored.Models.Models
 
         public int Season { get; set; }
 
-        public ICollection<TeamStatistic> TeamStatistics { get; set; }
+        public virtual ICollection<TeamStatistic> TeamStatistics { get; set; }
     }
 }

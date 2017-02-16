@@ -21,7 +21,6 @@ namespace WhoScored.WebFormsClient.Presenters
         private void View_GetLeaguesTable(object sender, LeagueTableEventArgs e)
         {
             this.View.Model.LeagueTable = this.leagueTableRepository.GetById(e.Id);
-         //   this.View.Model.TeamStatistics = this.leagueTableRepository.GetById(e.Id).TeamStatistics;
         }
     }
 }
