@@ -5,5 +5,3 @@ branches:
 build:
   project: ./WhoScored/WhoScored.sln
   verbosity: minimal
-test:
-  assemblies: WhoScored/WhoScored.Tests
