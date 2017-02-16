@@ -9,7 +9,7 @@ namespace WhoScored.Tests.WhoScored.Models.CategoryTests
     public class NameTests
     {
         [Test]
-        public void Title_ShouldHave_RequiredAttribute()
+        public void Name_ShouldHave_RequiredAttribute()
         {
             Category category = new Category();
             string property = "Name";

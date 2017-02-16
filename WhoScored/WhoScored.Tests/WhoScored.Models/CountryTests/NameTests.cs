@@ -1,20 +1,20 @@
 ﻿using NUnit.Framework;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using WhoScored.Models.Models;
+using WhoScored.Models;
 
-namespace WhoScored.Tests.WhoScored.Models.CommentTests
+namespace WhoScored.Tests.WhoScored.Models.CountryTests
 {
     [TestFixture]
-    public class ContextTests
+    public class NameTests
     {
         [Test]
-        public void Context_ShouldHave_RequiredAttribute()
+        public void Name_ShouldHave_RequiredAttribute()
         {
-            Comment comment = new Comment();
-            string property = "Context";
+            Country country = new Country();
+            string property = "Name";
 
-            bool hasAttribute = comment.GetType()
+            bool hasAttribute = country.GetType()
                 .GetProperty(property)
                 .GetCustomAttributes(false)
                 .Where(p => p.GetType() == typeof(RequiredAttribute))

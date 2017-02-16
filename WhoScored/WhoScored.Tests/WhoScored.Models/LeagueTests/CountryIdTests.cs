@@ -3,18 +3,18 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using WhoScored.Models.Models;
 
-namespace WhoScored.Tests.WhoScored.Models.CommentTests
+namespace WhoScored.Tests.WhoScored.Models.LeagueTests
 {
     [TestFixture]
-    public class ContextTests
+    public class CountryIdTests
     {
         [Test]
-        public void Context_ShouldHave_RequiredAttribute()
+        public void CountryId_ShouldHave_RequiredAttribute()
         {
-            Comment comment = new Comment();
-            string property = "Context";
+            League league = new League();
+            string property = "CountryId";
 
-            bool hasAttribute = comment.GetType()
+            bool hasAttribute = league.GetType()
                 .GetProperty(property)
                 .GetCustomAttributes(false)
                 .Where(p => p.GetType() == typeof(RequiredAttribute))

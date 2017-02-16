@@ -3,18 +3,18 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using WhoScored.Models.Models;
 
-namespace WhoScored.Tests.WhoScored.Models.CommentTests
+namespace WhoScored.Tests.WhoScored.Models.TrollPhotoTests
 {
     [TestFixture]
-    public class ContextTests
+    class PhotoPathTests
     {
         [Test]
-        public void Context_ShouldHave_RequiredAttribute()
+        public void PhotoPath_ShouldHave_RequiredAttribute()
         {
-            Comment comment = new Comment();
-            string property = "Context";
+            TrollPhoto photo = new TrollPhoto();
+            string property = "PhotoPath";
 
-            bool hasAttribute = comment.GetType()
+            bool hasAttribute = photo.GetType()
                 .GetProperty(property)
                 .GetCustomAttributes(false)
                 .Where(p => p.GetType() == typeof(RequiredAttribute))

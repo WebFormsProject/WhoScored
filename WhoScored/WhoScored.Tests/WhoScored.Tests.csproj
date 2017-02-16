@@ -39,6 +39,22 @@
       <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Moq, Version=4.5.30.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.5.30\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
@@ -87,6 +103,17 @@
     <Compile Include="WhoScored.Models\CoachTests\FirstNameTests.cs" />
     <Compile Include="WhoScored.Models\CoachTests\LastNameTests.cs" />
     <Compile Include="WhoScored.Models\CommentTests\ContextTests.cs" />
+    <Compile Include="WhoScored.Models\CountryTests\NameTests.cs" />
+    <Compile Include="WhoScored.Models\FootballPlayerTests\FirstNameTests.cs" />
+    <Compile Include="WhoScored.Models\FootballPlayerTests\LastNameTests.cs" />
+    <Compile Include="WhoScored.Models\LeagueTests\CountryIdTests.cs" />
+    <Compile Include="WhoScored.Models\LeagueTests\NameTests.cs" />
+    <Compile Include="WhoScored.Models\TitleTests\TitleNameTests.cs" />
+    <Compile Include="WhoScored.Models\TrollPhotoTests\CategoryIdTests.cs" />
+    <Compile Include="WhoScored.Models\TrollPhotoTests\PhotoPathTests.cs" />
+    <Compile Include="WhoScored.Models\TrollPhotoTests\UserIdTests.cs" />
+    <Compile Include="WhoScored.Models\UserTests\FirstNameTests.cs" />
+    <Compile Include="WhoScored.Models\UserTests\LastNameTests.cs" />
     <Compile Include="WhoScored.Models\ValidationConstants.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +121,7 @@
     <Folder Include="WhoScored.WebFormsClient\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
