@@ -83,6 +83,10 @@
     <Compile Include="WhoScored.Models\ArticleTests\ContextTests.cs" />
     <Compile Include="WhoScored.Models\ArticleTests\TitleTests.cs" />
     <Compile Include="WhoScored.Models\ArticleTests\UserIdTests.cs" />
+    <Compile Include="WhoScored.Models\CategoryTests\NameTests.cs" />
+    <Compile Include="WhoScored.Models\CoachTests\FirstNameTests.cs" />
+    <Compile Include="WhoScored.Models\CoachTests\LastNameTests.cs" />
+    <Compile Include="WhoScored.Models\CommentTests\ContextTests.cs" />
     <Compile Include="WhoScored.Models\ValidationConstants.cs" />
   </ItemGroup>
   <ItemGroup>

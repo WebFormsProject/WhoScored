@@ -255,6 +255,7 @@
     <Content Include="Content\materialize-v0.97.5\font\material-design-icons\Material-Design-Icons.svg" />
     <Content Include="Content\materialize-v0.97.5\js\materialize.js" />
     <Content Include="Content\materialize-v0.97.5\js\materialize.min.js" />
+    <Content Include="Content\Photos.css" />
     <Content Include="Content\Site.css" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

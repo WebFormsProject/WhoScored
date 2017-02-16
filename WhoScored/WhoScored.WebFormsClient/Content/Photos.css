@@ -1,0 +1,20 @@
+﻿div image.animation-loading {
+    z-index: 999999;
+}
+
+.selected-image {
+    position: center;
+    display: inline-block;
+    width: 65%;
+    margin: 2%;
+}
+
+.btn-next-prev {
+    text-shadow: 1px 1px 1px #000000;
+    vertical-align: top;
+    margin: 10% 0;
+}
+
+.image-responsive {
+    max-width: 95%;
+}
