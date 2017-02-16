@@ -23,14 +23,15 @@ namespace WhoScored.WebFormsClient
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (imagesPaths == null)
+            if (imagesPaths == null || this.SelectedImage.ImageUrl == null)
             {
                 this.GetTrollPhotos?.Invoke(sender, e);
 
                 imagesPaths = this.Model.TrollPhotosPaths.ToList();
                 selectedImageIndex = 1;
-                this.SelectedImage.ImageUrl = imagesPaths[selectedImageIndex];
             }
+
+            this.SelectedImage.ImageUrl = imagesPaths[selectedImageIndex];
         }
 
         protected void ButtonPrevious_Click(object sender, EventArgs e)

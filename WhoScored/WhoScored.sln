@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoScored.Models", "WhoScor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoScored.Data", "WhoScored.Data\WhoScored.Data.csproj", "{BD385FBA-A232-48D7-9440-6626B8162249}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoScored.Tests", "WhoScored.Tests\WhoScored.Tests.csproj", "{90C22DF8-4D4C-4C12-896E-540B53D92D95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{BD385FBA-A232-48D7-9440-6626B8162249}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD385FBA-A232-48D7-9440-6626B8162249}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD385FBA-A232-48D7-9440-6626B8162249}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90C22DF8-4D4C-4C12-896E-540B53D92D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90C22DF8-4D4C-4C12-896E-540B53D92D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90C22DF8-4D4C-4C12-896E-540B53D92D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90C22DF8-4D4C-4C12-896E-540B53D92D95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
