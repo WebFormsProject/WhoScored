@@ -8,27 +8,30 @@ using WebFormsMvp;
 using WebFormsMvp.Web;
 using WhoScored.WebFormsClient.Models;
 using WhoScored.WebFormsClient.Presenters;
-using WhoScored.WebFormsClient.Services;
 using WhoScored.WebFormsClient.Views;
 
 namespace WhoScored.WebFormsClient
 {
     [PresenterBinding(typeof(TrollPhotosPresenter))]
-    public partial class TrollPhotos : MvpPage<TrollPhotosViewMode>, ITrollPhotosView
+    public partial class TrollPhotos : MvpPage<TrollPhotosViewModel>, ITrollPhotosView
     {
         private static int selectedImageIndex;
         private static IList<string> imagesPaths;
 
-        public event EventHandler OnGetTrollPhotos;
+        private string[] ImageExtensions = new string[] { ".jpg", ".png" };
+
+        public event EventHandler OnGetTrollPhotosPaths;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (imagesPaths == null || this.SelectedImage.ImageUrl == null)
             {
-                this.OnGetTrollPhotos?.Invoke(sender, e);
+                this.OnGetTrollPhotosPaths?.Invoke(sender, e);
 
-                imagesPaths = this.Model.TrollPhotosPaths.ToList();
                 selectedImageIndex = 1;
+                imagesPaths = this.Model.TrollPhotosPaths
+                    .Where(photo => photo.EndsWith(ImageExtensions[0]) || photo.EndsWith(ImageExtensions[1]))
+                    .ToList();
             }
 
             this.SelectedImage.ImageUrl = imagesPaths[selectedImageIndex];

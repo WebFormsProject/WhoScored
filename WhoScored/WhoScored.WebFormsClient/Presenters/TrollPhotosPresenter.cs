@@ -1,29 +1,29 @@
 ﻿using Bytes2you.Validation;
 using System;
+using System.Linq;
 using WebFormsMvp;
-using WhoScored.WebFormsClient.Services.Contracts;
+using WhoScored.Data.Contracts;
+using WhoScored.Models.Models;
 using WhoScored.WebFormsClient.Views;
 
 namespace WhoScored.WebFormsClient.Presenters
 {
     public class TrollPhotosPresenter : Presenter<ITrollPhotosView>
     {
-        private readonly ITrollPhotosService trollPhotosService;
+        private readonly IWhoScoredRepository<TrollPhoto> trollPhotosRepository;
 
-        private const string TrollPhotosDirectory = "~/photos/";
-
-        public TrollPhotosPresenter(ITrollPhotosView view, ITrollPhotosService trollPhotosService)
+        public TrollPhotosPresenter(ITrollPhotosView view, IWhoScoredRepository<TrollPhoto> trollPhotosRepository)
             : base(view)
         {
-            Guard.WhenArgument(this.trollPhotosService, "trollPhotosService").IsNull();
-            this.trollPhotosService = trollPhotosService;
+            Guard.WhenArgument(this.trollPhotosRepository, "trollPhotosRepository").IsNull();
+            this.trollPhotosRepository = trollPhotosRepository;
 
-            this.View.OnGetTrollPhotos += this.View_GetTrollPhotos;
+            this.View.OnGetTrollPhotosPaths += this.View_GetTrollPhotos;
         }
 
         private void View_GetTrollPhotos(object sender, EventArgs e)
         {
-            this.View.Model.TrollPhotosPaths = this.trollPhotosService.GetImages(TrollPhotosDirectory);
+            this.View.Model.TrollPhotosPaths = this.trollPhotosRepository.GetAll().Select(p => p.PhotoPath);
         }
     }
 }

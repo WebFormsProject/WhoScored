@@ -64,16 +64,16 @@ namespace WhoScored.Data
         public void InitializeDb()
         {
             //this.Users.AddOrUpdate(
-            //    x => x.Username,
+            //    x => x.FirstName,
             //    new User
             //    {
             //        FirstName = "admin",
             //        LastName = "admin",
-            //        Email = "admin",
-            //        Username = "admin",
-            //        Roles = new[] { "admin", "user" }
+            //        Email = "admin"
             //    });
 
+            //this.SeedCategories();
+            //this.SaveChanges();
             //SeedCountries();
             //this.SaveChanges();
             //SeedCoaches();
@@ -85,6 +85,8 @@ namespace WhoScored.Data
             //SeedGames();
             //this.SaveChanges();
             //this.SeedStatisitcs();
+            this.SeedTrollPhotos();
+            this.SaveChanges();
         }
 
         public new void SaveChanges()
@@ -144,10 +146,10 @@ namespace WhoScored.Data
             var bayern = this.Teams.SingleOrDefault(x => x.Name == "Bayern Munich");
             var chelsea = this.Teams.SingleOrDefault(x => x.Name == "Chelsea");
 
-            var rmSt = new TeamStatistic {Team = realMadrid};
-            var barcelonaStatistics = new TeamStatistic {Team = barcelona};
-            var arsenalStatistics = new TeamStatistic {Team = arsenal};
-            var chelseaStatistics = new TeamStatistic {Team = chelsea};
+            var rmSt = new TeamStatistic { Team = realMadrid };
+            var barcelonaStatistics = new TeamStatistic { Team = barcelona };
+            var arsenalStatistics = new TeamStatistic { Team = arsenal };
+            var chelseaStatistics = new TeamStatistic { Team = chelsea };
             this.TeamStatistics.Add(rmSt);
             this.TeamStatistics.Add(barcelonaStatistics);
             this.TeamStatistics.Add(arsenalStatistics);
@@ -163,17 +165,26 @@ namespace WhoScored.Data
             this.LeagueTables.Add(new LeagueTable()
             {
                 League = premier,
-                TeamStatistics = new HashSet<TeamStatistic>() {arsenalStatistics, chelseaStatistics }
+                TeamStatistics = new HashSet<TeamStatistic>() { arsenalStatistics, chelseaStatistics }
             });
 
             this.LeagueTables.Add(new LeagueTable()
             {
                 League = laLiga,
-                TeamStatistics = new HashSet<TeamStatistic>() {rmSt, barcelonaStatistics}
+                TeamStatistics = new HashSet<TeamStatistic>() { rmSt, barcelonaStatistics }
             });
 
             this.SaveChanges();
 
+        }
+
+        private void SeedCategories()
+        {
+            this.Categories.AddOrUpdate(x => x.Name,
+                new Category()
+                {
+                    Name = "Troll Photo"
+                });
         }
 
         private void SeedCountries()
@@ -414,6 +425,46 @@ namespace WhoScored.Data
                         HomeTeamGoals = 4,
                         GoalScorers = new HashSet<FootballPlayer>() { ronaldo, pique }
                     });
+        }
+
+        private void SeedTrollPhotos()
+        {
+            this.TrollPhotos.Add(
+                new TrollPhoto()
+                {
+                    PhotoPath = "/photos/TrollPhotos/image1.jpg",
+                    CategoryId = 1
+                });
+            this.TrollPhotos.Add(
+                new TrollPhoto()
+                {
+                    PhotoPath = "/photos/TrollPhotos/image2.jpg",
+                    CategoryId = 1
+                });
+            this.TrollPhotos.Add(
+                new TrollPhoto()
+                {
+                    PhotoPath = "/photos/TrollPhotos/image3.jpg",
+                    CategoryId = 1
+                });
+            this.TrollPhotos.Add(
+                new TrollPhoto()
+                {
+                    PhotoPath = "/photos/TrollPhotos/image4.jpg",
+                    CategoryId = 1
+                });
+            this.TrollPhotos.Add(
+                new TrollPhoto()
+                {
+                    PhotoPath = "/photos/TrollPhotos/image5.jpg",
+                    CategoryId = 1
+                });
+           this.TrollPhotos.Add(
+               new TrollPhoto()
+                {
+                    PhotoPath = "/photos/TrollPhotos/image6.jpg",
+                    CategoryId = 1
+                });
         }
     }
 }

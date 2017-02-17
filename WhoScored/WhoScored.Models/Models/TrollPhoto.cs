@@ -14,7 +14,7 @@ namespace WhoScored.Models.Models
 
         public int Id { get; set; }
 
-        [Required]
+        //[Required]
         public int UserId { get; set; }
 
         public virtual User User { get; set; }

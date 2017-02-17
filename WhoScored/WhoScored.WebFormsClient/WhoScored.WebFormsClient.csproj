@@ -264,9 +264,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="LeaguesTable.aspx" />
     <Content Include="Leagues.aspx" />
-    <Content Include="photos\sky.jpg" />
-    <Content Include="photos\train.jpg" />
-    <Content Include="photos\winter.jpg" />
     <Content Include="Public.Master" />
     <Content Include="Account\Web.config" />
     <Content Include="Content\materialize-v0.97.5\font\roboto\Roboto-Thin.woff2" />
@@ -514,7 +511,7 @@
     <Compile Include="Models\LeagueTablesViewModel.cs" />
     <Compile Include="Models\StatisticsViewModel.cs" />
     <Compile Include="Models\TeamViewModel.cs" />
-    <Compile Include="Models\TrollPhotosViewMode.cs" />
+    <Compile Include="Models\TrollPhotosViewModel.cs" />
     <Compile Include="Presenters\LeaguePresenter.cs" />
     <Compile Include="Presenters\LeagueTablePresenter.cs" />
     <Compile Include="Presenters\StatisticsPresenter.cs" />
@@ -565,7 +562,9 @@
     <Compile Include="Views\ITeamView.cs" />
     <Compile Include="Views\ITrollPhotosView.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="photos\TrollPhotos\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WhoScored.Data\WhoScored.Data.csproj">
       <Project>{bd385fba-a232-48d7-9440-6626b8162249}</Project>
