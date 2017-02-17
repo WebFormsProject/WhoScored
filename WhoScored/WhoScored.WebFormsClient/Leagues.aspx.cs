@@ -16,11 +16,11 @@ namespace WhoScored.WebFormsClient
     [PresenterBinding(typeof(LeaguePresenter))]
     public partial class Leagues : MvpPage<LeaguesViewModel>, ILeaguesView
     {
-        public event EventHandler GetLeagues;
+        public event EventHandler OnGetLeagues;
         
         public IEnumerable<League> ListViewLeagues_GetData()
         {
-            this.GetLeagues?.Invoke(this, null);
+            this.OnGetLeagues?.Invoke(this, null);
 
             return this.Model.Leagues;
         }

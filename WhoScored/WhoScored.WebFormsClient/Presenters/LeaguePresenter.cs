@@ -17,7 +17,7 @@ namespace WhoScored.WebFormsClient.Presenters
            Guard.WhenArgument(leagueRepository, "leagueRepository").IsNull();
             this.leagueRepository = leagueRepository;
 
-            this.View.GetLeagues += View_GetLeagues;
+            this.View.OnGetLeagues += View_GetLeagues;
         }
 
         private void View_GetLeagues(object sender, EventArgs e)

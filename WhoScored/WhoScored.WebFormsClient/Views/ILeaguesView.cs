@@ -6,6 +6,6 @@ namespace WhoScored.WebFormsClient.Views
 {
     public interface ILeaguesView : IView<LeaguesViewModel>
     {
-        event EventHandler GetLeagues;
+        event EventHandler OnGetLeagues;
     }
 }

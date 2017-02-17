@@ -15,10 +15,10 @@ namespace WhoScored.WebFormsClient.Presenters
         {
             this.leagueTableRepository = leagueTableRepository;
 
-            this.View.GetLeagueTables += this.View_GetLeaguesTable;
+            this.View.OnGetLeagueTableData += this.View_OnGetLeaguesTable;
         }
 
-        private void View_GetLeaguesTable(object sender, LeagueTableEventArgs e)
+        private void View_OnGetLeaguesTable(object sender, LeagueTableEventArgs e)
         {
             this.View.Model.LeagueTable = this.leagueTableRepository.GetById(e.Id);
         }

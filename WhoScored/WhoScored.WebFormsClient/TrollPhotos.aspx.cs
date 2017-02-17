@@ -19,13 +19,13 @@ namespace WhoScored.WebFormsClient
         private static int selectedImageIndex;
         private static IList<string> imagesPaths;
 
-        public event EventHandler GetTrollPhotos;
+        public event EventHandler OnGetTrollPhotos;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (imagesPaths == null || this.SelectedImage.ImageUrl == null)
             {
-                this.GetTrollPhotos?.Invoke(sender, e);
+                this.OnGetTrollPhotos?.Invoke(sender, e);
 
                 imagesPaths = this.Model.TrollPhotosPaths.ToList();
                 selectedImageIndex = 1;
