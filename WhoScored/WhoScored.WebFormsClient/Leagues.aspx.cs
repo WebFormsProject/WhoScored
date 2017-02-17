@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebFormsMvp;
 using WebFormsMvp.Web;
+using WhoScored.Models.Models;
 using WhoScored.WebFormsClient.Models;
 using WhoScored.WebFormsClient.Presenters;
 using WhoScored.WebFormsClient.Views;
@@ -15,14 +16,13 @@ namespace WhoScored.WebFormsClient
     [PresenterBinding(typeof(LeaguePresenter))]
     public partial class Leagues : MvpPage<LeaguesViewModel>, ILeaguesView
     {
-        public event EventHandler GetLeagues;
-
-        protected void Page_Load(object sender, EventArgs e)
+        public event EventHandler OnGetLeagues;
+        
+        public IEnumerable<League> ListViewLeagues_GetData()
         {
-            this.GetLeagues?.Invoke(sender, e);
+            this.OnGetLeagues?.Invoke(this, null);
 
-            this.LeaguesGridView.DataSource = this.Model.Leagues.ToList();
-            this.LeaguesGridView.DataBind();
+            return this.Model.Leagues;
         }
     }
 }

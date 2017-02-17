@@ -18,7 +18,7 @@ namespace WhoScored.WebFormsClient.Presenters
             Guard.WhenArgument(this.trollPhotosService, "trollPhotosService").IsNull();
             this.trollPhotosService = trollPhotosService;
 
-            this.View.GetTrollPhotos += this.View_GetTrollPhotos;
+            this.View.OnGetTrollPhotos += this.View_GetTrollPhotos;
         }
 
         private void View_GetTrollPhotos(object sender, EventArgs e)

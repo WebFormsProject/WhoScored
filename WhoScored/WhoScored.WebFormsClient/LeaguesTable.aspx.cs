@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebFormsMvp;
 using WebFormsMvp.Web;
+using WhoScored.Models.Models;
 using WhoScored.WebFormsClient.Models;
 using WhoScored.WebFormsClient.Models.CustomEvents;
 using WhoScored.WebFormsClient.Presenters;
@@ -16,18 +17,14 @@ namespace WhoScored.WebFormsClient
     [PresenterBinding(typeof(LeagueTablePresenter))]
     public partial class LeaguesTable : MvpPage<LeagueTablesViewModel>, ILeagueTableView
     {
-        public event EventHandler<LeagueTableEventArgs> GetLeagueTables;
+        public event EventHandler<LeagueTableEventArgs> OnGetLeagueTableData;
 
-        protected void Page_Load(object sender, EventArgs e)
+        public IEnumerable<TeamStatistic> GridViewLeagueTable_GetData()
         {
             int id = int.Parse(this.Request.QueryString["id"]);
-            this.GetLeagueTables?.Invoke(sender, new LeagueTableEventArgs(id));
+            this.OnGetLeagueTableData?.Invoke(this, new LeagueTableEventArgs(id));
 
-       // this.Response.Write(this.Model.LeagueTable);
-
-          this.LeaguesStatisticsGridView.DataSource = this.Model.LeagueTable.TeamStatistics.ToList();
-            this.LeaguesStatisticsGridView.DataBind();
+            return this.Model.LeagueTable.TeamStatistics;
         }
-
     }
 }

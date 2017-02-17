@@ -14,10 +14,10 @@ namespace WhoScored.WebFormsClient.Presenters
         public LeaguePresenter(ILeaguesView view, IWhoScoredRepository<League> leagueRepository)
             : base(view)
         {
-           Guard.WhenArgument(leagueRepository, "leagueRepository").IsNull();
+           Guard.WhenArgument(leagueRepository, "leagueRepository").IsNull().Throw();
             this.leagueRepository = leagueRepository;
 
-            this.View.GetLeagues += View_GetLeagues;
+            this.View.OnGetLeagues += View_GetLeagues;
         }
 
         private void View_GetLeagues(object sender, EventArgs e)

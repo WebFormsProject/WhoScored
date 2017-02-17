@@ -14,5 +14,7 @@ namespace WhoScored.Models.Models
         public int CountryId { get; set; }
 
         public virtual Country Country { get; set; }
+
+        public string LeaugeLogo { get; set; }
     }
 }

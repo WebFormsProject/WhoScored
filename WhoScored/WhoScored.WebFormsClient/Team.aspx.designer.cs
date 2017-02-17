@@ -10,15 +10,24 @@
 namespace WhoScored.WebFormsClient {
     
     
-    public partial class Leagues {
+    public partial class Team {
         
         /// <summary>
-        /// ListViewLeagues control.
+        /// TeamFormView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListViewLeagues;
+        protected global::System.Web.UI.WebControls.FormView TeamFormView;
+        
+        /// <summary>
+        /// RepeaterPeople control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterPeople;
     }
 }

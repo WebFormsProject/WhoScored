@@ -84,7 +84,7 @@ namespace WhoScored.Data
             //SeedLeagues();
             //SeedGames();
             //this.SaveChanges();
-            this.SeedStatisitcs();
+            //this.SeedStatisitcs();
         }
 
         public new void SaveChanges()
@@ -219,7 +219,8 @@ namespace WhoScored.Data
                 CurrentTeam = realMadrid,
                 Country = spain,
                 Position = PlayerPositionType.Defender,
-                PreviousTeams = new HashSet<Team>() { arsenal, bayern }
+                PreviousTeams = new HashSet<Team>() { arsenal, bayern },
+                ImagePath = "/photos/Players/sergio-ramos.jpg"
             },
             new FootballPlayer()
             {
@@ -228,7 +229,8 @@ namespace WhoScored.Data
                 CurrentTeam = arsenal,
                 Country = germany,
                 Position = PlayerPositionType.Midfielder,
-                PreviousTeams = new HashSet<Team>() { realMadrid }
+                PreviousTeams = new HashSet<Team>() { realMadrid },
+                ImagePath = "/photos/Players/mesut-ozil.png"
             },
             new FootballPlayer()
             {
@@ -244,7 +246,8 @@ namespace WhoScored.Data
                 LastName = "Ronaldo",
                 CurrentTeam = realMadrid,
                 Country = portugal,
-                Position = PlayerPositionType.Forward
+                Position = PlayerPositionType.Forward,
+                ImagePath = "/photos/Players/cristiano-ronaldo.jpg"
             },
             new FootballPlayer()
             {
@@ -332,13 +335,15 @@ namespace WhoScored.Data
                 {
                     Name = "Real Madrid",
                     CountryId = spain.Id,
-                    Coach = zidane
+                    Coach = zidane,
+                    EmblemImagePath = "/photos/Teams/real-madrid-la-liga.jpg"
                 },
                 new Team()
                 {
                     Name = "Arsenal",
                     CountryId = england.Id,
-                    Coach = arsene
+                    Coach = arsene,
+                    EmblemImagePath = "/photos/Teams/arsenal-premier-league.png"
                 },
                 new Team()
                 {
@@ -375,9 +380,9 @@ namespace WhoScored.Data
         private void SeedLeagues()
         {
             this.Leagues.AddOrUpdate(x => x.Name,
-                new League() { Name = "Premier League", CountryId = 2 },
-                new League() { Name = "La Liga", CountryId = 1 },
-                new League() { Name = "Bundesliga", CountryId = 4 });
+                new League() { Name = "Premier League", CountryId = 2, LeaugeLogo = "/photos/Leagues/premier-league.png" },
+                new League() { Name = "La Liga", CountryId = 1, LeaugeLogo = "/photos/Leagues/la-liga.png" },
+                new League() { Name = "Bundesliga", CountryId = 4, LeaugeLogo = "/photos/Leagues/bundesliga.png" });
         }
 
         private void SeedGames()
