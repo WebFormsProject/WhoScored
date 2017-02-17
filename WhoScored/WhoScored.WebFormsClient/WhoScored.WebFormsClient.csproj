@@ -264,6 +264,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="LeaguesTable.aspx" />
     <Content Include="Leagues.aspx" />
+    <Content Include="News.aspx" />
     <Content Include="Public.Master" />
     <Content Include="Account\Web.config" />
     <Content Include="Content\materialize-v0.97.5\font\roboto\Roboto-Thin.woff2" />
@@ -512,6 +513,13 @@
     <Compile Include="Models\StatisticsViewModel.cs" />
     <Compile Include="Models\TeamViewModel.cs" />
     <Compile Include="Models\TrollPhotosViewModel.cs" />
+    <Compile Include="News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Presenters\LeaguePresenter.cs" />
     <Compile Include="Presenters\LeagueTablePresenter.cs" />
     <Compile Include="Presenters\StatisticsPresenter.cs" />
