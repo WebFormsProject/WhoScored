@@ -1,4 +1,5 @@
-﻿using WebFormsMvp;
+﻿using Bytes2you.Validation;
+using WebFormsMvp;
 using WhoScored.Data.Contracts;
 using WhoScored.Models.Models;
 using WhoScored.WebFormsClient.Models.CustomEvents;
@@ -13,6 +14,7 @@ namespace WhoScored.WebFormsClient.Presenters
         public LeagueTablePresenter(ILeagueTableView view, IWhoScoredRepository<LeagueTable> leagueTableRepository) 
             : base(view)
         {
+            Guard.WhenArgument(leagueTableRepository, "leagueTableRepository").IsNull().Throw();
             this.leagueTableRepository = leagueTableRepository;
 
             this.View.OnGetLeagueTableData += this.View_OnGetLeaguesTable;

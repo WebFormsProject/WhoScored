@@ -219,7 +219,8 @@ namespace WhoScored.Data
                 CurrentTeam = realMadrid,
                 Country = spain,
                 Position = PlayerPositionType.Defender,
-                PreviousTeams = new HashSet<Team>() { arsenal, bayern }
+                PreviousTeams = new HashSet<Team>() { arsenal, bayern },
+                ImagePath = "/photos/Players/sergio-ramos.jpg"
             },
             new FootballPlayer()
             {
@@ -228,7 +229,8 @@ namespace WhoScored.Data
                 CurrentTeam = arsenal,
                 Country = germany,
                 Position = PlayerPositionType.Midfielder,
-                PreviousTeams = new HashSet<Team>() { realMadrid }
+                PreviousTeams = new HashSet<Team>() { realMadrid },
+                ImagePath = "/photos/Players/mesut-ozil.png"
             },
             new FootballPlayer()
             {
@@ -244,7 +246,8 @@ namespace WhoScored.Data
                 LastName = "Ronaldo",
                 CurrentTeam = realMadrid,
                 Country = portugal,
-                Position = PlayerPositionType.Forward
+                Position = PlayerPositionType.Forward,
+                ImagePath = "/photos/Players/cristiano-ronaldo.jpg"
             },
             new FootballPlayer()
             {
@@ -332,13 +335,15 @@ namespace WhoScored.Data
                 {
                     Name = "Real Madrid",
                     CountryId = spain.Id,
-                    Coach = zidane
+                    Coach = zidane,
+                    EmblemImagePath = "/photos/Teams/real-madrid-la-liga.jpg"
                 },
                 new Team()
                 {
                     Name = "Arsenal",
                     CountryId = england.Id,
-                    Coach = arsene
+                    Coach = arsene,
+                    EmblemImagePath = "/photos/Teams/arsenal-premier-league.png"
                 },
                 new Team()
                 {
