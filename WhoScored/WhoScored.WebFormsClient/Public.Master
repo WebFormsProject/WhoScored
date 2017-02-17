@@ -36,7 +36,7 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-inverse navbar-fixed-top brown lighten-4">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></button>
@@ -45,10 +45,8 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/home">Home</a></li>
-                        <li><a runat="server" href="~/about">About</a></li>
                         <li><a runat="server" href="~/statistics">Statistics</a></li>
                         <li><a runat="server" href="~/TrollPhotos">Troll photos</a></li>
-                        <li><a runat="server" href="~/contacts">Contacts</a></li>
                         <li><a runat="server" href="~/leagues">Leagues</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
@@ -70,14 +68,35 @@
                 </div>
             </div>
         </div>
-        <div class="container body-content">
+     
+        <div class="body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Who Scored - Binary Unicorns application</p>
-            </footer>
         </div>
+        <footer class="page-footer brown lighten-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Company Bio</h5>
+                        <p class="grey-text text-lighten-4">We are two binary unicorns. This a team project for Webforms. </p>
+
+
+                    </div>
+                    <div class="col l3 s12">
+                        <h5><a runat="server" href="~/about" class="white-text">About us</a></h5>
+                    </div>
+                    <div class="col l3 s12">
+                        <h5><a runat="server" href="~/contacts" class="white-text">Contact us</a></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    Made by Binary Unicorns
+     
+                </div>
+            </div>
+        </footer>
     </form>
 </body>
 </html>
