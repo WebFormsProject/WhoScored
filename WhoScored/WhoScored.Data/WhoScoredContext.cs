@@ -85,8 +85,8 @@ namespace WhoScored.Data
             //SeedGames();
             //this.SaveChanges();
             //this.SeedStatisitcs();
-            this.SeedTrollPhotos();
-            this.SaveChanges();
+            //this.SeedTrollPhotos();
+            //this.SaveChanges();
         }
 
         public new void SaveChanges()
