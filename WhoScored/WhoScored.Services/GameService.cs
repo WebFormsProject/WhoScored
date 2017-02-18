@@ -18,9 +18,16 @@ namespace WhoScored.Services
             this.gameRepository = gameRepository;
         }
 
-        public IEnumerable<IGrouping<League,Game>> GetGamesGroupedByLeague()
+        public IEnumerable<League> GetGroupedLeagues()
         {
-            var groupedGames = this.gameRepository.GetAll().GroupBy(x => x.League);
+            var groupedLeagues = this.gameRepository.GetAll().GroupBy(x => x.League).Select(x => x.Key);
+
+            return groupedLeagues;
+        }
+
+        public IEnumerable<Game> GetGamesByLeague(League league)
+        {
+            var groupedGames = this.gameRepository.GetAll().Where(x => x.League == league);
 
             return groupedGames;
         }

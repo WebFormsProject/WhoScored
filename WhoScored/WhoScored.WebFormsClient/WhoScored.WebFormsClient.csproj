@@ -512,6 +512,7 @@
     <Compile Include="Leagues.aspx.designer.cs">
       <DependentUpon>Leagues.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CustomEvents\GameNameEventArgs.cs" />
     <Compile Include="Models\CustomEvents\IdEventArgs.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LeaguesViewModel.cs" />

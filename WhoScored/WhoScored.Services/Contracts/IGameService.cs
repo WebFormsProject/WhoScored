@@ -6,6 +6,8 @@ namespace WhoScored.Services.Contracts
 {
     public interface IGameService
     {
-        IEnumerable<IGrouping<League, Game>> GetGamesGroupedByLeague();
+        IEnumerable<League> GetGroupedLeagues();
+
+        IEnumerable<Game> GetGamesByLeague(League league);
     }
 }
