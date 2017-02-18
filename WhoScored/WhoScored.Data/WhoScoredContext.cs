@@ -74,16 +74,25 @@ namespace WhoScored.Data
 
             //this.SeedCategories();
             //this.SaveChanges();
-            //SeedCountries();
+
+            //this.SeedCountries();
             //this.SaveChanges();
-            //SeedCoaches();
+
+            //this.SeedCoaches();
             //this.SaveChanges();
-            //SeedTeams();
+
+            //this.SeedTeams();
             //this.SaveChanges();
-            //SeedFootballPlayers();
-            //SeedLeagues();
-            //SeedGames();
+
+            //this.SeedFootballPlayers();
             //this.SaveChanges();
+
+            //this.SeedLeagues();
+            //this.SaveChanges();
+
+            //this.SeedGames();
+            //this.SaveChanges();
+
             //this.SeedStatisitcs();
             //this.SeedTrollPhotos();
             //this.SaveChanges();
@@ -408,6 +417,10 @@ namespace WhoScored.Data
             var pique = this.FootballPlayers.SingleOrDefault(x => x.LastName == "Pique");
             var ozil = this.FootballPlayers.SingleOrDefault(x => x.LastName == "Ozil");
 
+            var premier = this.Leagues.SingleOrDefault(x => x.Name == "Premier League");
+            var laLiga = this.Leagues.SingleOrDefault(x => x.Name == "La Liga");
+            var bundesliga = this.Leagues.SingleOrDefault(x => x.Name == "Bundesliga");
+
             this.Games.AddOrUpdate(
                 new Game()
                 {
@@ -415,6 +428,8 @@ namespace WhoScored.Data
                     HomeTeam = arsenal,
                     AwayTeamGoals = 0,
                     HomeTeamGoals = 3,
+                    GameDate = DateTime.Now,
+                    League = premier,
                     GoalScorers = new HashSet<FootballPlayer>() { ozil }
                 },
                     new Game()
@@ -423,6 +438,8 @@ namespace WhoScored.Data
                         HomeTeam = realMadrid,
                         AwayTeamGoals = 1,
                         HomeTeamGoals = 4,
+                        GameDate = DateTime.Now,
+                        League = laLiga,
                         GoalScorers = new HashSet<FootballPlayer>() { ronaldo, pique }
                     });
         }
@@ -459,8 +476,8 @@ namespace WhoScored.Data
                     PhotoPath = "/photos/TrollPhotos/image5.jpg",
                     CategoryId = 1
                 });
-           this.TrollPhotos.Add(
-               new TrollPhoto()
+            this.TrollPhotos.Add(
+                new TrollPhoto()
                 {
                     PhotoPath = "/photos/TrollPhotos/image6.jpg",
                     CategoryId = 1

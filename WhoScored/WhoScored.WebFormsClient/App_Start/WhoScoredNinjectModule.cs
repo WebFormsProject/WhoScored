@@ -1,9 +1,10 @@
 ﻿using Ninject.Modules;
 using Ninject.Web.Common;
-using System.Data.Entity;
 using WhoScored.Data;
 using WhoScored.Data.Contracts;
 using WhoScored.Models.Models;
+using WhoScored.Services;
+using WhoScored.Services.Contracts;
 using WhoScored.WebFormsClient.Presenters;
 
 namespace WhoScored.WebFormsClient.App_Start
@@ -28,6 +29,10 @@ namespace WhoScored.WebFormsClient.App_Start
 
             this.Bind<TeamPresenter>().ToSelf();
             this.Bind<IWhoScoredRepository<WhoScored.Models.Models.Team>>().To<WhoScoredRepository<WhoScored.Models.Models.Team>>();
+
+            this.Bind<ScoresPresenter>().ToSelf();
+            this.Bind<IWhoScoredRepository<Game>>().To<WhoScoredRepository<Game>>();
+            this.Bind<IGameService>().To<GameService>();
 
             //this.Bind<UserPresenter>().ToSelf();
             //this.Bind<IWhoScoredRepository<User>>().To<WhoScoredRepository<User>>();

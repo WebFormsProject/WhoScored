@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace WhoScored.Models.Models
 {
@@ -24,6 +25,12 @@ namespace WhoScored.Models.Models
         public int AwayTeamId { get; set; }
 
         public virtual Team AwayTeam { get; set; }
+
+        public int LeagueId { get; set; }
+
+        public virtual League League { get; set; }
+
+        public DateTime GameDate { get; set; }
 
         public virtual ICollection<FootballPlayer> GoalScorers
         {

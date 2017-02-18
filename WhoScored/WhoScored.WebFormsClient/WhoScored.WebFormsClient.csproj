@@ -318,6 +318,7 @@
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Home.aspx" />
+    <Content Include="Scores.aspx" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -515,6 +516,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LeaguesViewModel.cs" />
     <Compile Include="Models\LeagueTablesViewModel.cs" />
+    <Compile Include="Models\ScoresModelView.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Models\StatisticsViewModel.cs" />
     <Compile Include="Models\TeamViewModel.cs" />
@@ -528,6 +530,7 @@
     </Compile>
     <Compile Include="Presenters\LeaguePresenter.cs" />
     <Compile Include="Presenters\LeagueTablePresenter.cs" />
+    <Compile Include="Presenters\ScoresPresenter.cs" />
     <Compile Include="Presenters\UserPresenter.cs" />
     <Compile Include="Presenters\StatisticsPresenter.cs" />
     <Compile Include="Presenters\TeamPresenter.cs" />
@@ -546,6 +549,13 @@
     </Compile>
     <Compile Include="Public.Master.designer.cs">
       <DependentUpon>Public.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Scores.aspx.cs">
+      <DependentUpon>Scores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Scores.aspx.designer.cs">
+      <DependentUpon>Scores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="Statistics.aspx.cs">
@@ -578,6 +588,7 @@
     </Compile>
     <Compile Include="Views\ILeaguesView.cs" />
     <Compile Include="Views\ILeagueTableView.cs" />
+    <Compile Include="Views\IScoresView.cs" />
     <Compile Include="Views\IUserView.cs" />
     <Compile Include="Views\IStatisticsView.cs" />
     <Compile Include="Views\ITeamView.cs" />
@@ -594,6 +605,10 @@
     <ProjectReference Include="..\WhoScored.Models\WhoScored.Models.csproj">
       <Project>{8eb1e289-5218-4171-a916-b1c3852914fd}</Project>
       <Name>WhoScored.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WhoScored.Services\WhoScored.Services.csproj">
+      <Project>{8381481d-97a5-49f2-a4f6-01c4599b22e5}</Project>
+      <Name>WhoScored.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
