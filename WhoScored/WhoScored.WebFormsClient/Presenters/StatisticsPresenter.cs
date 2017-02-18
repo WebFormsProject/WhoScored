@@ -14,7 +14,7 @@ namespace WhoScored.WebFormsClient.Presenters
         public StatisticsPresenter(IStatisticsView view, IWhoScoredRepository<Team> teamRepository)
             : base(view)
         {
-            Guard.WhenArgument(this.teamRepository, "teamRepository").IsNull();
+            Guard.WhenArgument(this.teamRepository, "teamRepository").IsNull().Throw();
             this.teamRepository = teamRepository;
 
             this.View.GetTeams += this.View_GetTeams;

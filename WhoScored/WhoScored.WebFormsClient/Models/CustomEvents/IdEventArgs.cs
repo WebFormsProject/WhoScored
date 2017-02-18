@@ -2,9 +2,9 @@
 
 namespace WhoScored.WebFormsClient.Models.CustomEvents
 {
-    public class LeagueTableEventArgs : EventArgs
+    public class IdEventArgs : EventArgs
     {
-        public LeagueTableEventArgs(int id)
+        public IdEventArgs(int id)
         {
             this.Id = id;
         }

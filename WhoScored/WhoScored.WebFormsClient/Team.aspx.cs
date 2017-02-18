@@ -14,7 +14,7 @@ namespace WhoScored.WebFormsClient
     [PresenterBinding(typeof(TeamPresenter))]
     public partial class Team : MvpPage<TeamViewModel>, ITeamView
     {
-        public event EventHandler<TeamEventArgs> OnGetTeam;
+        public event EventHandler<IdEventArgs> OnGetTeam;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,7 +25,7 @@ namespace WhoScored.WebFormsClient
         {
             string queryParam = this.Request.QueryString["id"];
             int id = int.Parse(queryParam);
-            this.OnGetTeam?.Invoke(this, new TeamEventArgs(id));
+            this.OnGetTeam?.Invoke(this, new IdEventArgs(id));
 
             return this.Model.Team;
         }

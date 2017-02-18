@@ -15,7 +15,7 @@ namespace WhoScored.WebFormsClient.Presenters
         public TrollPhotosPresenter(ITrollPhotosView view, IWhoScoredRepository<TrollPhoto> trollPhotosRepository)
             : base(view)
         {
-            Guard.WhenArgument(this.trollPhotosRepository, "trollPhotosRepository").IsNull();
+            Guard.WhenArgument(trollPhotosRepository, "trollPhotosRepository").IsNull().Throw();
             this.trollPhotosRepository = trollPhotosRepository;
 
             this.View.OnGetTrollPhotosPaths += this.View_GetTrollPhotos;

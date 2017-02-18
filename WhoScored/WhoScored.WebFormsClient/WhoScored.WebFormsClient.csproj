@@ -266,9 +266,18 @@
     <Content Include="LeaguesTable.aspx" />
     <Content Include="Leagues.aspx" />
     <Content Include="News.aspx" />
+    <Content Include="photos\background-1.jpg" />
+    <Content Include="photos\background-image.jpg" />
+    <Content Include="photos\Leagues\bundesliga.png" />
+    <Content Include="photos\Leagues\la-liga.png" />
+    <Content Include="photos\Leagues\premier-league.png" />
+    <Content Include="photos\Players\cristiano-ronaldo.jpg" />
+    <Content Include="photos\Players\mesut-ozil.png" />
+    <Content Include="photos\Players\sergio-ramos.jpg" />
+    <Content Include="photos\Teams\arsenal-premier-league.png" />
+    <Content Include="photos\Teams\real-madrid-la-liga.jpg" />
     <Content Include="Profile.aspx" />
     <Content Include="Public.Master" />
-    <Content Include="Account\Web.config" />
     <Content Include="Content\materialize-v0.97.5\font\roboto\Roboto-Thin.woff2" />
     <Content Include="Content\materialize-v0.97.5\font\roboto\Roboto-Thin.woff" />
     <Content Include="Content\materialize-v0.97.5\font\roboto\Roboto-Thin.ttf" />
@@ -301,6 +310,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Home.aspx" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
@@ -381,6 +391,7 @@
     <Compile Include="Account\Forgot.aspx.designer.cs">
       <DependentUpon>Forgot.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Account\Helpers\IdentityHelper.cs" />
     <Compile Include="Account\Lockout.aspx.cs">
       <DependentUpon>Lockout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -472,6 +483,8 @@
     <Compile Include="App_Start\NinjectWeb.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Account\Services\EmailService.cs" />
+    <Compile Include="Account\Services\SmsService.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WhoScoredNinjectModule.cs" />
     <Compile Include="Contacts.aspx.cs">
@@ -507,11 +520,11 @@
     <Compile Include="Leagues.aspx.designer.cs">
       <DependentUpon>Leagues.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Models\CustomEvents\LeagueTableEventArgs.cs" />
-    <Compile Include="Models\CustomEvents\TeamEventArgs.cs" />
+    <Compile Include="Models\CustomEvents\IdEventArgs.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LeaguesViewModel.cs" />
     <Compile Include="Models\LeagueTablesViewModel.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Models\StatisticsViewModel.cs" />
     <Compile Include="Models\TeamViewModel.cs" />
     <Compile Include="Models\TrollPhotosViewModel.cs" />
@@ -524,6 +537,7 @@
     </Compile>
     <Compile Include="Presenters\LeaguePresenter.cs" />
     <Compile Include="Presenters\LeagueTablePresenter.cs" />
+    <Compile Include="Presenters\UserPresenter.cs" />
     <Compile Include="Presenters\StatisticsPresenter.cs" />
     <Compile Include="Presenters\TeamPresenter.cs" />
     <Compile Include="Presenters\TrollPhotosPresenter.cs" />
@@ -573,6 +587,7 @@
     </Compile>
     <Compile Include="Views\ILeaguesView.cs" />
     <Compile Include="Views\ILeagueTableView.cs" />
+    <Compile Include="Views\IUserView.cs" />
     <Compile Include="Views\IStatisticsView.cs" />
     <Compile Include="Views\ITeamView.cs" />
     <Compile Include="Views\ITrollPhotosView.cs" />

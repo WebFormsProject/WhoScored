@@ -17,12 +17,12 @@ namespace WhoScored.WebFormsClient
     [PresenterBinding(typeof(LeagueTablePresenter))]
     public partial class LeaguesTable : MvpPage<LeagueTablesViewModel>, ILeagueTableView
     {
-        public event EventHandler<LeagueTableEventArgs> OnGetLeagueTableData;
+        public event EventHandler<IdEventArgs> OnGetLeagueTableData;
 
         public IEnumerable<TeamStatistic> GridViewLeagueTable_GetData()
         {
             int id = int.Parse(this.Request.QueryString["id"]);
-            this.OnGetLeagueTableData?.Invoke(this, new LeagueTableEventArgs(id));
+            this.OnGetLeagueTableData?.Invoke(this, new IdEventArgs(id));
 
             return this.Model.LeagueTable.TeamStatistics;
         }

@@ -7,6 +7,6 @@ namespace WhoScored.WebFormsClient.Views
 {
     public interface ITeamView : IView<TeamViewModel>
     {
-        event EventHandler<TeamEventArgs> OnGetTeam;
+        event EventHandler<IdEventArgs> OnGetTeam;
     }
 }

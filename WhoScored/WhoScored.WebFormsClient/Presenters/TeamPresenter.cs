@@ -19,7 +19,7 @@ namespace WhoScored.WebFormsClient.Presenters
             this.View.OnGetTeam += View_OnOnGetTeam;
         }
 
-        private void View_OnOnGetTeam(object sender, TeamEventArgs e)
+        private void View_OnOnGetTeam(object sender, IdEventArgs e)
         {
             this.View.Model.Team = this.teamRepository.GetById(e.Id);
         }

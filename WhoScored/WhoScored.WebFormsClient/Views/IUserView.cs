@@ -5,8 +5,8 @@ using WhoScored.WebFormsClient.Models.CustomEvents;
 
 namespace WhoScored.WebFormsClient.Views
 {
-    public interface ILeagueTableView : IView<LeagueTablesViewModel>
+    public interface IUserView : IView<UserViewModel>
     {
-        event EventHandler<IdEventArgs> OnGetLeagueTableData;
+        event EventHandler<IdEventArgs> OnGetUser;
     }
 }

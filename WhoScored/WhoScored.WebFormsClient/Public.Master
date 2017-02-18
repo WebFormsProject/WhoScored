@@ -52,8 +52,8 @@
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                <li><a runat="server" href="~/account/register">Register</a></li>
+                                <li><a runat="server" href="~/account/login">Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
@@ -79,22 +79,22 @@
                 <div class="row">
                     <div class="col l6 s12">
                         <h5 class="white-text">Company Bio</h5>
-                        <p class="grey-text text-lighten-4">We are two binary unicorns. This a team project for Webforms. </p>
-
-
+                        <p class="grey-text text-lighten-4">Designed and built with all the love in the world by 0 and 1.</p>
                     </div>
-                    <div class="col l3 s12">
-                        <h5><a runat="server" href="~/about" class="white-text">About us</a></h5>
-                    </div>
-                    <div class="col l3 s12">
+                    <div class="col l6 s12">
                         <h5><a runat="server" href="~/contacts" class="white-text">Contact us</a></h5>
+                        <p class="grey-text text-lighten-4">
+                            Whether you’re looking for answers, would like to solve a problem, or just want to let us know how we did, you can write to us. 
+                            We’ll help you resolve your issues quickly and easily, getting you back to more important things, like watching the big game tonight.
+                        </p>
+                        <p class="text-lighten-3">Our e-mail can be found below.</p>
+                        <p class="text-lighten-3">who.scored@mail.com</p>
                     </div>
                 </div>
             </div>
             <div class="footer-copyright">
                 <div class="container">
                     Made by Binary Unicorns
-     
                 </div>
             </div>
         </footer>

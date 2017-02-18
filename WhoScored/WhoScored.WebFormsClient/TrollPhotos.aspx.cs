@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 using WhoScored.WebFormsClient.Models;
@@ -26,7 +23,7 @@ namespace WhoScored.WebFormsClient
         {
             if (imagesPaths == null || this.SelectedImage.ImageUrl == null)
             {
-                this.OnGetTrollPhotosPaths?.Invoke(sender, e);
+                this.OnGetTrollPhotosPaths?.Invoke(this, null);
 
                 selectedImageIndex = 1;
                 imagesPaths = this.Model.TrollPhotosPaths

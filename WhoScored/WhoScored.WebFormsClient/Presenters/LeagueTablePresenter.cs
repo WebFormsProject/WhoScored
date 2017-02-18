@@ -20,7 +20,7 @@ namespace WhoScored.WebFormsClient.Presenters
             this.View.OnGetLeagueTableData += this.View_OnGetLeaguesTable;
         }
 
-        private void View_OnGetLeaguesTable(object sender, LeagueTableEventArgs e)
+        private void View_OnGetLeaguesTable(object sender, IdEventArgs e)
         {
             this.View.Model.LeagueTable = this.leagueTableRepository.GetById(e.Id);
         }
