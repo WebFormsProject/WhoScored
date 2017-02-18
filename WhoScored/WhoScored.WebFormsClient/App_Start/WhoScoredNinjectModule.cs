@@ -2,7 +2,6 @@
 using Ninject.Web.Common;
 using WhoScored.Data;
 using WhoScored.Data.Contracts;
-using WhoScored.Models.Models;
 using WhoScored.Services;
 using WhoScored.Services.Contracts;
 using WhoScored.WebFormsClient.Presenters;
@@ -14,28 +13,17 @@ namespace WhoScored.WebFormsClient.App_Start
         public override void Load()
         {
             this.Bind<IWhoScoredContext>().To<WhoScoredContext>().InRequestScope();
-            // this.Bind<DbContext>().To<WhoScoredContext>().InRequestScope();
+            this.Bind(typeof(IWhoScoredRepository<>)).To(typeof(WhoScoredRepository<>));
 
             this.Bind<StatisticsPresenter>().ToSelf();
-            this.Bind<IWhoScoredRepository<Team>>().To<WhoScoredRepository<Team>>();
-
             this.Bind<LeaguePresenter>().ToSelf();
             this.Bind<LeagueTablePresenter>().ToSelf();
-            this.Bind(typeof(IWhoScoredRepository<League>)).To(typeof(WhoScoredRepository<League>));
-            this.Bind(typeof(IWhoScoredRepository<LeagueTable>)).To(typeof(WhoScoredRepository<LeagueTable>));
-
             this.Bind<TrollPhotosPresenter>().ToSelf();
-            this.Bind<IWhoScoredRepository<TrollPhoto>>().To<WhoScoredRepository<TrollPhoto>>();
-
             this.Bind<TeamPresenter>().ToSelf();
-            this.Bind<IWhoScoredRepository<WhoScored.Models.Models.Team>>().To<WhoScoredRepository<WhoScored.Models.Models.Team>>();
-
             this.Bind<ScoresPresenter>().ToSelf();
-            this.Bind<IWhoScoredRepository<Game>>().To<WhoScoredRepository<Game>>();
-            this.Bind<IGameService>().To<GameService>();
+            this.Bind<UserPresenter>().ToSelf();
 
-            //this.Bind<UserPresenter>().ToSelf();
-            //this.Bind<IWhoScoredRepository<User>>().To<WhoScoredRepository<User>>();
+            this.Bind<IGameService>().To<GameService>();
         }
     }
 }

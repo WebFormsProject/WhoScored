@@ -8,52 +8,55 @@
 
 nav ul a,
 nav .brand-logo {
-  color: #444;
+    color: #444;
 }
 
 p {
-  line-height: 2rem;
+    line-height: 2rem;
 }
 
 .button-collapse {
-  color: #26a69a;
+    color: #26a69a;
 }
 
 .parallax-container {
-  min-height: 380px;
-  line-height: 0;
-  height: auto;
-  color: rgba(255,255,255,.9);
+    min-height: 380px;
+    line-height: 0;
+    height: auto;
+    color: rgba(255,255,255,.9);
 }
-  .parallax-container .section {
-    width: 100%;
-  }
+
+    .parallax-container .section {
+        width: 100%;
+    }
 
 @media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
+    .parallax-container .section {
+        position: absolute;
+        top: 40%;
+    }
+
+    #index-banner .section {
+        top: 10%;
+    }
 }
 
 @media only screen and (max-width : 600px) {
-  #index-banner .section {
-    top: 0;
-  }
+    #index-banner .section {
+        top: 0;
+    }
 }
 
 .icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-  font-size: inherit;
+    padding: 0 15px;
 }
 
+    .icon-block .material-icons {
+        font-size: inherit;
+    }
+
 footer.page-footer {
-  margin: 0;
+    margin: 0;
 }
 
 #background-home-image {
@@ -61,6 +64,24 @@ footer.page-footer {
     transform: translate3d(-50%, 197px, 0px);
 }
 
-#home-quote-container h3{
+#home-quote-container h3 {
     padding-top: 100px;
+}
+
+div.home-background {
+    background-color: rgba(13, 13, 11, 0.9);
+}
+
+a.btn-get-started {
+    background-color: rgba(32, 32, 22, 0.71);
+    text-decoration: none;
+    box-shadow: none;
+    border: none;
+    color: white;
+}
+
+a.btn-get-started:hover {
+    background-color: rgba(32, 32, 22, 0.58);
+    text-decoration: none;
+    color: white;
 }

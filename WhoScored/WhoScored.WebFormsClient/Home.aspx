@@ -10,7 +10,7 @@
                         <h3 class="header col s12 light white-text">Football is Freedom, a whole universe!</h3>
                     </div>
                     <div class="row center">
-                        <a href="/leagues.apsx" id="download-button" class="btn-large waves-effect waves-light brown lighten-4">Get Started</a>
+                        <a href="/leagues.aspx" id="download-button" class="btn-large waves-effect waves-light btn-get-started">Get Started</a>
                     </div>
                 </div>
             </div>

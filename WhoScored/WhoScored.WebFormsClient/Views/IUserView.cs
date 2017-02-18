@@ -7,6 +7,6 @@ namespace WhoScored.WebFormsClient.Views
 {
     public interface IUserView : IView<UserViewModel>
     {
-        event EventHandler<IdEventArgs> OnGetUser;
+        event EventHandler<UserIdEventArgs> OnGetUser;
     }
 }

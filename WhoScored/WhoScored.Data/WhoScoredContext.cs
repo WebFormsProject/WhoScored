@@ -30,11 +30,6 @@ namespace WhoScored.Data
 
         public IDbSet<Country> Countries { get; set; }
 
-        //public IDbSet<User> Users
-        //{
-        //    get; set;
-        //}
-
         public IDbSet<FootballPlayer> FootballPlayers { get; set; }
 
         public IDbSet<Game> Games { get; set; }
@@ -107,6 +102,13 @@ namespace WhoScored.Data
         {
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+
+            modelBuilder.Entity<User>().ToTable("AspNetUsers");
+            modelBuilder.Entity<IdentityRole>().ToTable("AspNetRoles");
+            modelBuilder.Entity<IdentityUserRole>().ToTable("AspNetUserRoles");
+            modelBuilder.Entity<IdentityUserLogin>().ToTable("AspNetUserLogins");
+            modelBuilder.Entity<IdentityUserClaim>().ToTable("AspNetUserClaims");
+
             base.OnModelCreating(modelBuilder);
 
             this.MapTeamTable(modelBuilder);
@@ -147,6 +149,7 @@ namespace WhoScored.Data
                .WithMany(x => x.CurrentFootballPlayers);
         }
 
+        #region Seed Data
         private void SeedStatisitcs()
         {
             var realMadrid = this.Teams.SingleOrDefault(x => x.Name == "Real Madrid");
@@ -483,5 +486,6 @@ namespace WhoScored.Data
                     CategoryId = 1
                 });
         }
+        #endregion
     }
 }

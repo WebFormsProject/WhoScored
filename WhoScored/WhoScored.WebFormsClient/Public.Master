@@ -34,7 +34,7 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top brown lighten-4">
+        <div class="navbar navbar-inverse navbar-fixed-top home-background">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></button>
@@ -59,7 +59,7 @@
                                 <button runat="server" class="dropdown-toggle dropdown-link" data-toggle="dropdown">Hello, <%: Context.User.Identity.GetUserName()  %> !
                                     <span class="caret"></span>
                                 </button>
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu profile-menu">
                                     <li><a href="~/profile" runat="server">Your profile</a></li>
                                     <li><a href="#" runat="server">Add troll photos</a></li>
                                     <li><a href="~/account/manage" runat="server">Manage your account</a></li>

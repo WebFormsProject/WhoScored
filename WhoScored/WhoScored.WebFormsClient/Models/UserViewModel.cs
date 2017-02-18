@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Web.Providers.Entities;
+﻿using WhoScored.Models.Models;
 
 namespace WhoScored.WebFormsClient.Models
 {

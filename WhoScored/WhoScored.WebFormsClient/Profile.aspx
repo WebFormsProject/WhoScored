@@ -5,10 +5,12 @@
         <div class="col s8 m8 offset-m2 l6 offset-l3 hoverable">
             <div class="card-panel grey lighten-5 z-depth-1">
                 <div class="text-center">
-                    <h4><%# this.User.Identity.GetUserName() %></h4>
-                    <img src="photos/Avatars/default.png" alt="avatar" class="avatar responsive-img circle" />
+                    <asp:Label ID="UserLabel" runat="server"></asp:Label>
+                    <br />
+                    <asp:Image ID="UserAvatar" AlternateText="avatar" runat="server" CssClass="avatar responsive-img circle" />
                 </div>
             </div>
+            <%--<asp:FileUpload ID="TrollPhotoFileUpload" runat="server" OnDataBinding="TrollPhotoFileUpload_DataBinding" />--%>
         </div>
     </div>
 </asp:Content>
