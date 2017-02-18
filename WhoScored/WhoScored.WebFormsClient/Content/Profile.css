@@ -1,0 +1,22 @@
+﻿img.avatar {
+    max-width: 20%;
+}
+
+
+button.dropdown-link {
+    height: 50px;
+    padding: 15px;
+    font-size: 18px;
+    line-height: 20px;
+    box-sizing: inherit;
+    box-shadow: none;
+    border: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #9d9d9d;
+    background-color: transparent;
+}
+
+button.dropdown-link:hover {
+    color: white;
+}
+
