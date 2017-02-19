@@ -1,6 +1,6 @@
 ﻿using Bytes2you.Validation;
 using WebFormsMvp;
-using WhoScored.MVP.Models.CustomEvents;
+using WhoScored.MVP.Models.CustomEventArgs;
 using WhoScored.MVP.Views;
 using WhoScored.Services.Contracts;
 

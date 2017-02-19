@@ -14,7 +14,7 @@ namespace WhoScored.WebFormsClient
     [PresenterBinding(typeof(TeamPresenter))]
     public partial class Team : MvpPage<TeamViewModel>, ITeamView
     {
-        public event EventHandler<IdEventArgs> OnGetTeam;
+        public event EventHandler<WhoScored.MVP.Models.CustomEventArgs.IdEventArgs> OnGetTeam;
 
         protected void Page_Load(object sender, EventArgs e)
         {

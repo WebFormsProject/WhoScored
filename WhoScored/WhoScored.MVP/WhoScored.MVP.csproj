@@ -119,6 +119,7 @@
     <Compile Include="Models\CustomEventArgs\PasswordChangeEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\RegisterEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\UserIdEventArgs.cs" />
+    <Compile Include="Models\FootballPlayerViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LeaguesViewModel.cs" />
     <Compile Include="Models\LeagueTablesViewModel.cs" />
