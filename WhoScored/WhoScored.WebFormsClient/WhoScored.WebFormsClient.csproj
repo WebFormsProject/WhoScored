@@ -261,6 +261,7 @@
     <Content Include="Content\materialize-v0.97.5\js\materialize.min.js" />
     <Content Include="Content\Photos.css" />
     <Content Include="Content\Profile.css" />
+    <Content Include="Content\Scores.css" />
     <Content Include="Content\Site.css" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -271,7 +272,7 @@
     <Content Include="Leagues.aspx" />
     <Content Include="News.aspx" />
     <Content Include="photos\Avatars\default.png" />
-    <Content Include="photos\Avatars\pepsi.jpg" />
+     <Content Include="photos\Avatars\pepsi.jpg" />
     <Content Include="photos\background-1.jpg" />
     <Content Include="photos\background-image.jpg" />
     <Content Include="photos\Leagues\bundesliga.png" />
@@ -513,9 +514,9 @@
     <Compile Include="Leagues.aspx.designer.cs">
       <DependentUpon>Leagues.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Models\CustomEvents\UserIdEventArgs.cs" />
     <Compile Include="Models\CustomEvents\GameNameEventArgs.cs" />
     <Compile Include="Models\CustomEvents\IdEventArgs.cs" />
+    <Compile Include="Models\CustomEvents\UserIdEventArgs.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LeaguesViewModel.cs" />
     <Compile Include="Models\LeagueTablesViewModel.cs" />
