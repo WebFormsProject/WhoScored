@@ -12,19 +12,19 @@
         </asp:FormView>
         <h3>Squad
         </h3>
-        <ul class="collection">
+        <div class="collection">
             <asp:Repeater ID="RepeaterPeople" runat="server"
                 DataSource="<%# GetCurrentPlayers() %>" ItemType="WhoScored.Models.Models.FootballPlayer">
                 <ItemTemplate>
-                    <li class="collection-item avatar">
+                    <a href="<%# "Player?id=" + Item.Id %>" class="collection-item avatar brown-text text-darken-4 players">
                         <img src="<%#: Item.ImagePath %>" alt="" class="circle">
-                        <span class="title"><%#: Item.FirstName %> <%#: Item.LastName %></span>
+                        <h6 class="title"><%#: Item.FirstName %> <%#: Item.LastName %></h6>
                         <p><%#: Item.Position %></p>
-                        <h4 class="secondary-content"><%#: Item.ShirtNumber %></h4>
-                    </li>
+                        <h4 class="secondary-content brown-text text-darken-4"><%#: Item.ShirtNumber %></h4>
+                    </a>
                 </ItemTemplate>
             </asp:Repeater>
-        </ul>
+        </div>
     </div>
     <div class="card-panel">
         <div class="row">

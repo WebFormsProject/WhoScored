@@ -251,6 +251,7 @@
     <Content Include="Content\materialize-v0.97.5\js\materialize.js" />
     <Content Include="Content\materialize-v0.97.5\js\materialize.min.js" />
     <Content Include="Content\Photos.css" />
+    <Content Include="Content\PlayerProfile.css" />
     <Content Include="Content\Profile.css" />
     <Content Include="Content\Scores.css" />
     <Content Include="Content\Site.css" />
@@ -274,6 +275,7 @@
     <Content Include="photos\Players\sergio-ramos.jpg" />
     <Content Include="photos\Teams\arsenal-premier-league.png" />
     <Content Include="photos\Teams\real-madrid-la-liga.jpg" />
+    <Content Include="Player.aspx" />
     <Content Include="Profile.aspx" />
     <Content Include="Public.Master" />
     <Content Include="Content\materialize-v0.97.5\font\roboto\Roboto-Thin.woff2" />
@@ -444,6 +446,13 @@
     </Compile>
     <Compile Include="News.aspx.designer.cs">
       <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Player.aspx.cs">
+      <DependentUpon>Player.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Player.aspx.designer.cs">
+      <DependentUpon>Player.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>

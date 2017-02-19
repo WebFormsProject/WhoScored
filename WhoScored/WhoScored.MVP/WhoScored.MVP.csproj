@@ -122,7 +122,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LeaguesViewModel.cs" />
     <Compile Include="Models\LeagueTablesViewModel.cs" />
-    <Compile Include="Models\ScoresModelView.cs" />
+    <Compile Include="Models\ScoresViewModel.cs" />
     <Compile Include="Models\StatisticsViewModel.cs" />
     <Compile Include="Models\TeamViewModel.cs" />
     <Compile Include="Models\TrollPhotosViewModel.cs" />
@@ -130,6 +130,7 @@
     <Compile Include="Presenters\Auth\ManageAccountPresenter.cs" />
     <Compile Include="Presenters\Auth\ManagePasswordPresenter.cs" />
     <Compile Include="Presenters\Auth\PasswordChangePresenter.cs" />
+    <Compile Include="Presenters\FootballPlayerPresenter.cs" />
     <Compile Include="Presenters\LeaguePresenter.cs" />
     <Compile Include="Presenters\LeagueTablePresenter.cs" />
     <Compile Include="Presenters\Auth\LoginPresenter.cs" />
@@ -144,6 +145,7 @@
     <Compile Include="Views\Auth\IManageAccountView.cs" />
     <Compile Include="Views\Auth\IManagePasswordView.cs" />
     <Compile Include="Views\Auth\IPasswordChangeView.cs" />
+    <Compile Include="Views\IFootballPlayerView.cs" />
     <Compile Include="Views\ILeaguesView.cs" />
     <Compile Include="Views\ILeagueTableView.cs" />
     <Compile Include="Views\Auth\IRegisterView.cs" />

@@ -5,7 +5,7 @@ using WhoScored.MVP.Models.CustomEventArgs;
 
 namespace WhoScored.MVP.Views
 {
-    public interface IScoresView : IView<ScoresModelView>
+    public interface IScoresView : IView<ScoresViewModel>
     {
         event EventHandler OnGetLeagues;
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bytes2you.Validation;
 using WhoScored.Data.Contracts;
 using WhoScored.Models.Models;
 using WhoScored.Services.Contracts;
@@ -15,6 +16,8 @@ namespace WhoScored.Services
 
         public GameService(IWhoScoredRepository<Game> gameRepository)
         {
+            Guard.WhenArgument(gameRepository, "gameRepository").IsNull().Throw();
+
             this.gameRepository = gameRepository;
         }
 
