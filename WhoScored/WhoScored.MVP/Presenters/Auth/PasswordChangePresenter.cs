@@ -3,7 +3,7 @@ using Microsoft.AspNet.Identity.Owin;
 using System.Web;
 using WebFormsMvp;
 using WhoScored.MVP.Identity;
-using WhoScored.MVP.Models.CustomEvents;
+using WhoScored.MVP.Models.CustomEventArgs;
 using WhoScored.MVP.Views.Auth;
 
 namespace WhoScored.MVP.Presenters.Auth

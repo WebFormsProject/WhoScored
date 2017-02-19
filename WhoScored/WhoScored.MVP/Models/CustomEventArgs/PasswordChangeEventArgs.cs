@@ -3,7 +3,7 @@ using System;
 using System.Security.Principal;
 using System.Web;
 
-namespace WhoScored.MVP.Models.CustomEvents
+namespace WhoScored.MVP.Models.CustomEventArgs
 {
     public class PasswordChangeEventArgs : EventArgs
     {

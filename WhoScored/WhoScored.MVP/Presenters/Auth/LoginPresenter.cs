@@ -2,8 +2,8 @@
 using Microsoft.AspNet.Identity.Owin;
 using WebFormsMvp;
 using WhoScored.MVP.Views.Auth;
-using WhoScored.MVP.Models.CustomEvents;
 using WhoScored.MVP.Identity;
+using WhoScored.MVP.Models.CustomEventArgs;
 
 namespace WhoScored.MVP.Presenters.Auth
 {

@@ -5,7 +5,7 @@ using WebFormsMvp;
 using WebFormsMvp.Web;
 using WhoScored.Models.Models;
 using WhoScored.MVP.Models;
-using WhoScored.MVP.Models.CustomEvents;
+using WhoScored.MVP.Models.CustomEventArgs;
 using WhoScored.MVP.Presenters;
 using WhoScored.MVP.Views;
 

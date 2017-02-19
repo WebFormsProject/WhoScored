@@ -4,7 +4,7 @@ using WhoScored.MVP.Presenters.Auth;
 using WebFormsMvp.Web;
 using WhoScored.MVP.Models.Auth;
 using WhoScored.MVP.Views.Auth;
-using WhoScored.MVP.Models.CustomEvents;
+using WhoScored.MVP.Models.CustomEventArgs;
 using System.Linq;
 
 namespace WhoScored.WebFormsClient.Account
@@ -25,7 +25,7 @@ namespace WhoScored.WebFormsClient.Account
 
             if (this.Model.IdentityResult.Succeeded)
             {
-                Response.Redirect("~/Account/ResetPasswordConfirmation");
+                Response.Redirect("~/Account/Login");
             }
             else
             {

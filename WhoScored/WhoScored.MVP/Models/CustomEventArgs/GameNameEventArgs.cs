@@ -1,7 +1,7 @@
 ﻿using System;
 using WhoScored.Models.Models;
 
-namespace WhoScored.MVP.Models.CustomEvents
+namespace WhoScored.MVP.Models.CustomEventArgs
 {
     public class GameNameEventArgs : EventArgs
     {

@@ -5,8 +5,8 @@ using WhoScored.MVP.Models.CustomEventArgs;
 
 namespace WhoScored.MVP.Views.Auth
 {
-    public interface IPasswordChangeView : IView<PasswordChangeViewModel>
+    public interface IManagePasswordView : IView<ManagePasswordViewModel>
     {
-        event EventHandler<PasswordChangeEventArgs> ChangePassword;
+        event EventHandler<ManagePasswordEventArgs> ManagingPassword;
     }
 }

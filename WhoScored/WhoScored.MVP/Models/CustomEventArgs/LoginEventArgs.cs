@@ -2,7 +2,7 @@
 using System;
 using System.Web;
 
-namespace WhoScored.MVP.Models.CustomEvents
+namespace WhoScored.MVP.Models.CustomEventArgs
 {
     public class LoginEventArgs : EventArgs
     {

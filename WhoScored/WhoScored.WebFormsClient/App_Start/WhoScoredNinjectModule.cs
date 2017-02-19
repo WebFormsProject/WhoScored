@@ -18,6 +18,8 @@ namespace WhoScored.WebFormsClient.App_Start
 
             this.Bind<RegisterPresenter>().ToSelf();
             this.Bind<LoginPresenter>().ToSelf();
+            this.Bind<ManageAccountPresenter>().ToSelf();
+            this.Bind<ManagePasswordPresenter>().ToSelf();
             this.Bind<UserPresenter>().ToSelf();
             this.Bind<StatisticsPresenter>().ToSelf();
             this.Bind<LeaguePresenter>().ToSelf();

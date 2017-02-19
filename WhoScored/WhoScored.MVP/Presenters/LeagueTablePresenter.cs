@@ -2,7 +2,7 @@
 using WebFormsMvp;
 using WhoScored.Data.Contracts;
 using WhoScored.Models.Models;
-using WhoScored.MVP.Models.CustomEvents;
+using WhoScored.MVP.Models.CustomEventArgs;
 using WhoScored.MVP.Views;
 
 namespace WhoScored.MVP.Presenters

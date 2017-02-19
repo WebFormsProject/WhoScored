@@ -4,7 +4,7 @@ using Microsoft.AspNet.Identity.Owin;
 using WebFormsMvp.Web;
 using WhoScored.MVP.Models.Auth;
 using WhoScored.MVP.Views.Auth;
-using WhoScored.MVP.Models.CustomEvents;
+using WhoScored.MVP.Models.CustomEventArgs;
 using WebFormsMvp;
 using WhoScored.MVP.Identity;
 using WhoScored.MVP.Presenters.Auth;
@@ -32,7 +32,12 @@ namespace WhoScored.WebFormsClient.Account
         {
             if (IsValid)
             {
-                this.Logging?.Invoke(this, new LoginEventArgs(this.Context, this.Username.Text, this.Password.Text, this.RememberMe.Checked, shouldLockout: false));
+                this.Logging?.Invoke(this, new LoginEventArgs(
+                    this.Context, 
+                    this.Username.Text, 
+                    this.Password.Text, 
+                    this.RememberMe.Checked, 
+                    shouldLockout: false));
 
                 switch (this.Model.SignInStatus)
                 {

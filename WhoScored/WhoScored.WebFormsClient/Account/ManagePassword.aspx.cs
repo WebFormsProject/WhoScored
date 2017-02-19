@@ -1,47 +1,45 @@
 ﻿using System;
-using System.Web;
-using System.Web.UI;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using WhoScored.MVP.Identity;
+using WebFormsMvp;
+using WhoScored.MVP.Presenters.Auth;
+using WebFormsMvp.Web;
+using WhoScored.MVP.Models.Auth;
+using WhoScored.MVP.Views.Auth;
+using WhoScored.MVP.Models.CustomEventArgs;
 
 namespace WhoScored.WebFormsClient.Account
 {
-    public partial class ManagePassword : Page
+    [PresenterBinding(typeof(ManagePasswordPresenter))]
+    public partial class ManagePassword : MvpPage<ManagePasswordViewModel>, IManagePasswordView
     {
-        protected string SuccessMessage
-        {
-            get;
-            private set;
-        }
+        public event EventHandler<ManagePasswordEventArgs> ManagingPassword;
 
-        private bool HasPassword(ApplicationUserManager manager)
-        {
-            return manager.HasPassword(User.Identity.GetUserId());
-        }
+        protected string SuccessMessage { get; set; }
 
-        protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load()
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            this.ManagingPassword?.Invoke(this, new ManagePasswordEventArgs(
+                this.Context,
+                this.User.Identity,
+                this.CurrentPassword.Text,
+                this.NewPassword.Text,
+                false,
+                false));
 
-            if (!IsPostBack)
+            if (!this.Page.IsPostBack)
             {
-                // Determine the sections to render
-                if (HasPassword(manager))
+                if (this.Model.HasPassword)
                 {
-                    changePasswordHolder.Visible = true;
+                    this.changePasswordHolder.Visible = true;
                 }
                 else
                 {
-                    setPassword.Visible = true;
-                    changePasswordHolder.Visible = false;
+                    this.changePasswordHolder.Visible = false;
                 }
 
-                // Render success message
-                var message = Request.QueryString["m"];
+                string message = Request.QueryString["m"];
                 if (message != null)
                 {
-                    // Strip the query string from action
                     Form.Action = ResolveUrl("~/Account/Manage");
                 }
             }
@@ -49,38 +47,15 @@ namespace WhoScored.WebFormsClient.Account
 
         protected void ChangePassword_Click(object sender, EventArgs e)
         {
-            if (IsValid)
+            if (this.Page.IsValid)
             {
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-                IdentityResult result = manager.ChangePassword(User.Identity.GetUserId(), CurrentPassword.Text, NewPassword.Text);
-                if (result.Succeeded)
+                if (this.Model.IdentityResult.Succeeded)
                 {
-                    var user = manager.FindById(User.Identity.GetUserId());
-                    signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
                     Response.Redirect("~/Account/Manage?m=ChangePwdSuccess");
                 }
                 else
                 {
-                    AddErrors(result);
-                }
-            }
-        }
-
-        protected void SetPassword_Click(object sender, EventArgs e)
-        {
-            if (IsValid)
-            {
-                // Create the local login info and link the local account to the user
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                IdentityResult result = manager.AddPassword(User.Identity.GetUserId(), password.Text);
-                if (result.Succeeded)
-                {
-                    Response.Redirect("~/Account/Manage?m=SetPwdSuccess");
-                }
-                else
-                {
-                    AddErrors(result);
+                    AddErrors(this.Model.IdentityResult);
                 }
             }
         }
