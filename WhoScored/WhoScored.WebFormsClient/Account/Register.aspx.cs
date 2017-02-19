@@ -1,35 +1,37 @@
 ﻿using System;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using WhoScored.Models.Models;
-using WhoScored.WebFormsClient.Account.Helpers;
+using WhoScored.MVP.Identity;
+using WebFormsMvp.Web;
+using WhoScored.MVP.Models.Auth;
+using WhoScored.MVP.Views.Auth;
+using WebFormsMvp;
+using WhoScored.MVP.Models.CustomEvents;
+using WhoScored.MVP.Presenters.Auth;
 
 namespace WhoScored.WebFormsClient.Account
 {
-    public partial class Register : Page
+    [PresenterBinding(typeof(RegisterPresenter))]
+    public partial class Register : MvpPage<RegisterViewModel>, IRegisterView
     {
+        public event EventHandler<RegisterEventArgs> Registering;
+
         protected void CreateUser_Click(object sender, EventArgs e)
         {
-            var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var user = new User() { UserName = Username.Text, Email = Email.Text, FirstName = FirstName.Text, LastName = LastName.Text };
-            IdentityResult result = manager.Create(user, Password.Text);
-            if (result.Succeeded)
-            {
-                // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                //string code = manager.GenerateEmailConfirmationToken(user.Id);
-                //string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
-                //manager.SendEmail(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>.");
+            this.Registering?.Invoke(this, new RegisterEventArgs(
+                this.Context,
+                this.Username.Text,
+                this.Password.Text,
+                this.Email.Text,
+                this.FirstName.Text,
+                this.LastName.Text));
 
-                signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
+            if (this.Model.IdentityResult.Succeeded)
+            {
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             }
-            else 
+            else
             {
-                ErrorMessage.Text = result.Errors.FirstOrDefault();
+                ErrorMessage.Text = this.Model.IdentityResult.Errors.FirstOrDefault();
             }
         }
     }

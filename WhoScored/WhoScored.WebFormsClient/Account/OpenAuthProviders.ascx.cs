@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
-using WhoScored.WebFormsClient.Account.Helpers;
+using WhoScored.MVP.Identity;
 
 namespace WhoScored.WebFormsClient.Account
 {

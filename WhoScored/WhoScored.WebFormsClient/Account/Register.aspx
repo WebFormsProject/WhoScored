@@ -8,10 +8,9 @@
     <div class="form-horizontal">
         <h4>Register</h4>
         <hr />
-        <asp:ValidationSummary runat="server" CssClass="text-danger" />
         <div class="card card-panel hoverable">
             <div>
-                <asp:Label runat="server" AssociatedControlID="Username" CssClass="col-md-2 control-label">Username</asp:Label>
+                <asp:Label runat="server" AssociatedControlID="Username" CssClass="col-md-2 control-label">Username *</asp:Label>
                 <div class="col-md-10">
                     <asp:TextBox runat="server" ID="Username" CssClass="form-control" />
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="Username"
@@ -19,13 +18,17 @@
                 </div>
             </div>
             <div class="form-group">
-                <asp:Label runat="server" CssClass="col-md-2 control-label">Email</asp:Label>
+                <asp:Label runat="server" CssClass="col-md-2 control-label">E-mail *</asp:Label>
                 <div class="col-md-10">
                     <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
+                        CssClass="text-danger" ErrorMessage="The e-mail field is required." />
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
+                        CssClass="text-danger" ErrorMessage="You must enter a valid e-mail." />
                 </div>
             </div>
             <div class="form-group">
-                <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
+                <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password *</asp:Label>
                 <div class="col-md-10">
                     <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
@@ -33,7 +36,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <asp:Label runat="server" AssociatedControlID="ConfirmPassword" CssClass="col-md-2 control-label">Confirm password</asp:Label>
+                <asp:Label runat="server" AssociatedControlID="ConfirmPassword" CssClass="col-md-2 control-label">Confirm password *</asp:Label>
                 <div class="col-md-10">
                     <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" CssClass="form-control" />
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
@@ -43,7 +46,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <asp:Label runat="server" AssociatedControlID="FirstName" CssClass="col-md-2 control-label">First name</asp:Label>
+                <asp:Label runat="server" AssociatedControlID="FirstName" CssClass="col-md-2 control-label">First name *</asp:Label>
                 <div class="col-md-10">
                     <asp:TextBox runat="server" ID="FirstName" CssClass="form-control" />
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="FirstName"
@@ -51,7 +54,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <asp:Label runat="server" CssClass="col-md-2 control-label">Last name</asp:Label>
+                <asp:Label runat="server" CssClass="col-md-2 control-label">Last name *</asp:Label>
                 <div class="col-md-10">
                     <asp:TextBox runat="server" ID="LastName" AssociatedControlID="LastName" CssClass="form-control" />
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="LastName"
@@ -62,8 +65,6 @@
                 <asp:Label runat="server" CssClass="col-md-2 control-label">Upload avatar</asp:Label>
                 <div class="col-md-10">
                     <asp:FileUpload runat="server" />
-                    <%--  <asp:RequiredFieldValidator runat="server"
-                    CssClass="text-danger" ErrorMessage="The email field is required." />--%>
                 </div>
             </div>
             <div class="form-group">

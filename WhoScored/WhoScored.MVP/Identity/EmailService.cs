@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using System.Threading.Tasks;
 
-namespace WhoScored.WebFormsClient.Account.Services
+namespace WhoScored.MVP.Identity
 {
     public class EmailService : IIdentityMessageService
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web;
 
-namespace WhoScored.WebFormsClient.Account.Helpers
+namespace WhoScored.MVP.Identity
 {
     public static class IdentityHelper
     {

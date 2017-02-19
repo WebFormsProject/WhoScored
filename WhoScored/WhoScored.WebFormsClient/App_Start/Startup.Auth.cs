@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Owin;
 using WhoScored.Data;
 using WhoScored.Models.Models;
+using WhoScored.MVP.Identity;
 
 namespace WhoScored.WebFormsClient
 {

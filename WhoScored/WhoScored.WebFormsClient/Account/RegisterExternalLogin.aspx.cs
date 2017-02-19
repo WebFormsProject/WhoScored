@@ -3,9 +3,8 @@ using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Owin;
 using WhoScored.Models.Models;
-using WhoScored.WebFormsClient.Account.Helpers;
+using WhoScored.MVP.Identity;
 
 namespace WhoScored.WebFormsClient.Account
 {

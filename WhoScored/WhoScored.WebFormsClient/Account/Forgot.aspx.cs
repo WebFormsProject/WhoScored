@@ -4,6 +4,7 @@ using System.Web.UI;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using WhoScored.Models.Models;
+using WhoScored.MVP.Identity;
 
 namespace WhoScored.WebFormsClient.Account
 {

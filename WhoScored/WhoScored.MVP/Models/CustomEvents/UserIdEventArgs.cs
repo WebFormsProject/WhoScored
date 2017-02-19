@@ -7,9 +7,8 @@ namespace WhoScored.MVP.Models.CustomEvents
         public UserIdEventArgs(string id)
         {
             this.Id = id;
-
         }
 
-        public string Id { get; set; }
+        public string Id { get; private set; }
     }
 }
