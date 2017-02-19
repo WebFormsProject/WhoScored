@@ -8,7 +8,6 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Owin;
-using WhoScored.WebFormsClient.Models;
 
 namespace WhoScored.WebFormsClient.Account
 {

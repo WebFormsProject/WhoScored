@@ -272,7 +272,7 @@
     <Content Include="Leagues.aspx" />
     <Content Include="News.aspx" />
     <Content Include="photos\Avatars\default.png" />
-     <Content Include="photos\Avatars\pepsi.jpg" />
+    <Content Include="photos\Avatars\pepsi.jpg" />
     <Content Include="photos\background-1.jpg" />
     <Content Include="photos\background-image.jpg" />
     <Content Include="photos\Leagues\bundesliga.png" />
@@ -514,17 +514,6 @@
     <Compile Include="Leagues.aspx.designer.cs">
       <DependentUpon>Leagues.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Models\CustomEvents\GameNameEventArgs.cs" />
-    <Compile Include="Models\CustomEvents\IdEventArgs.cs" />
-    <Compile Include="Models\CustomEvents\UserIdEventArgs.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\LeaguesViewModel.cs" />
-    <Compile Include="Models\LeagueTablesViewModel.cs" />
-    <Compile Include="Models\ScoresModelView.cs" />
-    <Compile Include="Models\UserViewModel.cs" />
-    <Compile Include="Models\StatisticsViewModel.cs" />
-    <Compile Include="Models\TeamViewModel.cs" />
-    <Compile Include="Models\TrollPhotosViewModel.cs" />
     <Compile Include="News.aspx.cs">
       <DependentUpon>News.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -532,13 +521,6 @@
     <Compile Include="News.aspx.designer.cs">
       <DependentUpon>News.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presenters\LeaguePresenter.cs" />
-    <Compile Include="Presenters\LeagueTablePresenter.cs" />
-    <Compile Include="Presenters\ScoresPresenter.cs" />
-    <Compile Include="Presenters\UserPresenter.cs" />
-    <Compile Include="Presenters\StatisticsPresenter.cs" />
-    <Compile Include="Presenters\TeamPresenter.cs" />
-    <Compile Include="Presenters\TrollPhotosPresenter.cs" />
     <Compile Include="Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -590,13 +572,6 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Views\ILeaguesView.cs" />
-    <Compile Include="Views\ILeagueTableView.cs" />
-    <Compile Include="Views\IScoresView.cs" />
-    <Compile Include="Views\IUserView.cs" />
-    <Compile Include="Views\IStatisticsView.cs" />
-    <Compile Include="Views\ITeamView.cs" />
-    <Compile Include="Views\ITrollPhotosView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="photos\TrollPhotos\" />
@@ -609,6 +584,10 @@
     <ProjectReference Include="..\WhoScored.Models\WhoScored.Models.csproj">
       <Project>{8eb1e289-5218-4171-a916-b1c3852914fd}</Project>
       <Name>WhoScored.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WhoScored.MVP\WhoScored.MVP.csproj">
+      <Project>{df7de976-bd71-423f-a0f2-b4f3ce8f14ac}</Project>
+      <Name>WhoScored.MVP</Name>
     </ProjectReference>
     <ProjectReference Include="..\WhoScored.Services\WhoScored.Services.csproj">
       <Project>{8381481d-97a5-49f2-a4f6-01c4599b22e5}</Project>

@@ -2,9 +2,9 @@
 using Ninject.Web.Common;
 using WhoScored.Data;
 using WhoScored.Data.Contracts;
+using WhoScored.MVP.Presenters;
 using WhoScored.Services;
 using WhoScored.Services.Contracts;
-using WhoScored.WebFormsClient.Presenters;
 
 namespace WhoScored.WebFormsClient.App_Start
 {

@@ -1,0 +1,28 @@
+﻿using System;
+using Bytes2you.Validation;
+using WebFormsMvp;
+using WhoScored.Data.Contracts;
+using WhoScored.Models.Models;
+using WhoScored.MVP.Views;
+
+namespace WhoScored.MVP.Presenters
+{
+    public class LeaguePresenter : Presenter<ILeaguesView>
+    {
+        private readonly IWhoScoredRepository<League> leagueRepository; 
+
+        public LeaguePresenter(ILeaguesView view, IWhoScoredRepository<League> leagueRepository)
+            : base(view)
+        {
+           Guard.WhenArgument(leagueRepository, "leagueRepository").IsNull().Throw();
+            this.leagueRepository = leagueRepository;
+
+            this.View.OnGetLeagues += View_GetLeagues;
+        }
+
+        private void View_GetLeagues(object sender, EventArgs e)
+        {
+           this.View.Model.Leagues = this.leagueRepository.GetAll();
+        }
+    }
+}

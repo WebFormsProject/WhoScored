@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 using WhoScored.Models.Models;
-using WhoScored.WebFormsClient.Models;
-using WhoScored.WebFormsClient.Models.CustomEvents;
-using WhoScored.WebFormsClient.Presenters;
-using WhoScored.WebFormsClient.Views;
+using WhoScored.MVP.Models;
+using WhoScored.MVP.Models.CustomEvents;
+using WhoScored.MVP.Presenters;
+using WhoScored.MVP.Views;
 
 namespace WhoScored.WebFormsClient
 {
