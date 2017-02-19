@@ -12,7 +12,7 @@ using WhoScored.MVP.Views;
 namespace WhoScored.WebFormsClient
 {
     [PresenterBinding(typeof(ScoresPresenter))]
-    public partial class Scores : MvpPage<ScoresModelView>, IScoresView
+    public partial class Scores : MvpPage<ScoresViewModel>, IScoresView
     {
         public event EventHandler OnGetLeagues;
         public event EventHandler<GameNameEventArgs> OnGetGameByLeague;

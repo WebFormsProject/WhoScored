@@ -25,8 +25,10 @@ namespace WhoScored.WebFormsClient.App_Start
             this.Bind<TrollPhotosPresenter>().ToSelf();
             this.Bind<TeamPresenter>().ToSelf();
             this.Bind<ScoresPresenter>().ToSelf();
+            this.Bind<FootballPlayerPresenter>().ToSelf();
 
             this.Bind<IGameService>().To<GameService>();
+            this.Bind<IFootballPlayerService>().To<FootballPlayerService>();
         }
     }
 }

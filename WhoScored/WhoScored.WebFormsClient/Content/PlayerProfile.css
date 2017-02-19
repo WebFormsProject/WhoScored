@@ -1,0 +1,13 @@
+﻿.player-image {
+    margin: auto 0;
+    max-width: 200px;
+    border-radius: 100px;
+}
+
+.player-info-panel {
+    border: 1px solid #efebe9 ;
+}
+
+.player-info-panel > th {
+    margin-left: 5px;
+}

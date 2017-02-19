@@ -115,15 +115,17 @@
     <Compile Include="Models\CustomEvents\PasswordChangeEventArgs.cs" />
     <Compile Include="Models\CustomEvents\RegisterEventArgs.cs" />
     <Compile Include="Models\CustomEvents\UserIdEventArgs.cs" />
+    <Compile Include="Models\FootballPlayerViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LeaguesViewModel.cs" />
     <Compile Include="Models\LeagueTablesViewModel.cs" />
-    <Compile Include="Models\ScoresModelView.cs" />
+    <Compile Include="Models\ScoresViewModel.cs" />
     <Compile Include="Models\StatisticsViewModel.cs" />
     <Compile Include="Models\TeamViewModel.cs" />
     <Compile Include="Models\TrollPhotosViewModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Presenters\Auth\PasswordChangePresenter.cs" />
+    <Compile Include="Presenters\FootballPlayerPresenter.cs" />
     <Compile Include="Presenters\LeaguePresenter.cs" />
     <Compile Include="Presenters\LeagueTablePresenter.cs" />
     <Compile Include="Presenters\Auth\LoginPresenter.cs" />
@@ -136,6 +138,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Auth\ILoginView.cs" />
     <Compile Include="Views\Auth\IPasswordChangeView.cs" />
+    <Compile Include="Views\IFootballPlayerView.cs" />
     <Compile Include="Views\ILeaguesView.cs" />
     <Compile Include="Views\ILeagueTableView.cs" />
     <Compile Include="Views\Auth\IRegisterView.cs" />
