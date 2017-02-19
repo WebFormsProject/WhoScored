@@ -31,5 +31,12 @@ namespace WhoScored.Services
 
             return groupedGames;
         }
+
+        public Game GetGameById(int id)
+        {
+            Game game = this.gameRepository.GetById(id);
+
+            return game;
+        }
     }
 }

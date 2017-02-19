@@ -10,5 +10,7 @@ namespace WhoScored.MVP.Views
         event EventHandler OnGetLeagues;
 
         event EventHandler<GameNameEventArgs> OnGetGameByLeague;
+
+        event EventHandler<IdEventArgs> OnGetGameById;
     }
 }

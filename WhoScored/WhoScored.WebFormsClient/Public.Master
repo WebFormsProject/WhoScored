@@ -15,7 +15,7 @@
 </head>
 <body>
     <form runat="server">
-        <asp:ScriptManager runat="server">
+        <asp:ScriptManager runat="server" EnablePageMethods="true">
             <Scripts>
                 <%--Framework Scripts--%>
                 <asp:ScriptReference Name="MsAjaxBundle" />

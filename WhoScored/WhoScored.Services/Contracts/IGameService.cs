@@ -9,5 +9,7 @@ namespace WhoScored.Services.Contracts
         IEnumerable<League> GetGroupedLeagues();
 
         IEnumerable<Game> GetGamesByLeague(League league);
+
+        Game GetGameById(int id);
     }
 }

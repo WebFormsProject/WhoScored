@@ -8,5 +8,7 @@ namespace WhoScored.MVP.Models
         public IEnumerable<League> Leagues { get; set; }
 
         public IEnumerable<Game> GamesByLeague { get; set; }
+
+        public Game Game { get; set; }
     }
 }
