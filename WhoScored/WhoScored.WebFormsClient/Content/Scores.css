@@ -5,3 +5,10 @@
 .match-time {
     width: 15%;
 }
+
+.popbox {
+    display: none;
+    position: absolute;
+    z-index: 99999;
+    width: 400px;
+}

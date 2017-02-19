@@ -19,6 +19,12 @@ namespace WhoScored.MVP.Presenters
 
             this.View.OnGetLeagues += View_OnGetLeagues;
             this.View.OnGetGameByLeague += View_OnGetGameByLeague;
+            this.View.OnGetGameById += View_OnGetGameById;
+        }
+
+        private void View_OnGetGameById(object sender, IdEventArgs idEventArgs)
+        {
+            this.View.Model.Game = this.gameService.GetGameById(idEventArgs.Id);
         }
 
         private void View_OnGetGameByLeague(object sender, GameNameEventArgs gameNameEventArgs)

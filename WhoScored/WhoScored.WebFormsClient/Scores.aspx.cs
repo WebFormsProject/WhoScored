@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.Services;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 using WhoScored.Models.Models;
@@ -15,11 +16,10 @@ namespace WhoScored.WebFormsClient
     {
         public event EventHandler OnGetLeagues;
         public event EventHandler<GameNameEventArgs> OnGetGameByLeague;
+        public event EventHandler<IdEventArgs> OnGetGameById;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //ScoresGridView.DataSource = this.Model.Games.ToList();
-            //ScoresGridView.DataBind();
         }
 
         public IEnumerable<League> GetLeagues()
@@ -34,6 +34,31 @@ namespace WhoScored.WebFormsClient
             this.OnGetGameByLeague?.Invoke(this, new GameNameEventArgs(league));
 
             return this.Model.GamesByLeague;
-        } 
+        }
+
+        [WebMethod]
+        public static object GetGameDetails(string id, string homeTeam, string awayTeam, string homeScorers, string awayScorers)
+        {
+            string homeScorersResult = homeScorers;
+            string awayScorersResult = awayScorers;
+
+            if (string.IsNullOrEmpty(homeScorers))
+            {
+                homeScorersResult = "No goal scorers";
+            }
+
+            if (string.IsNullOrEmpty(awayScorers))
+            {
+                awayScorersResult = "No goal scorers";
+            }
+
+            return new
+            {
+                HomeTeam = homeTeam,
+                AwayTeam = awayTeam,
+                HomeTeamScorers = homeScorersResult,
+                AwayTeamScorers = awayScorersResult
+            };
+        }
     }
 }
