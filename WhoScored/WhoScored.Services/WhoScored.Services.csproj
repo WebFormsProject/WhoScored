@@ -49,12 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\ICountryService.cs" />
     <Compile Include="Contracts\IFootballPlayerService.cs" />
     <Compile Include="Contracts\ILeagueService.cs" />
     <Compile Include="Contracts\ILeagueTableService.cs" />
     <Compile Include="Contracts\ITeamService.cs" />
     <Compile Include="Contracts\ITrollPhotoService.cs" />
     <Compile Include="Contracts\IUserService.cs" />
+    <Compile Include="CountryService.cs" />
+    <Compile Include="UserService.cs" />
     <Compile Include="FootballPlayerService.cs" />
     <Compile Include="GameService.cs" />
     <Compile Include="Contracts\IGameService.cs" />

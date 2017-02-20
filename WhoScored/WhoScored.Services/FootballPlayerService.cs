@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Bytes2you.Validation;
 using WhoScored.Data.Contracts;
 using WhoScored.Models.Models;
@@ -13,11 +9,14 @@ namespace WhoScored.Services
     public class FootballPlayerService : IFootballPlayerService
     {
         private readonly IWhoScoredRepository<FootballPlayer> footballPlayerRepository;
+        private readonly IUnitOfWork unitOfWork;
 
-        public FootballPlayerService(IWhoScoredRepository<FootballPlayer> footballPlayerRepository)
+        public FootballPlayerService(IWhoScoredRepository<FootballPlayer> footballPlayerRepository, IUnitOfWork unitOfWork)
         {
             Guard.WhenArgument(footballPlayerRepository, "footballPlayerRepository").IsNull().Throw();
+            Guard.WhenArgument(unitOfWork, "unitOfWork").IsNull().Throw();
             this.footballPlayerRepository = footballPlayerRepository;
+            this.unitOfWork = unitOfWork;
         }
 
         public IEnumerable<FootballPlayer> GetAllFootballPlayers()
@@ -32,6 +31,15 @@ namespace WhoScored.Services
             FootballPlayer foundPlayer = this.footballPlayerRepository.GetById(id);
 
             return foundPlayer;
+        }
+
+        public void UpdateFootballPlayer(FootballPlayer footballPlayer)
+        {
+            using (this.unitOfWork)
+            {
+                this.footballPlayerRepository.Update(footballPlayer);
+                this.unitOfWork.Commit();
+            }
         }
     }
 }

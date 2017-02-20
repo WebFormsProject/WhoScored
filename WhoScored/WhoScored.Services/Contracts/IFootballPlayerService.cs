@@ -7,5 +7,7 @@ namespace WhoScored.Services.Contracts
     {
         IEnumerable<FootballPlayer> GetAllFootballPlayers();
         FootballPlayer GetFootballPlayerById(int id);
+
+        void UpdateFootballPlayer(FootballPlayer footballPlayer);
     }
 }
