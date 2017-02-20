@@ -29,19 +29,19 @@ namespace WhoScored.Data
 
         public void Add(T entity)
         {
-            DbEntityEntry entry = AttachIfDetached(entity);
+            DbEntityEntry entry = this.Context.Entry(entity);
             entry.State = EntityState.Added;
         }
 
         public void Update(T entity)
         {
-            DbEntityEntry entry = AttachIfDetached(entity);
+            DbEntityEntry entry = this.Context.Entry(entity);
             entry.State = EntityState.Modified;
         }
 
         public void Delete(T entity)
         {
-            DbEntityEntry entry = AttachIfDetached(entity);
+            DbEntityEntry entry = this.Context.Entry(entity);
             entry.State = EntityState.Deleted;
         }
 

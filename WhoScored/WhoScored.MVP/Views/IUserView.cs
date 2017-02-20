@@ -7,6 +7,8 @@ namespace WhoScored.MVP.Views
 {
     public interface IUserView : IView<UserViewModel>
     {
-        event EventHandler<UserIdEventArgs> OnGetUser;
+        event EventHandler<UserIdEventArgs> GetUser;
+
+        event EventHandler<UserPhotoUploadEventArgs> UploadTrollPhoto;
     }
 }

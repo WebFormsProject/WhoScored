@@ -12,10 +12,10 @@ using WhoScored.MVP.Views.Auth;
 namespace WhoScored.WebFormsClient.Account
 {
     [PresenterBinding(typeof(UserAvatarPresenter))]
-    public partial class ManageAvatar : MvpPage<UserAvatarViewModelcs>, IUserAvatarView
+    public partial class ManageAvatar : MvpPage<UserUploadPhotoViewModel>, IUserAvatarView
     {
         public event EventHandler<UserIdEventArgs> GetAvatar;
-        public event EventHandler<UserAvatarEventArgs> UploadAvatar;
+        public event EventHandler<UserPhotoUploadEventArgs> UploadAvatar;
 
         protected string SuccessMessage { get; set; }
 
@@ -40,14 +40,14 @@ namespace WhoScored.WebFormsClient.Account
                 string avatarFilePath = "/photos/Avatars/" + filename;
                 string storageLocation = Server.MapPath($"~{avatarFilePath}");
 
-                this.UploadAvatar?.Invoke(this, new UserAvatarEventArgs(
+                this.UploadAvatar?.Invoke(this, new UserPhotoUploadEventArgs(
                     fileBase,
                     avatarFilePath,
                     storageLocation,
                     this.User.Identity.GetUserId()));
             }
 
-            if (this.Model.UserAvatarIsUploaded)
+            if (this.Model.PhotoIsUploaded)
             {
                 Response.Redirect("~/Account/Manage?m=ChangeAvatarSuccess");
             }

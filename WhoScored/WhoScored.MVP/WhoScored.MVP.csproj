@@ -112,7 +112,7 @@
     <Compile Include="Models\Auth\ManagePasswordViewModel.cs" />
     <Compile Include="Models\Auth\PasswordChangeViewModel.cs" />
     <Compile Include="Models\Auth\RegisterViewModel.cs" />
-    <Compile Include="Models\Auth\UserAvatarViewModelcs.cs" />
+    <Compile Include="Models\Auth\UserUploadPhotoViewModel.cs" />
     <Compile Include="Models\CustomEventArgs\GameNameEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\IdEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\LoginEventArgs.cs" />
@@ -120,7 +120,7 @@
     <Compile Include="Models\CustomEventArgs\ManagePasswordEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\PasswordChangeEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\RegisterEventArgs.cs" />
-    <Compile Include="Models\CustomEventArgs\UserAvatarEventArgs.cs" />
+    <Compile Include="Models\CustomEventArgs\UserPhotoUploadEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\UserIdEventArgs.cs" />
     <Compile Include="Models\FootballPlayerViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -151,8 +151,8 @@
     <Compile Include="Views\Auth\IManageAccountView.cs" />
     <Compile Include="Views\Auth\IManagePasswordView.cs" />
     <Compile Include="Views\Auth\IPasswordChangeView.cs" />
-    <Compile Include="Views\IAddFootballPlayerView.cs" />
     <Compile Include="Views\Auth\IUserAvatarView.cs" />
+    <Compile Include="Views\IAddFootballPlayerView.cs" />
     <Compile Include="Views\IFootballPlayerView.cs" />
     <Compile Include="Views\ILeaguesView.cs" />
     <Compile Include="Views\ILeagueTableView.cs" />

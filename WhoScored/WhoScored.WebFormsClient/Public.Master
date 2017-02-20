@@ -61,7 +61,6 @@
                                 </button>
                                 <ul class="dropdown-menu profile-menu">
                                     <li><a href="~/profile" runat="server">Your profile</a></li>
-                                    <li><a href="#" runat="server">Add troll photos</a></li>
                                     <li><a href="~/account/manage" runat="server">Manage your account</a></li>
                                     <li class="divider"></li>
                                     <li>

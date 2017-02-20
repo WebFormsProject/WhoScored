@@ -19,6 +19,7 @@ namespace WhoScored.MVP.Models.CustomEventArgs
             this.CurrentPassword = currentPassword;
             this.NewPassword = newPassword;
         }
+
         public HttpContext HttpContext { get; set; }
 
         public IIdentity User { get; set; }

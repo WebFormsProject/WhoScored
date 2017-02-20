@@ -33,12 +33,11 @@ namespace WhoScored.WebFormsClient
 
             this.Bind<IGameService>().To<GameService>();
             this.Bind<IFootballPlayerService>().To<FootballPlayerService>();
-            this.Bind<IUserAvatarService>().To<UserAvatarService>();
+            this.Bind<IUserService>().To<UserService>();
             this.Bind<ILeagueTableService>().To<LeagueTableService>();
             this.Bind<ILeagueService>().To<LeagueService>();
             this.Bind<ITeamService>().To<TeamService>();
             this.Bind<ITrollPhotoService>().To<TrollPhotoService>();
-            this.Bind<IUserService>().To<UserService>();
         }
     }
 }

@@ -5,8 +5,8 @@ namespace WhoScored.Services.Contracts
 {
     public interface ITrollPhotoService
     {
-        IEnumerable<TrollPhoto> GetAllTrollPhotos();
+        IEnumerable<TrollPhoto> GetAll();
 
-        IEnumerable<string> GetTrollPhotoPaths();
+        void UploadTrollPhoto(string userId, string filePath);
     }
 }

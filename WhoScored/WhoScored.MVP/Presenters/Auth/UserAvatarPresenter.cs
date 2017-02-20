@@ -11,9 +11,9 @@ namespace WhoScored.MVP.Presenters.Auth
     {
         private const int MaxAvatarSizeInBytes = 10 * 1000 * 1000;
 
-        private readonly IUserAvatarService userAvatarService;
+        private readonly IUserService userAvatarService;
 
-        public UserAvatarPresenter(IUserAvatarService userAvatarService, IUserAvatarView view)
+        public UserAvatarPresenter(IUserService userAvatarService, IUserAvatarView view)
             : base(view)
         {
             Guard.WhenArgument(userAvatarService, "userAvatarService").IsNull().Throw();
@@ -26,18 +26,18 @@ namespace WhoScored.MVP.Presenters.Auth
 
         private void View_GetAvatar(object sender, UserIdEventArgs e)
         {
-            this.View.Model.UserAvatarFilePath = this.userAvatarService.GetAvatarFilePath(e.Id);
+            this.View.Model.PhotoFilePath = this.userAvatarService.GetAvatarFilePath(e.Id);
         }
 
-        private void View_UploadAvatar(object sender, UserAvatarEventArgs e)
+        private void View_UploadAvatar(object sender, UserPhotoUploadEventArgs e)
         {
             HttpPostedFileBase uploadedFile = e.PostedFileBase;
             if (uploadedFile.ContentLength <= MaxAvatarSizeInBytes)
             {
-                uploadedFile.SaveAs(e.AvatarStorageLocation);
+                uploadedFile.SaveAs(e.StorageLocation);
 
-                this.userAvatarService.UploadAvatar(e.UserId, e.AvatarFilePath);
-                this.View.Model.UserAvatarIsUploaded = true;
+                this.userAvatarService.UploadAvatar(e.UserId, e.FilePath);
+                this.View.Model.PhotoIsUploaded = true;
             }
         }
     }

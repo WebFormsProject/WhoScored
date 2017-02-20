@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Bytes2you.Validation;
 using WhoScored.Data.Contracts;
 using WhoScored.Models.Models;
@@ -9,23 +8,36 @@ namespace WhoScored.Services
 {
     public class TrollPhotoService : ITrollPhotoService
     {
+        private readonly IWhoScoredContext context;
         private readonly IWhoScoredRepository<TrollPhoto> trollPhotoRepository;
 
-        public TrollPhotoService(IWhoScoredRepository<TrollPhoto> trollPhotoRepository)
+        public TrollPhotoService(IWhoScoredContext context, IWhoScoredRepository<TrollPhoto> trollPhotoRepository)
         {
+            Guard.WhenArgument(context, "context").IsNull().Throw();
             Guard.WhenArgument(trollPhotoRepository, "trollPhotoRepository").IsNull().Throw();
 
+            this.context = context;
             this.trollPhotoRepository = trollPhotoRepository;
         }
 
-        public IEnumerable<TrollPhoto> GetAllTrollPhotos()
+        public IEnumerable<TrollPhoto> GetAll()
         {
             return this.trollPhotoRepository.GetAll();
         }
 
-        public IEnumerable<string> GetTrollPhotoPaths()
+        public void UploadTrollPhoto(string userId, string filePath)
         {
-            return this.trollPhotoRepository.GetAll().Select(x=>x.PhotoPath);
+            Guard.WhenArgument(userId, "userId").IsNull().Throw();
+            Guard.WhenArgument(filePath, "filePath").IsNull().Throw();
+
+            TrollPhoto trollPhoto = new TrollPhoto()
+            {
+                UserId = userId,
+                PhotoPath = filePath
+            };
+
+            this.trollPhotoRepository.Add(trollPhoto);
+            this.context.SaveChanges();
         }
     }
 }

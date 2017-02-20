@@ -17,7 +17,7 @@ namespace WhoScored.Data
         public WhoScoredContext()
             : base("WhoScored")
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<WhoScoredContext>());
+           // Database.SetInitializer(new DropCreateDatabaseIfModelChanges<WhoScoredContext>());
         }
 
         public IDbSet<Article> Articles { get; set; }
@@ -452,38 +452,32 @@ namespace WhoScored.Data
             this.TrollPhotos.Add(
                 new TrollPhoto()
                 {
-                    PhotoPath = "/photos/TrollPhotos/image1.jpg",
-                    CategoryId = 1
+                    PhotoPath = "/photos/TrollPhotos/image1.jpg"
                 });
             this.TrollPhotos.Add(
                 new TrollPhoto()
                 {
-                    PhotoPath = "/photos/TrollPhotos/image2.jpg",
-                    CategoryId = 1
+                    PhotoPath = "/photos/TrollPhotos/image2.jpg"
                 });
             this.TrollPhotos.Add(
                 new TrollPhoto()
                 {
-                    PhotoPath = "/photos/TrollPhotos/image3.jpg",
-                    CategoryId = 1
+                    PhotoPath = "/photos/TrollPhotos/image3.jpg"
                 });
             this.TrollPhotos.Add(
                 new TrollPhoto()
                 {
-                    PhotoPath = "/photos/TrollPhotos/image4.jpg",
-                    CategoryId = 1
+                    PhotoPath = "/photos/TrollPhotos/image4.jpg"
                 });
             this.TrollPhotos.Add(
                 new TrollPhoto()
                 {
-                    PhotoPath = "/photos/TrollPhotos/image5.jpg",
-                    CategoryId = 1
+                    PhotoPath = "/photos/TrollPhotos/image5.jpg"
                 });
             this.TrollPhotos.Add(
                 new TrollPhoto()
                 {
-                    PhotoPath = "/photos/TrollPhotos/image6.jpg",
-                    CategoryId = 1
+                    PhotoPath = "/photos/TrollPhotos/image6.jpg"
                 });
         }
         #endregion

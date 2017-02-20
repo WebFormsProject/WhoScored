@@ -13,6 +13,15 @@ namespace WhoScored.WebFormsClient {
     public partial class Profile {
         
         /// <summary>
+        /// successMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder successMessage;
+        
+        /// <summary>
         /// UserLabel control.
         /// </summary>
         /// <remarks>
@@ -29,5 +38,32 @@ namespace WhoScored.WebFormsClient {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image UserAvatar;
+        
+        /// <summary>
+        /// TrollPhotoNameTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TrollPhotoNameTextBox;
+        
+        /// <summary>
+        /// TrollPhotoFileUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload TrollPhotoFileUpload;
+        
+        /// <summary>
+        /// UploadTrollPhotoButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button UploadTrollPhotoButton;
     }
 }

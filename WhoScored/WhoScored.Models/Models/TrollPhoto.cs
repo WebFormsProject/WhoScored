@@ -14,18 +14,12 @@ namespace WhoScored.Models.Models
 
         public int Id { get; set; }
 
-        [Required]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         public virtual User User { get; set; }
 
         [Required]
         public string PhotoPath { get; set; }
-
-        [Required]
-        public int CategoryId { get; set; }
-
-        public virtual Category Category { get; set; }
 
         public virtual ICollection<Comment> Comments
         {

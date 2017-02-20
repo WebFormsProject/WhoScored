@@ -7,18 +7,41 @@ namespace WhoScored.Services
 {
     public class UserService : IUserService
     {
-        private readonly IWhoScoredRepository<User> useRepository;
+        private readonly IWhoScoredContext context;
+        private readonly IWhoScoredRepository<User> userRepository;
 
-        public UserService(IWhoScoredRepository<User> useRepository)
+        public UserService(IWhoScoredContext context, IWhoScoredRepository<User> userRepository)
         {
-            Guard.WhenArgument(useRepository, "useRepository").IsNull().Throw();
+            Guard.WhenArgument(userRepository, "userRepository").IsNull().Throw();
+            Guard.WhenArgument(context, "context").IsNull().Throw();
 
-            this.useRepository = useRepository;
+            this.context = context;
+            this.userRepository = userRepository;
         }
 
         public User GetUserById(object id)
         {
-            return this.useRepository.GetById(id);
+            return this.userRepository.GetById(id);
+        }
+
+        public string GetAvatarFilePath(string userId)
+        {
+            Guard.WhenArgument(userId, "userId").IsNullOrEmpty().Throw();
+
+            return this.userRepository.GetById(userId).AvatarPath;
+        }
+
+        public void UploadAvatar(string userId, string filePath)
+        {
+            Guard.WhenArgument(userId, "userId").IsNull().Throw();
+            Guard.WhenArgument(filePath, "filePath").IsNull().Throw();
+
+            User user = this.userRepository.GetById(userId);
+            if (user != null)
+            {
+                user.AvatarPath = filePath;
+                this.context.SaveChanges();
+            }
         }
     }
 }

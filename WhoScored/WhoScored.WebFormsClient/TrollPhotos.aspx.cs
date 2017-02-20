@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using WebFormsMvp;
 using WebFormsMvp.Web;
+using WhoScored.Models.Models;
 using WhoScored.MVP.Models;
 using WhoScored.MVP.Presenters;
 using WhoScored.MVP.Views;
@@ -16,23 +17,27 @@ namespace WhoScored.WebFormsClient
         private static int selectedImageIndex;
         private static IList<string> imagesPaths;
 
+        private TrollPhoto currentImage;
         private string[] ImageExtensions = new string[] { ".jpg", ".png" };
 
-        public event EventHandler OnGetTrollPhotosPaths;
+        public event EventHandler GetTrollPhotos;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (imagesPaths == null || this.SelectedImage.ImageUrl == null)
+            if (imagesPaths == null || this.SelectedImage.ImageUrl == null || this.Model.TrollPhotosCollection == null)
             {
-                this.OnGetTrollPhotosPaths?.Invoke(this, null);
+                this.GetTrollPhotos?.Invoke(this, null);
 
-                selectedImageIndex = 1;
-                imagesPaths = this.Model.TrollPhotosPaths
+                imagesPaths = this.Model.TrollPhotosCollection
+                    .Select(p => p.PhotoPath)
                     .Where(photo => photo.EndsWith(ImageExtensions[0]) || photo.EndsWith(ImageExtensions[1]))
                     .ToList();
+                selectedImageIndex = 1;
+                currentImage = this.Model.TrollPhotosCollection.First();
             }
 
             this.SelectedImage.ImageUrl = imagesPaths[selectedImageIndex];
+            this.SelectedImageLikesLabel.Text = this.currentImage.Likes.ToString();
         }
 
         protected void ButtonPrevious_Click(object sender, EventArgs e)

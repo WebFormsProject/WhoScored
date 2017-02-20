@@ -6,6 +6,6 @@ namespace WhoScored.MVP.Views
 {
     public interface ITrollPhotosView : IView<TrollPhotosViewModel>
     {
-        event EventHandler OnGetTrollPhotosPaths;
+        event EventHandler GetTrollPhotos;
     }
 }
