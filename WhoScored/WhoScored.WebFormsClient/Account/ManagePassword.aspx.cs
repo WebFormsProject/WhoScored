@@ -51,7 +51,7 @@ namespace WhoScored.WebFormsClient.Account
             {
                 if (this.Model.IdentityResult.Succeeded)
                 {
-                    Response.Redirect("~/Account/Manage?m=ChangePwdSuccess");
+                    Response.Redirect("~/Account/Manage?m=ChangePasswordSuccess");
                 }
                 else
                 {

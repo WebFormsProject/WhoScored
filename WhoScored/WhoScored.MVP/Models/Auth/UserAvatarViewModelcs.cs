@@ -2,6 +2,8 @@
 {
     public class UserAvatarViewModelcs
     {
-        public string UserAvatarUrl { get; set; }
+        public string UserAvatarFilePath { get; set; }
+
+        public bool UserAvatarIsUploaded { get; set; }
     }
 }

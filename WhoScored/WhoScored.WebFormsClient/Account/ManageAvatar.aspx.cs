@@ -17,12 +17,13 @@ namespace WhoScored.WebFormsClient.Account
         public event EventHandler<UserIdEventArgs> GetAvatar;
         public event EventHandler<UserAvatarEventArgs> UploadAvatar;
 
+        protected string SuccessMessage { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.Page.IsPostBack)
             {
                 this.GetAvatar?.Invoke(this, new UserIdEventArgs(this.User.Identity.GetUserId()));
-                this.AvatarImage.ImageUrl = this.Model.UserAvatarUrl;
             }
         }
 
@@ -33,16 +34,22 @@ namespace WhoScored.WebFormsClient.Account
                 string username = this.Context.User.Identity.Name;
                 HttpPostedFile postedFile = this.AvatarFileUpload.PostedFile;
                 HttpPostedFileBase fileBase = new HttpPostedFileWrapper(postedFile);
+
                 string extension = Path.GetExtension(postedFile.FileName);
                 string filename = username + extension;
-                string storageLocation = Server.MapPath($"~/photos/Avatars/{filename}");
-                string filePath = $"/photos/Avatars/{filename}";
+                string avatarFilePath = "/photos/Avatars/" + filename;
+                string storageLocation = Server.MapPath($"~{avatarFilePath}");
 
                 this.UploadAvatar?.Invoke(this, new UserAvatarEventArgs(
                     fileBase,
-                    filePath,
+                    avatarFilePath,
                     storageLocation,
                     this.User.Identity.GetUserId()));
+            }
+
+            if (this.Model.UserAvatarIsUploaded)
+            {
+                Response.Redirect("~/Account/Manage?m=ChangeAvatarSuccess");
             }
         }
     }

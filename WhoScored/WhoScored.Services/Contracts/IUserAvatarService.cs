@@ -4,6 +4,6 @@
     {
         string GetAvatarFilePath(string userId);
 
-        void UploadAvatar(string userId, string avatarPath);
+        void UploadAvatar(string userId, string avatarFilePath);
     }
 }

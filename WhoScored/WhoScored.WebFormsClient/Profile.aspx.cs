@@ -12,15 +12,24 @@ namespace WhoScored.WebFormsClient
     [PresenterBinding(typeof(UserPresenter))]
     public partial class Profile : MvpPage<UserViewModel>, IUserView
     {
+        private const string DefaultAvatarPath = "/photos/Avatars/default.png";
+
         public event EventHandler<UserIdEventArgs> OnGetUser;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             string id = this.Page.User.Identity.GetUserId();
-
             this.OnGetUser?.Invoke(this, new UserIdEventArgs(id));
 
-            this.UserAvatar.ImageUrl = this.Model.User.AvatarPath = "/photos/Avatars/pepsi.jpg";
+            if (this.Model.User.AvatarPath != null)
+            {
+                this.UserAvatar.ImageUrl = this.Model.User.AvatarPath;
+            }
+            else
+            {
+                this.UserAvatar.ImageUrl = DefaultAvatarPath;
+            }
+
             this.UserLabel.Text = $"{this.Model.User.FirstName} {this.Model.User.LastName}";
             this.DataBind();
         }

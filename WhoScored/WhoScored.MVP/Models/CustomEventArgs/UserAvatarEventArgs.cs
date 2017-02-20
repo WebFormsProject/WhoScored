@@ -14,7 +14,7 @@ namespace WhoScored.MVP.Models.CustomEventArgs
             Guard.WhenArgument(userId, "userId").IsNull().Throw();
 
             this.PostedFileBase = postedFileBase;
-            this.AvatarFilePath = AvatarFilePath;
+            this.AvatarFilePath = avatarFilePath;
             this.AvatarStorageLocation = avatarStorageLocation;
             this.UserId = userId;
         }

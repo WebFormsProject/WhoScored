@@ -1,4 +1,5 @@
 ﻿using Bytes2you.Validation;
+using System.Web;
 using WebFormsMvp;
 using WhoScored.MVP.Models.CustomEventArgs;
 using WhoScored.MVP.Views.Auth;
@@ -8,6 +9,8 @@ namespace WhoScored.MVP.Presenters.Auth
 {
     public class UserAvatarPresenter : Presenter<IUserAvatarView>
     {
+        private const int MaxAvatarSizeInBytes = 10 * 1000 * 1000;
+
         private readonly IUserAvatarService userAvatarService;
 
         public UserAvatarPresenter(IUserAvatarService userAvatarService, IUserAvatarView view)
@@ -23,16 +26,19 @@ namespace WhoScored.MVP.Presenters.Auth
 
         private void View_GetAvatar(object sender, UserIdEventArgs e)
         {
-            this.View.Model.UserAvatarUrl = this.userAvatarService.GetAvatarFilePath(e.Id);
+            this.View.Model.UserAvatarFilePath = this.userAvatarService.GetAvatarFilePath(e.Id);
         }
 
         private void View_UploadAvatar(object sender, UserAvatarEventArgs e)
         {
-            var uploadedFile = e.PostedFileBase;
+            HttpPostedFileBase uploadedFile = e.PostedFileBase;
+            if (uploadedFile.ContentLength <= MaxAvatarSizeInBytes)
+            {
+                uploadedFile.SaveAs(e.AvatarStorageLocation);
 
-            // TODO: check content type and size
-            uploadedFile.SaveAs(e.AvatarStorageLocation);
-            this.userAvatarService.UploadAvatar(e.UserId, e.AvatarFilePath);
+                this.userAvatarService.UploadAvatar(e.UserId, e.AvatarFilePath);
+                this.View.Model.UserAvatarIsUploaded = true;
+            }
         }
     }
 }

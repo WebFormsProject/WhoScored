@@ -26,15 +26,15 @@ namespace WhoScored.Services
             return this.userRepository.GetById(userId).AvatarPath;
         }
 
-        public void UploadAvatar(string userId, string avatarPath)
+        public void UploadAvatar(string userId, string avatarFilePath)
         {
             Guard.WhenArgument(userId, "userId").IsNull().Throw();
-            Guard.WhenArgument(avatarPath, "avatarPath").IsNull().Throw();
+            Guard.WhenArgument(avatarFilePath, "avatarFilePath").IsNull().Throw();
 
             User user = this.userRepository.GetById(userId);
             if (user != null)
             {
-                user.AvatarPath = avatarPath;
+                user.AvatarPath = avatarFilePath;
                 this.context.SaveChanges();
             }
         }

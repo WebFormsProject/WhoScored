@@ -35,8 +35,20 @@ namespace WhoScored.WebFormsClient.Account
                 {
                     Form.Action = ResolveUrl("~/Account/Manage");
 
-                    SuccessMessage = message == "ChangePwdSuccess" ? "Your password has been changed." : String.Empty;
-                    successMessage.Visible = !String.IsNullOrEmpty(SuccessMessage);
+                    if (message == "ChangePasswordSuccess")
+                    {
+                        this.successMessage.Visible = true;
+                        this.SuccessMessage = "Your password has been changed.";
+                    }
+                    else if (message == "ChangeAvatarSuccess")
+                    {
+                        this.successMessage.Visible = true;
+                        this.SuccessMessage = "Your profile picture has been changed.";
+                    }
+                    else
+                    {
+                        this.successMessage.Visible = false; ;
+                    }
                 }
             }
         }
