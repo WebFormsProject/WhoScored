@@ -16,12 +16,12 @@ namespace WhoScored.MVP.Presenters
             Guard.WhenArgument(trollPhotoService, "trollPhotoService").IsNull().Throw();
             this.trollPhotoService = trollPhotoService;
 
-            this.View.GetTrollPhotos += this.View_GetTrollPhotos;
+            this.View.GetTrollPhotosPaths += this.View_GetTrollPhotosPaths;
         }
 
-        private void View_GetTrollPhotos(object sender, EventArgs e)
+        private void View_GetTrollPhotosPaths(object sender, EventArgs e)
         {
-            this.View.Model.TrollPhotosCollection = this.trollPhotoService.GetAll();
+            this.View.Model.TrollPhotosPaths = this.trollPhotoService.GetAllPaths();
         }
     }
 }

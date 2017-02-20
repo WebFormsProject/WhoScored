@@ -10,7 +10,6 @@
         <asp:UpdatePanel ID="TrollPhotosUpdatePanel" runat="server">
             <ContentTemplate>
                 <asp:Button ID="ButtonPrevious" Text="<< Previous" runat="server" OnClick="ButtonPrevious_Click" CssClass="btn waves-effect waves-light grey lighten-5 btn-next-prev" />
-                Likes: <asp:Label ID="SelectedImageLikesLabel" runat="server"></asp:Label>
                 <div class="selected-image text-center">
                     <asp:Image ID="SelectedImage" runat="server" CssClass="image-responsive" />
                 </div>
@@ -19,4 +18,3 @@
         </asp:UpdatePanel>
     </div>
 </asp:Content>
-

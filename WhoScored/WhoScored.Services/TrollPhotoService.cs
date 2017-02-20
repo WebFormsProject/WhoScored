@@ -3,26 +3,32 @@ using Bytes2you.Validation;
 using WhoScored.Data.Contracts;
 using WhoScored.Models.Models;
 using WhoScored.Services.Contracts;
+using System.Linq;
 
 namespace WhoScored.Services
 {
     public class TrollPhotoService : ITrollPhotoService
     {
-        private readonly IWhoScoredContext context;
+        private readonly IUnitOfWork unitOfWork;
         private readonly IWhoScoredRepository<TrollPhoto> trollPhotoRepository;
 
-        public TrollPhotoService(IWhoScoredContext context, IWhoScoredRepository<TrollPhoto> trollPhotoRepository)
+        public TrollPhotoService(IUnitOfWork unitOfWork, IWhoScoredRepository<TrollPhoto> trollPhotoRepository)
         {
-            Guard.WhenArgument(context, "context").IsNull().Throw();
+            Guard.WhenArgument(unitOfWork, "unitOfWork").IsNull().Throw();
             Guard.WhenArgument(trollPhotoRepository, "trollPhotoRepository").IsNull().Throw();
 
-            this.context = context;
+            this.unitOfWork = unitOfWork;
             this.trollPhotoRepository = trollPhotoRepository;
         }
 
         public IEnumerable<TrollPhoto> GetAll()
         {
             return this.trollPhotoRepository.GetAll();
+        }
+
+        public IEnumerable<string> GetAllPaths()
+        {
+            return this.GetAll().Select(p => p.PhotoPath);
         }
 
         public void UploadTrollPhoto(string userId, string filePath)
@@ -37,7 +43,7 @@ namespace WhoScored.Services
             };
 
             this.trollPhotoRepository.Add(trollPhoto);
-            this.context.SaveChanges();
+            this.unitOfWork.Commit();
         }
     }
 }

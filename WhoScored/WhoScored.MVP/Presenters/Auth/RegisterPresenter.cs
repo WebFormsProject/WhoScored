@@ -48,7 +48,7 @@ namespace WhoScored.MVP.Presenters.Auth
             }
 
             HttpPostedFileBase uploadedFile = e.AvatarFileBase;
-            if (uploadedFile.ContentLength <= MaxAvatarSizeInBytes)
+            if (uploadedFile != null && uploadedFile.ContentLength <= MaxAvatarSizeInBytes)
             {
                 uploadedFile.SaveAs(e.AvatarStorageLocation);
                 this.userAvatarService.UploadAvatar(user.Id, e.AvatarFilePath);

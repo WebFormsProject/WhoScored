@@ -7,6 +7,8 @@ namespace WhoScored.Services.Contracts
     {
         IEnumerable<TrollPhoto> GetAll();
 
+        IEnumerable<string> GetAllPaths();
+
         void UploadTrollPhoto(string userId, string filePath);
     }
 }

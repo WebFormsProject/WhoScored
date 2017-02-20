@@ -7,15 +7,15 @@ namespace WhoScored.Services
 {
     public class UserService : IUserService
     {
-        private readonly IWhoScoredContext context;
+        private readonly IUnitOfWork unitOfWork;
         private readonly IWhoScoredRepository<User> userRepository;
 
-        public UserService(IWhoScoredContext context, IWhoScoredRepository<User> userRepository)
+        public UserService(IUnitOfWork unitOfWork, IWhoScoredRepository<User> userRepository)
         {
             Guard.WhenArgument(userRepository, "userRepository").IsNull().Throw();
-            Guard.WhenArgument(context, "context").IsNull().Throw();
+            Guard.WhenArgument(unitOfWork, "unitOfWork").IsNull().Throw();
 
-            this.context = context;
+            this.unitOfWork = unitOfWork;
             this.userRepository = userRepository;
         }
 
@@ -40,7 +40,7 @@ namespace WhoScored.Services
             if (user != null)
             {
                 user.AvatarPath = filePath;
-                this.context.SaveChanges();
+                this.unitOfWork.Commit();
             }
         }
     }

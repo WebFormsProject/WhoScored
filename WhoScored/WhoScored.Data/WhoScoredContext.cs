@@ -17,7 +17,7 @@ namespace WhoScored.Data
         public WhoScoredContext()
             : base("WhoScored")
         {
-           // Database.SetInitializer(new DropCreateDatabaseIfModelChanges<WhoScoredContext>());
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<WhoScoredContext>());
         }
 
         public IDbSet<Article> Articles { get; set; }

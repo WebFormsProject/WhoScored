@@ -5,6 +5,6 @@ namespace WhoScored.MVP.Models
 {
     public class TrollPhotosViewModel
     {
-        public IEnumerable<TrollPhoto> TrollPhotosCollection { get; set; }
+        public IEnumerable<string> TrollPhotosPaths { get; set; }
     }
 }

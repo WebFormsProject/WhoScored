@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bytes2you.Validation;
+using System;
 
 namespace WhoScored.MVP.Models.CustomEventArgs
 {
@@ -6,6 +7,8 @@ namespace WhoScored.MVP.Models.CustomEventArgs
     {
         public UserIdEventArgs(string id)
         {
+            Guard.WhenArgument(id, "id").IsNull().Throw();
+
             this.Id = id;
         }
 
