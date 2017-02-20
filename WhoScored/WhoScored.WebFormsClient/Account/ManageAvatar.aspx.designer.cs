@@ -10,33 +10,33 @@
 namespace WhoScored.WebFormsClient.Account {
     
     
-    public partial class Manage {
+    public partial class ManageAvatar {
         
         /// <summary>
-        /// successMessage control.
+        /// AvatarImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder successMessage;
+        protected global::System.Web.UI.WebControls.Image AvatarImage;
         
         /// <summary>
-        /// ChangePassword control.
+        /// AvatarFileUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink ChangePassword;
+        protected global::System.Web.UI.WebControls.FileUpload AvatarFileUpload;
         
         /// <summary>
-        /// ChangeAvatar control.
+        /// UploadAvatarButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink ChangeAvatar;
+        protected global::System.Web.UI.WebControls.Button UploadAvatarButton;
     }
 }

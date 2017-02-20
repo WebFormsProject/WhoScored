@@ -62,12 +62,6 @@
                 </div>
             </div>
             <div class="form-group">
-                <asp:Label runat="server" CssClass="col-md-2 control-label">Upload avatar</asp:Label>
-                <div class="col-md-10">
-                    <asp:FileUpload runat="server" />
-                </div>
-            </div>
-            <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
                 </div>
