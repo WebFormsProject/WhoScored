@@ -40,11 +40,8 @@ namespace WhoScored.WebFormsClient
             this.Bind<ILeagueService>().To<LeagueService>();
             this.Bind<ITeamService>().To<TeamService>();
             this.Bind<ITrollPhotoService>().To<TrollPhotoService>();
-<<<<<<< HEAD
-=======
             this.Bind<IUserService>().To<UserService>();
             this.Bind<ICountryService>().To<CountryService>();
->>>>>>> 81ecd8d239f0f5e78ce82c8ee137d11cd0ed9d3f
         }
     }
 }
