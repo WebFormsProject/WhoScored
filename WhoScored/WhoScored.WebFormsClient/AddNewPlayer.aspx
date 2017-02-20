@@ -45,10 +45,10 @@
                         </ItemTemplate>
                         <EditItemTemplate>
                            <asp:DropDownList runat="server" AutoPostBack="False" CssClass="player-selector">
-                               <asp:ListItem Text="Goalkeeper"></asp:ListItem>
-                               <asp:ListItem Text="Defender"></asp:ListItem>
-                               <asp:ListItem Text="Midfielder"></asp:ListItem>
-                               <asp:ListItem Text="Forward"></asp:ListItem>
+                               <asp:ListItem Text="Defender" Value="0"></asp:ListItem>
+                               <asp:ListItem Text="Midfielder" Value="1"></asp:ListItem>
+                               <asp:ListItem Text="Forward" Value="2"></asp:ListItem>
+                               <asp:ListItem Text="Goalkeeper" Value="3"></asp:ListItem>
                            </asp:DropDownList>
                         </EditItemTemplate>
                     </asp:TemplateField>
@@ -85,8 +85,9 @@
                             <asp:Label runat="server" Text="<%# Item.Country.Name %>"></asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:DropDownList runat="server" ID="SelectCountryDropdown" DataValueField="Name"
-                                AutoPostBack="False" SelectMethod="GetCountries" CssClass="player-selector" ItemType="WhoScored.Models.Models.Country">
+                            <asp:DropDownList runat="server" ID="SelectCountryDropdown" DataValueField="Name" 
+                                AutoPostBack="False" SelectMethod="GetCountries" CssClass="player-selector" 
+                                ItemType="WhoScored.Models.Models.Country">
                             </asp:DropDownList>
                         </EditItemTemplate>
                     </asp:TemplateField>
@@ -107,7 +108,7 @@
                             <asp:Label runat="server" Text="<%# Item.BirthDate %>"></asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox runat="server" TextMode="Date" />
+                            <asp:TextBox runat="server" TextMode="Date" ID="BirthDateTextBox" Text="<%#: BindItem.BirthDate %>"/>
                         </EditItemTemplate>
                     </asp:TemplateField>
                     
