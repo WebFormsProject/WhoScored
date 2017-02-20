@@ -9,5 +9,9 @@ namespace WhoScored.Services.Contracts
         FootballPlayer GetFootballPlayerById(int id);
 
         void UpdateFootballPlayer(FootballPlayer footballPlayer);
+
+        void AddFootballPlayer(FootballPlayer footballPlayer);
+
+        void DeleteFootballPlayer(FootballPlayer footballPlayer);
     }
 }

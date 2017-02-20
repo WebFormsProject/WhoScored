@@ -33,6 +33,7 @@ namespace WhoScored.MVP.Presenters
             this.View.OnGetAllCoutries += View_OnGetAllCoutries;
             this.View.OnGetAllTeams += View_OnGetAllTeams;
             this.View.OnUpdateFootballPlayer += View_OnUpdateFootballPlayer;
+            this.View.OnDeleteFootballPlayer += View_OnDeleteFootballPlayer;
         }
 
         private void View_OnUpdateFootballPlayer(object sender, IdEventArgs e)
@@ -52,6 +53,13 @@ namespace WhoScored.MVP.Presenters
             {
                 this.footballPlayerService.UpdateFootballPlayer(player);
             }
+        }
+
+        private void View_OnDeleteFootballPlayer(object sender, IdEventArgs e)
+        {
+            FootballPlayer player = this.footballPlayerService.GetFootballPlayerById(e.Id);
+
+            this.footballPlayerService.DeleteFootballPlayer(player);
         }
 
         private void View_OnGetAllTeams(object sender, EventArgs eventArgs)

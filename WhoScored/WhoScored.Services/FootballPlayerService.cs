@@ -41,5 +41,23 @@ namespace WhoScored.Services
                 this.unitOfWork.Commit();
             }
         }
+
+        public void AddFootballPlayer(FootballPlayer footballPlayer)
+        {
+            using (this.unitOfWork)
+            {
+                this.footballPlayerRepository.Add(footballPlayer);
+                this.unitOfWork.Commit();
+            }
+        }
+
+        public void DeleteFootballPlayer(FootballPlayer footballPlayer)
+        {
+            using (this.unitOfWork)
+            {
+                this.footballPlayerRepository.Delete(footballPlayer);
+                this.unitOfWork.Commit();
+            }
+        }
     }
 }

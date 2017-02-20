@@ -16,6 +16,10 @@ namespace WhoScored.MVP.Views
 
         event EventHandler<IdEventArgs> OnUpdateFootballPlayer;
 
+        event EventHandler<IdEventArgs> OnDeleteFootballPlayer;
+
+        event EventHandler<IdEventArgs> OnAddFootballPlayer;
+
         ModelStateDictionary ModelState { get; }
 
         bool TryUpdateModel<TModel>(TModel model) where TModel : class;

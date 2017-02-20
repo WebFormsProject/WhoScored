@@ -8,28 +8,39 @@
             <asp:GridView runat="server" SelectMethod="GetFootballPlayers" AutoGenerateColumns="False"
                 ItemType="WhoScored.Models.Models.FootballPlayer"
                 CellPadding="2" BorderStyle="Solid" BorderColor="#263238" Font-Size="11" DataKeyNames="Id"
-                AllowSorting="True"
-                UpdateMethod="UpdateFootballPlayer">
+                AllowSorting="True" ShowFooter="true"
+                UpdateMethod="UpdateFootballPlayer"
+                DeleteMethod="DeleteFootballPlayer"
+                InsertMethod="InsertFootballPlayer" InsertItemPosition="LastItem" AutoGenerateInsertButton="True">
                 <HeaderStyle ForeColor="White" BackColor="#263238"></HeaderStyle>
                 <AlternatingRowStyle BackColor="#efebe9"></AlternatingRowStyle>
+              
                 <Columns>
-                     <asp:TemplateField HeaderText="Image">
+                    <asp:TemplateField HeaderText="Image">
                         <ItemTemplate>
-                            <asp:Image runat="server" ImageUrl="<%# Item.ImagePath %>" Width="50" CssClass="circle"/>
+                            <asp:Image runat="server" ImageUrl="<%# Item.ImagePath %>" Width="50" CssClass="circle" />
                         </ItemTemplate>
                         <EditItemTemplate>
                             <asp:FileUpload runat="server" />
                         </EditItemTemplate>
+                        <InsertItemTemplate>
+                            <asp:FileUpload runat="server" />
+                        </InsertItemTemplate>
                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="First name" SortExpression="FirstName">
                         <ItemTemplate>
-                            <asp:Label runat="server" Text="<%# Item.FirstName %>"></asp:Label>
+                            <asp:HyperLink runat="server" NavigateUrl='<%# string.Format("~/Player?id={0}", Item.Id) %>'
+                                Text="<%# Item.FirstName %>"></asp:HyperLink>
                         </ItemTemplate>
                         <EditItemTemplate>
                             <asp:TextBox runat="server" ID="FirstNameTextbox" Text='<%#: BindItem.FirstName %>' />
                         </EditItemTemplate>
+                        <InsertItemTemplate>
+                            <asp:TextBox runat="server" ID="FirstNameTextbox" Text='<%#: BindItem.FirstName %>' />
+                        </InsertItemTemplate>
                     </asp:TemplateField>
+
                     <asp:TemplateField HeaderText="Last name">
                         <ItemTemplate>
                             <asp:Label runat="server" Text="<%# Item.LastName %>"></asp:Label>
@@ -37,20 +48,20 @@
                         <EditItemTemplate>
                             <asp:TextBox runat="server" ID="LastNameTextbox" Text='<%#: BindItem.LastName %>' />
                         </EditItemTemplate>
+                        <InsertItemTemplate>
+                            <asp:TextBox runat="server" ID="LastNameTextbox" Text='<%#: BindItem.LastName %>' />
+
+                        </InsertItemTemplate>
                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="Position">
                         <ItemTemplate>
                             <asp:Label runat="server" Text="<%# Item.Position %>"></asp:Label>
                         </ItemTemplate>
-                        <EditItemTemplate>
-                           <asp:DropDownList runat="server" AutoPostBack="False" CssClass="player-selector">
-                               <asp:ListItem Text="Defender" Value="0"></asp:ListItem>
-                               <asp:ListItem Text="Midfielder" Value="1"></asp:ListItem>
-                               <asp:ListItem Text="Forward" Value="2"></asp:ListItem>
-                               <asp:ListItem Text="Goalkeeper" Value="3"></asp:ListItem>
-                           </asp:DropDownList>
-                        </EditItemTemplate>
+                        <InsertItemTemplate>
+                            <asp:Label runat="server" Text="<%# Item.Position %>"></asp:Label>
+
+                        </InsertItemTemplate>
                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="Number">
@@ -60,6 +71,10 @@
                         <EditItemTemplate>
                             <asp:TextBox runat="server" ID="ShirtNumberTextbox" TextMode="Number" Text='<%#: BindItem.ShirtNumber %>' />
                         </EditItemTemplate>
+                        <InsertItemTemplate>
+                            <asp:TextBox runat="server" ID="ShirtNumberTextbox" TextMode="Number" Text='<%#: BindItem.ShirtNumber %>' />
+
+                        </InsertItemTemplate>
                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="Height">
@@ -69,6 +84,10 @@
                         <EditItemTemplate>
                             <asp:TextBox runat="server" ID="HeightTextbox" Text='<%#: BindItem.Height %>' />
                         </EditItemTemplate>
+                        <InsertItemTemplate>
+                            <asp:TextBox runat="server" ID="HeightTextbox" Text='<%#: BindItem.Height %>' />
+
+                        </InsertItemTemplate>
                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="Weight">
@@ -78,6 +97,10 @@
                         <EditItemTemplate>
                             <asp:TextBox runat="server" ID="WeightTextbox" TextMode="Number" Text='<%#: BindItem.Weight %>' />
                         </EditItemTemplate>
+                        <InsertItemTemplate>
+                            <asp:TextBox runat="server" ID="WeightTextbox" TextMode="Number" Text='<%#: BindItem.Weight %>' />
+
+                        </InsertItemTemplate>
                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="Country">
@@ -85,11 +108,21 @@
                             <asp:Label runat="server" Text="<%# Item.Country.Name %>"></asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:DropDownList runat="server" ID="SelectCountryDropdown" DataValueField="Name" 
-                                AutoPostBack="False" SelectMethod="GetCountries" CssClass="player-selector" 
-                                ItemType="WhoScored.Models.Models.Country">
+                            <asp:DropDownList runat="server" ID="SelectCountryDropdown" DataTextField="Name" DataValueField="Id"
+                                DataSource="<%# GetCountries() %>"
+                                AutoPostBack="False" CssClass="player-selector"
+                                ItemType="WhoScored.Models.Models.Country"
+                                SelectedValue='<%# Bind("CountryId") %>'>
                             </asp:DropDownList>
                         </EditItemTemplate>
+                        <InsertItemTemplate>
+                            <asp:DropDownList runat="server" ID="SelectCountryDropdown" DataTextField="Name" DataValueField="Id"
+                                DataSource="<%# GetCountries() %>"
+                                AutoPostBack="False" CssClass="player-selector"
+                                ItemType="WhoScored.Models.Models.Country"
+                                SelectedValue='<%# Bind("CountryId") %>'>
+                            </asp:DropDownList>
+                        </InsertItemTemplate>
                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="Team">
@@ -97,10 +130,19 @@
                             <asp:Label runat="server" Text="<%# Item.CurrentTeam.Name %>"></asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:DropDownList runat="server" ID="SelectCurrentTeamDropdown" ItemType="WhoScored.Models.Models.Team" DataValueField="Name"
-                                AutoPostBack="False" SelectMethod="GetTeams" CssClass="player-selector">
+                            <asp:DropDownList runat="server" ID="SelectCurrentTeamDropdown" DataSource="<%# GetTeams() %>"
+                                ItemType="WhoScored.Models.Models.Team" DataTextField="Name" DataValueField="Id"
+                                SelectedValue='<%# Bind("CurrentTeamId") %>'
+                                AutoPostBack="False" CssClass="player-selector">
                             </asp:DropDownList>
                         </EditItemTemplate>
+                        <InsertItemTemplate>
+                            <asp:DropDownList runat="server" ID="SelectCurrentTeamDropdown" DataSource="<%# GetTeams() %>"
+                                ItemType="WhoScored.Models.Models.Team" DataTextField="Name" DataValueField="Id"
+                                SelectedValue='<%# Bind("CurrentTeamId") %>'
+                                AutoPostBack="False" CssClass="player-selector">
+                            </asp:DropDownList>
+                        </InsertItemTemplate>
                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="Birth date">
@@ -108,10 +150,13 @@
                             <asp:Label runat="server" Text="<%# Item.BirthDate %>"></asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox runat="server" TextMode="Date" ID="BirthDateTextBox" Text="<%#: BindItem.BirthDate %>"/>
+                            <asp:TextBox runat="server" TextMode="Date" ID="BirthDateTextBox" Text="<%#: BindItem.BirthDate %>" />
                         </EditItemTemplate>
+                        <InsertItemTemplate>
+                            <asp:TextBox runat="server" TextMode="Date" ID="BirthDateTextBox" Text="<%#: BindItem.BirthDate %>" />
+                        </InsertItemTemplate>
                     </asp:TemplateField>
-                    
+
                     <asp:TemplateField>
                         <ItemTemplate>
                             <asp:Button ID="btnEdit" runat="server" CommandName="Edit" Text="Edit" CssClass="btn btn-xs blue-grey" />
@@ -121,6 +166,13 @@
                             <asp:Button ID="btnUpdate" runat="server" CommandName="Update" Text="Update" CssClass="btn btn-xs blue-grey" />
                             <asp:Button ID="btnCancel" runat="server" CommandName="Cancel" Text="Cancel" CssClass="btn btn-xs red" />
                         </EditItemTemplate>
+                        <InsertItemTemplate>
+                            <asp:Button ID="btnUpdate" runat="server" CommandName="Update" Text="Insert" CssClass="btn btn-xs blue-grey" />
+                            <asp:Button ID="btnCancel" runat="server" CommandName="Cancel" Text="Cancel" CssClass="btn btn-xs red" />
+                        </InsertItemTemplate>
+                        <FooterTemplate>
+                            <asp:Button ID="lbInsert" runat="server" CommandName="Insert" Text="Insert"></asp:Button>
+                        </FooterTemplate>
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
