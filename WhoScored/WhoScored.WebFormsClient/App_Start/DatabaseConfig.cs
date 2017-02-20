@@ -2,7 +2,7 @@
 using WhoScored.Data;
 using WhoScored.Data.Contracts;
 
-namespace WhoScored.WebFormsClient.App_Start
+namespace WhoScored.WebFormsClient
 {
     public class DatabaseConfig
     {

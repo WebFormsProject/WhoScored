@@ -7,7 +7,7 @@ using WhoScored.MVP.Presenters.Auth;
 using WhoScored.Services;
 using WhoScored.Services.Contracts;
 
-namespace WhoScored.WebFormsClient.App_Start
+namespace WhoScored.WebFormsClient
 {
     public class WhoScoredNinjectModule : NinjectModule
     {
@@ -29,10 +29,16 @@ namespace WhoScored.WebFormsClient.App_Start
             this.Bind<TeamPresenter>().ToSelf();
             this.Bind<ScoresPresenter>().ToSelf();
             this.Bind<FootballPlayerPresenter>().ToSelf();
+            this.Bind<AddFootballPlayerPresenter>().ToSelf();
 
             this.Bind<IGameService>().To<GameService>();
             this.Bind<IFootballPlayerService>().To<FootballPlayerService>();
             this.Bind<IUserAvatarService>().To<UserAvatarService>();
+            this.Bind<ILeagueTableService>().To<LeagueTableService>();
+            this.Bind<ILeagueService>().To<LeagueService>();
+            this.Bind<ITeamService>().To<TeamService>();
+            this.Bind<ITrollPhotoService>().To<TrollPhotoService>();
+            this.Bind<IUserService>().To<UserService>();
         }
     }
 }

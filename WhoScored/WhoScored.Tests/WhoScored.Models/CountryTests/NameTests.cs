@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using WhoScored.Models;
+using WhoScored.Models.Models;
 
 namespace WhoScored.Tests.WhoScored.Models.CountryTests
 {

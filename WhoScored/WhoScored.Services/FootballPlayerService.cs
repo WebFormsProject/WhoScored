@@ -12,17 +12,24 @@ namespace WhoScored.Services
 {
     public class FootballPlayerService : IFootballPlayerService
     {
-        private readonly IWhoScoredRepository<FootballPlayer> footballPlayeRepository;
+        private readonly IWhoScoredRepository<FootballPlayer> footballPlayerRepository;
 
-        public FootballPlayerService(IWhoScoredRepository<FootballPlayer> footballPlayeRepository)
+        public FootballPlayerService(IWhoScoredRepository<FootballPlayer> footballPlayerRepository)
         {
-            Guard.WhenArgument(footballPlayeRepository, "footballPlayeRepository").IsNull().Throw();
-            this.footballPlayeRepository = footballPlayeRepository;
+            Guard.WhenArgument(footballPlayerRepository, "footballPlayerRepository").IsNull().Throw();
+            this.footballPlayerRepository = footballPlayerRepository;
+        }
+
+        public IEnumerable<FootballPlayer> GetAllFootballPlayers()
+        {
+            IEnumerable<FootballPlayer> players = this.footballPlayerRepository.GetAll();
+
+            return players;
         }
 
         public FootballPlayer GetFootballPlayerById(int id)
         {
-            FootballPlayer foundPlayer = this.footballPlayeRepository.GetById(id);
+            FootballPlayer foundPlayer = this.footballPlayerRepository.GetById(id);
 
             return foundPlayer;
         }
