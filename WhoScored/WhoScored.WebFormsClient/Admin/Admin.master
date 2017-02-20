@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Public.Master" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="WhoScored.WebFormsClient.Admin.Admin" %>
+
+<%--<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+</asp:Content>--%>
+<asp:Content ContentPlaceHolderID="MainContent"
+    ID="ContentPage" runat="server">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li><a href="AdminHome">Admin Home Page</a></li>
+                    <li><a href="AddNewPlayer">Manage Players</a></li>
+                    <li><a href="#">Manage Leagues</a></li>
+                    <li><a href="#">Manage Tables</a></li>
+                    <li><a href="#">Manage Teams</a></li>
+                    <li><a href="#">Manage Users</a></li>
+                </ul>
+                <ul class="nav nav-sidebar">
+                    <li><a href="">Add Game</a></li>
+                    <li><a href="">Add news</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolderAdminArea" runat="server" />
+            </div>
+        </div>
+    </div>
+
+    <%--  <aside class="admin-sidebar">
+        <ul>
+            <li><a href="AdminHome.aspx">Home</a></li>
+            <li><a href="ManageUsers.aspx">User Management</a></li>
+            <li><a href="ManageCourses.aspx">Course Management</a></li>
+            <li><a href="ManageHomework.aspx">Homework Management</a></li>
+            <li><a href="ManageCalendar.aspx">Calendar Management</a></li>
+        </ul>
+    </aside>--%>
+</asp:Content>

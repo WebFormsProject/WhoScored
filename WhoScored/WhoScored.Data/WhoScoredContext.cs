@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using WhoScored.Data.Contracts;
 using WhoScored.Models;
@@ -17,7 +18,7 @@ namespace WhoScored.Data
         public WhoScoredContext()
             : base("WhoScored")
         {
-           // Database.SetInitializer(new DropCreateDatabaseIfModelChanges<WhoScoredContext>());
+            // Database.SetInitializer(new DropCreateDatabaseIfModelChanges<WhoScoredContext>());
         }
 
         public IDbSet<Article> Articles { get; set; }
@@ -58,15 +59,7 @@ namespace WhoScored.Data
 
         public void InitializeDb()
         {
-            //this.Users.AddOrUpdate(
-            //    x => x.FirstName,
-            //    new User
-            //    {
-            //        FirstName = "admin",
-            //        LastName = "admin",
-            //        Email = "admin"
-            //    });
-
+            this.InitializeIdentity();
             //this.SeedCategories();
             //this.SaveChanges();
 
@@ -127,6 +120,43 @@ namespace WhoScored.Data
                m.MapRightKey("FootballPlayer_Id");
                m.ToTable("TeamsFootballPlayers");
            });
+        }
+
+        public void InitializeIdentity()
+        {
+            if (!this.Users.Any())
+            {
+                var roleStore = new RoleStore<IdentityRole>(this);
+                var roleManager = new RoleManager<IdentityRole>(roleStore);
+                var userStore = new UserStore<User>(this);
+                var userManager = new UserManager<User>(userStore);
+
+                // Add missing roles
+                var role = roleManager.FindByName("Admin");
+                if (role == null)
+                {
+                    role = new IdentityRole("Admin");
+                    roleManager.Create(role);
+                }
+
+                // Create test users
+                var user = userManager.FindByName("admin");
+                if (user == null)
+                {
+                    var newUser = new User()
+                    {
+                        UserName = "admin",
+                        FirstName = "Admin",
+                        LastName = "User",
+                        Email = "xxx@xxx.net",
+                        PhoneNumber = "123456"
+                    };
+
+                    userManager.Create(newUser, "unicorn");
+                    userManager.SetLockoutEnabled(newUser.Id, false);
+                    userManager.AddToRole(newUser.Id, "Admin");
+                }
+            }
         }
 
         private void MapGameTable(DbModelBuilder modelBuilder)
