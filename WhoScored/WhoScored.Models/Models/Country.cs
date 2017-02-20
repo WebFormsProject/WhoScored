@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WhoScored.Models
+namespace WhoScored.Models.Models
 {
     public class Country
     {

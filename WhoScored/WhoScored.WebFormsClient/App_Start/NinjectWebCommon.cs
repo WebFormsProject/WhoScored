@@ -1,18 +1,16 @@
+using System;
+using System.Web;
+using Microsoft.Web.Infrastructure.DynamicModuleHelper;
+using Ninject;
+using Ninject.Web.Common;
 using WebFormsMvp.Binder;
+using WhoScored.WebFormsClient;
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(WhoScored.WebFormsClient.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(WhoScored.WebFormsClient.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(NinjectWebCommon), "Stop")]
 
-namespace WhoScored.WebFormsClient.App_Start
+namespace WhoScored.WebFormsClient
 {
-    using System;
-    using System.Web;
-
-    using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
-    using Ninject;
-    using Ninject.Web.Common;
-
     public static class NinjectWebCommon 
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();

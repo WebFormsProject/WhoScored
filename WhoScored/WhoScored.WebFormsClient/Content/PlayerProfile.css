@@ -5,9 +5,22 @@
 }
 
 .player-info-panel {
-    border: 1px solid #efebe9 ;
+    border: 1px solid #efebe9;
 }
 
-.player-info-panel > th {
-    margin-left: 5px;
+    .player-info-panel > th {
+        margin-left: 5px;
+    }
+
+.player-selector {
+    display: block;
 }
+
+.custom-add-panel {
+        padding: 40px;
+}
+
+.custom-add-panel span{
+    font-size: large;
+}
+

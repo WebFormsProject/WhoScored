@@ -1,11 +1,11 @@
-﻿[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(WhoScored.WebFormsClient.App_Start.NinjectWeb), "Start")]
+﻿using Microsoft.Web.Infrastructure.DynamicModuleHelper;
+using Ninject.Web;
+using WhoScored.WebFormsClient;
 
-namespace WhoScored.WebFormsClient.App_Start
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NinjectWeb), "Start")]
+
+namespace WhoScored.WebFormsClient
 {
-    using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
-    using Ninject.Web;
-
     public static class NinjectWeb
     {
         /// <summary>

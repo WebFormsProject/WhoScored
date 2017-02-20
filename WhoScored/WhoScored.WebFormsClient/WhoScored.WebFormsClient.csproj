@@ -237,6 +237,7 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
+    <Content Include="AddNewPlayer.aspx" />
     <Content Include="animations\ajax-loader.gif" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -405,6 +406,13 @@
     </Compile>
     <Compile Include="Account\ResetPassword.aspx.designer.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewPlayer.aspx.cs">
+      <DependentUpon>AddNewPlayer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddNewPlayer.aspx.designer.cs">
+      <DependentUpon>AddNewPlayer.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\DatabaseConfig.cs" />
