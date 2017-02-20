@@ -9,14 +9,14 @@ namespace WhoScored.Services
     public class FootballPlayerService : IFootballPlayerService
     {
         private readonly IWhoScoredRepository<FootballPlayer> footballPlayerRepository;
-        private readonly IWhoScoredContext context;
+        private readonly IUnitOfWork unitOfWork;
 
-        public FootballPlayerService(IWhoScoredRepository<FootballPlayer> footballPlayerRepository, IWhoScoredContext context)
+        public FootballPlayerService(IWhoScoredRepository<FootballPlayer> footballPlayerRepository, IUnitOfWork unitOfWork)
         {
             Guard.WhenArgument(footballPlayerRepository, "footballPlayerRepository").IsNull().Throw();
-            Guard.WhenArgument(context, "context").IsNull().Throw();
+            Guard.WhenArgument(unitOfWork, "unitOfWork").IsNull().Throw();
             this.footballPlayerRepository = footballPlayerRepository;
-            this.context = context;
+            this.unitOfWork = unitOfWork;
         }
 
         public IEnumerable<FootballPlayer> GetAllFootballPlayers()
@@ -35,8 +35,11 @@ namespace WhoScored.Services
 
         public void UpdateFootballPlayer(FootballPlayer footballPlayer)
         {
-            this.footballPlayerRepository.Update(footballPlayer);
-            context.SaveChanges();
+            using (this.unitOfWork)
+            {
+                this.footballPlayerRepository.Update(footballPlayer);
+                this.unitOfWork.Commit();
+            }
         }
     }
 }

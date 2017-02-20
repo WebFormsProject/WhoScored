@@ -16,6 +16,8 @@ namespace WhoScored.WebFormsClient
             this.Bind<IWhoScoredContext>().To<WhoScoredContext>().InRequestScope();
             this.Bind(typeof(IWhoScoredRepository<>)).To(typeof(WhoScoredRepository<>));
 
+            this.Bind<IUnitOfWork>().To<WhoScoredUnitOfWork>();
+
             this.Bind<RegisterPresenter>().ToSelf();
             this.Bind<LoginPresenter>().ToSelf();
             this.Bind<ManageAccountPresenter>().ToSelf();
@@ -39,7 +41,7 @@ namespace WhoScored.WebFormsClient
             this.Bind<ITeamService>().To<TeamService>();
             this.Bind<ITrollPhotoService>().To<TrollPhotoService>();
             this.Bind<IUserService>().To<UserService>();
-            this.Bind<ICountryService>().To<CountryService>()
+            this.Bind<ICountryService>().To<CountryService>();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Public.Master" CodeBehind="AddNewPlayer.aspx.cs" Inherits="WhoScored.WebFormsClient.AddNewPlayer" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Public.Master" EnableEventValidation="false"
+    CodeBehind="AddNewPlayer.aspx.cs" Inherits="WhoScored.WebFormsClient.AddNewPlayer" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row player-container">
@@ -26,7 +27,7 @@
                             <asp:Label runat="server" Text="<%# Item.FirstName %>"></asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox runat="server" Text='<%# Item.FirstName %>' />
+                            <asp:TextBox runat="server" ID="FirstNameTextbox" Text='<%#: BindItem.FirstName %>' />
                         </EditItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Last name">
@@ -34,7 +35,7 @@
                             <asp:Label runat="server" Text="<%# Item.LastName %>"></asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox runat="server" Text='<%# Item.LastName %>' />
+                            <asp:TextBox runat="server" ID="LastNameTextbox" Text='<%#: BindItem.LastName %>' />
                         </EditItemTemplate>
                     </asp:TemplateField>
 
@@ -57,7 +58,7 @@
                             <asp:Label runat="server" Text="<%# Item.ShirtNumber %>"></asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox runat="server" TextMode="Number" Text='<%# Item.ShirtNumber %>' />
+                            <asp:TextBox runat="server" ID="ShirtNumberTextbox" TextMode="Number" Text='<%#: BindItem.ShirtNumber %>' />
                         </EditItemTemplate>
                     </asp:TemplateField>
 
@@ -66,7 +67,7 @@
                             <asp:Label runat="server" Text="<%# Item.Height %>"></asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox runat="server" Text='<%# Item.Height %>' />
+                            <asp:TextBox runat="server" ID="HeightTextbox" Text='<%#: BindItem.Height %>' />
                         </EditItemTemplate>
                     </asp:TemplateField>
 
@@ -75,7 +76,7 @@
                             <asp:Label runat="server" Text="<%# Item.Weight %>"></asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox runat="server" TextMode="Number" Text='<%# Item.Weight %>' />
+                            <asp:TextBox runat="server" ID="WeightTextbox" TextMode="Number" Text='<%#: BindItem.Weight %>' />
                         </EditItemTemplate>
                     </asp:TemplateField>
 
