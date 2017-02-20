@@ -1,19 +1,28 @@
 ﻿<%@ Page Title="Manage Avatar" Language="C#" MasterPageFile="~/Public.Master" AutoEventWireup="true" CodeBehind="ManageAvatar.aspx.cs" Inherits="WhoScored.WebFormsClient.Account.ManageAvatar" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
     <div>
         <asp:PlaceHolder runat="server" ID="successMessage" Visible="false" ViewStateMode="Disabled">
             <p class="text-success"><%: SuccessMessage %></p>
         </asp:PlaceHolder>
     </div>
-    <div class="form-horizontal">
+    <div class="container text-center">
+        <h2><%: Title %></h2>
         <asp:UpdatePanel runat="server">
             <ContentTemplate>
-                <div class="form-group text-center">
-                    <asp:Label AssociatedControlID="AvatarFileUpload" runat="server" CssClass="label label-warning">Upload avatar</asp:Label>
-                    <asp:FileUpload ID="AvatarFileUpload" runat="server" AllowMultiple="false" BackColor="Transparent" />
-                    <asp:Button ID="UploadAvatarButton" runat="server" OnClick="UploadAvatarButton_Click" Text="Upload" CssClass="btn btn-warning" />
+                <div class="row">
+                    <div class="card teal lighten-4">
+                        <div class="card-content white-text">
+                            <span class="card-title">Choose a new profile photo
+                                <asp:FileUpload ID="AvatarFileUpload" runat="server" AllowMultiple="false" />
+                            </span>
+                        </div>
+                        <div class="card-action">
+                            <asp:Button ID="UploadAvatarButton" runat="server" OnClick="UploadAvatarButton_Click" Text="Upload" CssClass="waves-effect waves-light btn grey darken-1" />
+                        </div>
+                    </div>
+                </div>
+                <div>
                 </div>
             </ContentTemplate>
             <Triggers>

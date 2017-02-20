@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Web;
+using System.IO;
 using System.Linq;
 using WhoScored.MVP.Identity;
 using WebFormsMvp.Web;
@@ -17,13 +19,38 @@ namespace WhoScored.WebFormsClient.Account
 
         protected void CreateUser_Click(object sender, EventArgs e)
         {
-            this.Registering?.Invoke(this, new RegisterEventArgs(
+            if (this.AvatarFileUpload.HasFile)
+            {
+                string username = this.Username.Text;
+                HttpPostedFile postedFile = this.AvatarFileUpload.PostedFile;
+                HttpPostedFileBase fileBase = new HttpPostedFileWrapper(postedFile);
+
+                string extension = Path.GetExtension(postedFile.FileName);
+                string filename = username + extension;
+                string avatarFilePath = "/photos/Avatars/" + filename;
+                string storageLocation = Server.MapPath($"~{avatarFilePath}");
+
+                this.Registering?.Invoke(this, new RegisterEventArgs(
+                this.Context,
+                this.Username.Text,
+                this.Password.Text,
+                this.Email.Text,
+                this.FirstName.Text,
+                this.LastName.Text,
+                fileBase,
+                avatarFilePath,
+                storageLocation));
+            }
+            else
+            {
+                this.Registering?.Invoke(this, new RegisterEventArgs(
                 this.Context,
                 this.Username.Text,
                 this.Password.Text,
                 this.Email.Text,
                 this.FirstName.Text,
                 this.LastName.Text));
+            }
 
             if (this.Model.IdentityResult.Succeeded)
             {

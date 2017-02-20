@@ -6,7 +6,16 @@ namespace WhoScored.MVP.Models.CustomEventArgs
 {
     public class RegisterEventArgs : EventArgs
     {
-        public RegisterEventArgs(HttpContext httpContext, string username, string password, string email, string firstName, string lastName)
+        public RegisterEventArgs(
+            HttpContext httpContext, 
+            string username, 
+            string password, 
+            string email, 
+            string firstName, 
+            string lastName, 
+            HttpPostedFileBase avatarFileBase = null, 
+            string avatarFilePath = null, 
+            string avatarStorageLocation = null)
         {
             Guard.WhenArgument(httpContext, "httpContext").IsNull().Throw();
             Guard.WhenArgument(username, "username").IsNull().Throw();
@@ -21,6 +30,9 @@ namespace WhoScored.MVP.Models.CustomEventArgs
             this.Email = email;
             this.FirstName = firstName;
             this.LastName = lastName;
+            this.AvatarFileBase = avatarFileBase;
+            this.AvatarFilePath = avatarFilePath;
+            this.AvatarStorageLocation = avatarStorageLocation;
         }
 
         public HttpContext HttpContext { get; set; }
@@ -34,5 +46,11 @@ namespace WhoScored.MVP.Models.CustomEventArgs
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
+
+        public HttpPostedFileBase AvatarFileBase { get; set; }
+
+        public string AvatarFilePath { get; set; }
+
+        public string AvatarStorageLocation { get; set; }
     }
 }
