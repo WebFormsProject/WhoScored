@@ -39,6 +39,7 @@ namespace WhoScored.WebFormsClient
             this.Bind<ITeamService>().To<TeamService>();
             this.Bind<ITrollPhotoService>().To<TrollPhotoService>();
             this.Bind<IUserService>().To<UserService>();
+            this.Bind<ICountryService>().To<CountryService>()
         }
     }
 }
