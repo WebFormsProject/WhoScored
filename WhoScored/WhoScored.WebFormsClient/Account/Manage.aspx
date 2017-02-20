@@ -17,7 +17,13 @@
                 <dl class="dl-horizontal">
                     <dt>Password:</dt>
                     <dd>
-                        <asp:HyperLink NavigateUrl="/Account/ManagePassword" Text="Change" Visible="false" ID="ChangePassword" runat="server" />
+                        <asp:HyperLink NavigateUrl="/account/managePassword" Text="Change" Visible="false" ID="ChangePassword" runat="server" />
+                    </dd>
+                </dl>
+                <dl class="dl-horizontal">
+                    <dt>Profile picture:</dt>
+                    <dd>
+                        <asp:HyperLink NavigateUrl="/account/manageAvatar" Text="Change" Visible="true" ID="ChangeAvatar" runat="server" />
                     </dd>
                 </dl>
             </div>
