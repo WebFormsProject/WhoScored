@@ -151,11 +151,8 @@
     <Compile Include="Views\Auth\IManageAccountView.cs" />
     <Compile Include="Views\Auth\IManagePasswordView.cs" />
     <Compile Include="Views\Auth\IPasswordChangeView.cs" />
-<<<<<<< HEAD
     <Compile Include="Views\IAddFootballPlayerView.cs" />
-=======
     <Compile Include="Views\Auth\IUserAvatarView.cs" />
->>>>>>> origin/master
     <Compile Include="Views\IFootballPlayerView.cs" />
     <Compile Include="Views\ILeaguesView.cs" />
     <Compile Include="Views\ILeagueTableView.cs" />
