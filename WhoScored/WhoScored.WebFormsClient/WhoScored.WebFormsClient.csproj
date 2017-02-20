@@ -238,8 +238,10 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
-    <Content Include="AddNewPlayer.aspx" />
+    <Content Include="Admin\AddNewPlayer.aspx" />
+    <Content Include="Admin\AdminHome.aspx" />
     <Content Include="animations\ajax-loader.gif" />
+    <Content Include="Content\admin.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -313,6 +315,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
+    <Content Include="Admin\Admin.master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Home.aspx" />
     <Content Include="Scores.aspx" />
@@ -415,12 +418,26 @@
     <Compile Include="Account\ResetPassword.aspx.designer.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AddNewPlayer.aspx.cs">
+    <Compile Include="Admin\AddNewPlayer.aspx.cs">
       <DependentUpon>AddNewPlayer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AddNewPlayer.aspx.designer.cs">
+    <Compile Include="Admin\AddNewPlayer.aspx.designer.cs">
       <DependentUpon>AddNewPlayer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.master.cs">
+      <DependentUpon>Admin.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.master.designer.cs">
+      <DependentUpon>Admin.master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\DatabaseConfig.cs" />

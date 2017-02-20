@@ -48,6 +48,27 @@
                         <li><a runat="server" href="~/leagues">Leagues</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <RoleGroups>
+                            <asp:RoleGroup Roles="Admin">
+                                <ContentTemplate>
+                                    <div class="nav navbar-nav navbar-right dropdown">
+                                        <button runat="server" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                                            Hello, <%: Context.User.Identity.GetUserName()  %> !
+                                    <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu profile-menu">
+                                            <li><a href="~/admin/AdminHome" runat="server">Admin page</a></li>
+                                            <li><a href="~/profile" runat="server">Your profile</a></li>
+                                            <li><a href="~/account/manage" runat="server">Manage your account</a></li>
+                                            <li class="divider"></li>
+                                            <li>
+                                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log out" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                        </RoleGroups>
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/account/register">Register</a></li>
@@ -56,7 +77,8 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <div class="nav navbar-nav navbar-right dropdown">
-                                <button runat="server" class="dropdown-toggle dropdown-link" data-toggle="dropdown">Hello, <%: Context.User.Identity.GetUserName()  %> !
+                                <button runat="server" class="dropdown-toggle dropdown-link" data-toggle="dropdown">
+                                    Hello, <%: Context.User.Identity.GetUserName()  %> !
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu profile-menu">
@@ -69,6 +91,7 @@
                                 </ul>
                             </div>
                         </LoggedInTemplate>
+
                     </asp:LoginView>
                 </div>
             </div>
