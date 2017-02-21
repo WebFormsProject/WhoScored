@@ -115,6 +115,12 @@
     <Compile Include="WhoScored.Models\ValidationConstants.cs" />
     <Compile Include="WhoScored.Services\CountryServiceTests\Constructor_Should.cs" />
     <Compile Include="WhoScored.Services\CountryServiceTests\GetAllCountries_Should.cs" />
+    <Compile Include="WhoScored.Services\LeaguesServiceTests\AddNewLeague_Should.cs" />
+    <Compile Include="WhoScored.Services\LeaguesServiceTests\Constructor_Should.cs" />
+    <Compile Include="WhoScored.Services\LeaguesServiceTests\DeleteLeague_Should.cs" />
+    <Compile Include="WhoScored.Services\LeaguesServiceTests\GetAll_Should.cs" />
+    <Compile Include="WhoScored.Services\LeaguesServiceTests\GetLeagueById_Should.cs" />
+    <Compile Include="WhoScored.Services\LeaguesServiceTests\UpdateLeague_Should.cs" />
     <Compile Include="WhoScored.Services\UserServiceTests\Constructor_Should.cs" />
     <Compile Include="WhoScored.Services\UserServiceTests\GetAvatarFilePath_Should.cs" />
     <Compile Include="WhoScored.Services\UserServiceTests\GetById_Should.cs" />
