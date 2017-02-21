@@ -13,84 +13,102 @@ namespace WhoScored.WebFormsClient {
     public partial class ManagePlayers {
         
         /// <summary>
-        /// TextBox3 control.
+        /// AvatarFileUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload TextBox3;
+        protected global::System.Web.UI.WebControls.FileUpload AvatarFileUpload;
         
         /// <summary>
-        /// FirstNameFooterTemplate control.
+        /// NewPlayerFirstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox FirstNameFooterTemplate;
+        protected global::System.Web.UI.WebControls.TextBox NewPlayerFirstName;
         
         /// <summary>
-        /// TextBox2 control.
+        /// NewPlayerLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox NewPlayerLastName;
         
         /// <summary>
-        /// ShirtNumberFooterTemplate control.
+        /// PositionDropdown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ShirtNumberFooterTemplate;
+        protected global::System.Web.UI.WebControls.DropDownList PositionDropdown;
         
         /// <summary>
-        /// TextBox1 control.
+        /// NewPlayerShirtNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox NewPlayerShirtNumber;
         
         /// <summary>
-        /// WeightFooterTemplate control.
+        /// NewPlayerHeight control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox WeightFooterTemplate;
+        protected global::System.Web.UI.WebControls.TextBox NewPlayerHeight;
         
         /// <summary>
-        /// SelectCountryDropdownFooterTemplate control.
+        /// NewPlayerWeight control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList SelectCountryDropdownFooterTemplate;
+        protected global::System.Web.UI.WebControls.TextBox NewPlayerWeight;
         
         /// <summary>
-        /// SelectCurrentTeamDropdownFooterTemplate control.
+        /// SelectCountryDropdownNewPlayer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList SelectCurrentTeamDropdownFooterTemplate;
+        protected global::System.Web.UI.WebControls.DropDownList SelectCountryDropdownNewPlayer;
         
         /// <summary>
-        /// BirthDateFooterTemplate control.
+        /// SelectCurrentTeamDropdownNewPlayer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox BirthDateFooterTemplate;
+        protected global::System.Web.UI.WebControls.DropDownList SelectCurrentTeamDropdownNewPlayer;
+        
+        /// <summary>
+        /// BirthDateNewPlayer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox BirthDateNewPlayer;
+        
+        /// <summary>
+        /// BtnInser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnInser;
     }
 }

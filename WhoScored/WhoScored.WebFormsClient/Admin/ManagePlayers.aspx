@@ -19,11 +19,8 @@
                         <asp:Image runat="server" ImageUrl="<%# Item.ImagePath %>" Width="50" CssClass="circle" />
                     </ItemTemplate>
                     <EditItemTemplate>
-                        <asp:FileUpload runat="server" />
+                        <asp:Image runat="server" ImageUrl="<%# Item.ImagePath %>" Width="50" CssClass="circle" />
                     </EditItemTemplate>
-                    <FooterTemplate>
-                        <asp:FileUpload runat="server" ID="ImageUpload" />
-                    </FooterTemplate>
                 </asp:TemplateField>
 
                 <asp:TemplateField HeaderText="First name" SortExpression="FirstName">
@@ -146,43 +143,50 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:FileUpload runat="server" ID="TextBox3" />
+                        <asp:FileUpload runat="server" ID="AvatarFileUpload" />
                     </td>
                     <td>
-                        <asp:TextBox runat="server" ID="FirstNameFooterTemplate" />
+                        <asp:TextBox runat="server" ID="NewPlayerFirstName" />
                     </td>
                     <td>
-                        <asp:TextBox runat="server" ID="TextBox2" />
+                        <asp:TextBox runat="server" ID="NewPlayerLastName" />
                     </td>
                     <td>
-                        <asp:Label runat="server"></asp:Label>
+                       <asp:DropDownList runat="server" ID="PositionDropdown" CssClass="player-selector">
+                           <asp:ListItem Text="Defender"></asp:ListItem>
+                           <asp:ListItem Text="Midfielder"></asp:ListItem>
+                           <asp:ListItem Text="Forward"></asp:ListItem>
+                           <asp:ListItem Text="Goalkeeper"></asp:ListItem>
+                           <asp:ListItem Text="Defender"></asp:ListItem>
+                       </asp:DropDownList>
                     </td>
                     <td>
-                        <asp:TextBox runat="server" ID="ShirtNumberFooterTemplate" TextMode="Number" />
+                        <asp:TextBox runat="server" ID="NewPlayerShirtNumber" TextMode="Number" />
                     </td>
 
                     <td>
-                        <asp:TextBox runat="server" ID="TextBox1" />
+                        <asp:TextBox runat="server" ID="NewPlayerHeight" />
                     </td>
                     <td>
-                        <asp:TextBox runat="server" ID="WeightFooterTemplate" TextMode="Number" />
+                        <asp:TextBox runat="server" ID="NewPlayerWeight" TextMode="Number" />
                     </td>
                     <td>
-                        <asp:DropDownList runat="server" ID="SelectCountryDropdownFooterTemplate" DataTextField="Name" DataValueField="Id"
+                        <asp:DropDownList runat="server" ID="SelectCountryDropdownNewPlayer" DataTextField="Name" DataValueField="Id"
                             DataSource="<%# GetCountries() %>"
                             AutoPostBack="False" CssClass="player-selector"
                             ItemType="WhoScored.Models.Models.Country" /></td>
                     <td>
-                        <asp:DropDownList runat="server" ID="SelectCurrentTeamDropdownFooterTemplate" DataSource="<%# GetTeams() %>"
+                        <asp:DropDownList runat="server" ID="SelectCurrentTeamDropdownNewPlayer" DataSource="<%# GetTeams() %>"
                             ItemType="WhoScored.Models.Models.Team" DataTextField="Name" DataValueField="Id"
                             AutoPostBack="False" CssClass="player-selector">
                         </asp:DropDownList></td>
 
                     <td>
-                        <asp:TextBox runat="server" TextMode="Date" ID="BirthDateFooterTemplate" />
+                        <asp:TextBox runat="server" TextMode="Date" ID="BirthDateNewPlayer" />
                     </td>
                 </tr>
             </table>
+            <asp:Button ID="BtnInser" runat="server" OnClick="CreateNewPlayer" Text="Insert" CssClass="btn btn-xs blue-grey" />
         </div>
     </div>
 </asp:Content>

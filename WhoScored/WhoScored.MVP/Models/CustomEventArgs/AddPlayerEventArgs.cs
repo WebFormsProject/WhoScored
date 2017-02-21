@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web;
 using WhoScored.Models.Models.Enums;
 
 namespace WhoScored.MVP.Models.CustomEventArgs
@@ -20,7 +21,7 @@ namespace WhoScored.MVP.Models.CustomEventArgs
             this.FirstName = firstName;
             this.LastName = lastName;
             this.ImagePath = imagePath;
-            this.Position = (PlayerPositionType)Enum.Parse(typeof (PlayerPositionType), position);
+            this.Position = (PlayerPositionType)Enum.Parse(typeof(PlayerPositionType), position);
             this.ShirtNumber = shirtNumber;
             this.Height = height;
             this.Weight = weight;

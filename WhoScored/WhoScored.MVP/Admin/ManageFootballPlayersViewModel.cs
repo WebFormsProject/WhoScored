@@ -9,6 +9,6 @@ namespace WhoScored.MVP.Admin
 
         public IEnumerable<Country> Countries { get; set; } 
 
-        public IEnumerable<Team> Teams { get; set; } 
+        public IEnumerable<Team> Teams { get; set; }
     }
 }

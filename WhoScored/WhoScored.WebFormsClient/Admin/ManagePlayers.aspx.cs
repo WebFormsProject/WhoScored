@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Web;
+using Microsoft.AspNet.Identity;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 using WhoScored.Models.Models;
@@ -24,7 +27,7 @@ namespace WhoScored.WebFormsClient
         {
             this.OnGetAllPlayers?.Invoke(this, null);
             return this.Model.FootballPlayers;
-        } 
+        }
 
         public IEnumerable<Country> GetCountries()
         {
@@ -51,6 +54,32 @@ namespace WhoScored.WebFormsClient
         public void InsertFootballPlayer()
         {
             // this.OnAddFootballPlayer?.Invoke(this, new AddPlayerEventArgs());
+        }
+
+        protected void CreateNewPlayer(object sender, EventArgs e)
+        {
+            string filePath = "";
+
+            if (this.AvatarFileUpload.HasFile)
+            {
+                string extension = Path.GetExtension(this.AvatarFileUpload.PostedFile.FileName);
+                filePath = "/photos/Players/" + this.NewPlayerFirstName.Text + this.NewPlayerLastName.Text + extension;
+                this.AvatarFileUpload.SaveAs(Server.MapPath(filePath));
+            }
+
+            string firstName = Server.HtmlEncode(this.NewPlayerFirstName.Text);
+            string lastName = Server.HtmlEncode(this.NewPlayerLastName.Text);
+            int shirtNumber = int.Parse(this.NewPlayerShirtNumber.Text);
+            int height = int.Parse(this.NewPlayerHeight.Text);
+            int weight = int.Parse(this.NewPlayerWeight.Text);
+            string position = this.PositionDropdown.SelectedValue;
+            int teamId = int.Parse(this.SelectCurrentTeamDropdownNewPlayer.SelectedValue);
+            int countryId = int.Parse(this.SelectCountryDropdownNewPlayer.SelectedValue);
+            DateTime birthDate = DateTime.Parse(this.BirthDateNewPlayer.Text);
+
+            this.OnAddFootballPlayer?.Invoke(this, new AddPlayerEventArgs(
+                firstName, lastName, filePath, position,
+                height, weight, shirtNumber, countryId, teamId, birthDate));
         }
     }
 }
