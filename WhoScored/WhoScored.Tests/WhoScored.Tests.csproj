@@ -109,9 +109,7 @@
     <Compile Include="WhoScored.Models\LeagueTests\CountryIdTests.cs" />
     <Compile Include="WhoScored.Models\LeagueTests\NameTests.cs" />
     <Compile Include="WhoScored.Models\TitleTests\TitleNameTests.cs" />
-    <Compile Include="WhoScored.Models\TrollPhotoTests\CategoryIdTests.cs" />
     <Compile Include="WhoScored.Models\TrollPhotoTests\PhotoPathTests.cs" />
-    <Compile Include="WhoScored.Models\TrollPhotoTests\UserIdTests.cs" />
     <Compile Include="WhoScored.Models\UserTests\FirstNameTests.cs" />
     <Compile Include="WhoScored.Models\UserTests\LastNameTests.cs" />
     <Compile Include="WhoScored.Models\ValidationConstants.cs" />
@@ -120,6 +118,7 @@
     <Compile Include="WhoScored.Services\UserServiceTests\Constructor_Should.cs" />
     <Compile Include="WhoScored.Services\UserServiceTests\GetAvatarFilePath_Should.cs" />
     <Compile Include="WhoScored.Services\UserServiceTests\GetById_Should.cs" />
+    <Compile Include="WhoScored.Services\UserServiceTests\UploadAvatar_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="WhoScored.Data\" />
