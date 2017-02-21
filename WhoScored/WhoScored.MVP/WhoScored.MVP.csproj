@@ -116,6 +116,7 @@
     <Compile Include="Models\Auth\PasswordChangeViewModel.cs" />
     <Compile Include="Models\Auth\RegisterViewModel.cs" />
     <Compile Include="Models\Auth\UserUploadPhotoViewModel.cs" />
+    <Compile Include="Models\CustomEventArgs\AddPlayerEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\GameNameEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\IdEventArgs.cs" />
     <Compile Include="Models\CustomEventArgs\LoginEventArgs.cs" />
