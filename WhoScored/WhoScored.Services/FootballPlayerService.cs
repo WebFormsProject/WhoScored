@@ -37,6 +37,8 @@ namespace WhoScored.Services
 
         public void UpdateFootballPlayer(FootballPlayer footballPlayer)
         {
+            Guard.WhenArgument(footballPlayer, "footballPlayer").IsNull().Throw();
+
             using (this.unitOfWork)
             {
                 this.footballPlayerRepository.Update(footballPlayer);
@@ -78,6 +80,8 @@ namespace WhoScored.Services
 
         public void DeleteFootballPlayer(FootballPlayer footballPlayer)
         {
+            Guard.WhenArgument(footballPlayer, "footballPlayer").IsNull().Throw();
+
             using (this.unitOfWork)
             {
                 this.footballPlayerRepository.Delete(footballPlayer);

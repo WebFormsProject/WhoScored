@@ -1,32 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.ModelBinding;
 using WebFormsMvp;
 using WebFormsMvp.Web;
 using WhoScored.Models.Models;
-using WhoScored.MVP.Models;
 using WhoScored.MVP.Models.CustomEventArgs;
 using WhoScored.MVP.Presenters;
-using WhoScored.MVP.Views;
-
-using System;
-using System.Web;
-using System.IO;
-using System.Linq;
-using WhoScored.MVP.Identity;
-using WebFormsMvp.Web;
-using WhoScored.MVP.Models.Auth;
-using WhoScored.MVP.Views.Auth;
-using WebFormsMvp;
-using WhoScored.MVP.Models.CustomEventArgs;
-using WhoScored.MVP.Presenters.Auth;
-
+using WhoScored.MVP.Admin;
 
 namespace WhoScored.WebFormsClient
 {
-    [PresenterBinding(typeof(AddFootballPlayerPresenter))]
-    public partial class ManagePlayers : MvpPage<AddFootballPlayerViewModel>, IAddFootballPlayerView
+    [PresenterBinding(typeof(ManageFootballPlayersPresenter))]
+    public partial class ManagePlayers : MvpPage<ManageFootballPlayersViewModel>, IManageFootballPlayersView
     {
         public event EventHandler OnGetAllPlayers;
         public event EventHandler OnGetAllCoutries;
