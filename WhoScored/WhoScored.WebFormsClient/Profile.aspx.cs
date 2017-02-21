@@ -34,9 +34,6 @@ namespace WhoScored.WebFormsClient
             {
                 this.UserAvatar.ImageUrl = DefaultAvatarPath;
             }
-
-            this.UserLabel.Text = $"{this.Model.User.FirstName} {this.Model.User.LastName}";
-            this.DataBind();
         }
 
         protected void UploadTrollPhotoButton_Click(object sender, EventArgs e)
