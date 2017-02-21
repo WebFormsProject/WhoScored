@@ -130,6 +130,9 @@
     <Compile Include="WhoScored.MVP\Admin\ManageLeaguesPresenterTests\View_OnGetAllCountries_Should.cs" />
     <Compile Include="WhoScored.MVP\Admin\ManageLeaguesPresenterTests\View_OnGetAllLeagues_Should.cs" />
     <Compile Include="WhoScored.MVP\Admin\ManageLeaguesPresenterTests\View_OnUpdateLeague_Presenter.cs" />
+    <Compile Include="WhoScored.MVP\Auth\UserAvatarPresenterTests\Constructor_Should.cs" />
+    <Compile Include="WhoScored.MVP\Auth\UserAvatarPresenterTests\View_GetAvatar_Should.cs" />
+    <Compile Include="WhoScored.MVP\Auth\UserAvatarPresenterTests\View_UploadAvatar_Should.cs" />
     <Compile Include="WhoScored.MVP\FootballPlayerPresenterTests\Constructor_Should.cs" />
     <Compile Include="WhoScored.MVP\FootballPlayerPresenterTests\View_OnGetFootballPlayerById_Should.cs" />
     <Compile Include="WhoScored.MVP\LeaguePresenterTests\Constructor_Should.cs" />
