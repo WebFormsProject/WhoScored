@@ -4,9 +4,9 @@ using WebFormsMvp;
 using WhoScored.MVP.Models;
 using WhoScored.MVP.Models.CustomEventArgs;
 
-namespace WhoScored.MVP.Views
+namespace WhoScored.MVP.Admin
 {
-    public interface IAddFootballPlayerView : IView<AddFootballPlayerViewModel>
+    public interface IManageFootballPlayersView : IView<ManageFootballPlayersViewModel>
     {
         event EventHandler OnGetAllPlayers;
 

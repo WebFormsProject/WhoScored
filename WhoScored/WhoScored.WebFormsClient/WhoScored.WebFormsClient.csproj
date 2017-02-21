@@ -352,7 +352,6 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Statistics.aspx" />
     <Content Include="Team.aspx" />
     <Content Include="TrollPhotos.aspx" />
     <Content Include="ViewSwitcher.ascx" />
@@ -517,13 +516,6 @@
       <DependentUpon>Scores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="Statistics.aspx.cs">
-      <DependentUpon>Statistics.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Statistics.aspx.designer.cs">
-      <DependentUpon>Statistics.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Team.aspx.cs">
       <DependentUpon>Team.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

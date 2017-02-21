@@ -17,7 +17,7 @@ namespace WhoScored.Tests.WhoScored.Services.CountryServiceTests
             var mockedCountryRepository = new Mock<IWhoScoredRepository<Country>>();
             ICountryService countryService = new CountryService(mockedCountryRepository.Object);
 
-            IEnumerable<Country> countries = new List<Country>();
+            IEnumerable<Country> countries = new List<Country>() { new Country() };
             mockedCountryRepository.Setup(x => x.GetAll()).Returns(countries);
 
             var actualCountries = countryService.GetAllCountries();
@@ -34,6 +34,17 @@ namespace WhoScored.Tests.WhoScored.Services.CountryServiceTests
             countryService.GetAllCountries();
             
             mockedCountryRepository.Verify(x=>x.GetAll(), Times.Once);
+        }
+
+        [Test]
+        public void ReturnEmptyCollection_WhenNoCountries()
+        {
+            var mockedCountryRepository = new Mock<IWhoScoredRepository<Country>>();
+            ICountryService countryService = new CountryService(mockedCountryRepository.Object);
+
+            var actualCountries = countryService.GetAllCountries();
+
+            Assert.IsEmpty(actualCountries);
         }
     }
 }

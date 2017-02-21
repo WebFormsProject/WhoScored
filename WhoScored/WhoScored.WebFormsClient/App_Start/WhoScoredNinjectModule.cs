@@ -25,14 +25,13 @@ namespace WhoScored.WebFormsClient
             this.Bind<ManagePasswordPresenter>().ToSelf();
             this.Bind<UserPresenter>().ToSelf();
             this.Bind<UserAvatarPresenter>().ToSelf();
-            this.Bind<StatisticsPresenter>().ToSelf();
             this.Bind<LeaguePresenter>().ToSelf();
             this.Bind<LeagueTablePresenter>().ToSelf();
             this.Bind<TrollPhotosPresenter>().ToSelf();
             this.Bind<TeamPresenter>().ToSelf();
             this.Bind<ScoresPresenter>().ToSelf();
             this.Bind<FootballPlayerPresenter>().ToSelf();
-            this.Bind<AddFootballPlayerPresenter>().ToSelf();
+            this.Bind<ManageFootballPlayersPresenter>().ToSelf();
             this.Bind<ManageLeaguePresenter>().ToSelf();
 
             this.Bind<IGameService>().To<GameService>();

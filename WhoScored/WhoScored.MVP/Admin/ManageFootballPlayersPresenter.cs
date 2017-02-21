@@ -2,20 +2,21 @@
 using Bytes2you.Validation;
 using WebFormsMvp;
 using WhoScored.Models.Models;
+using WhoScored.MVP.Admin;
 using WhoScored.MVP.Models.CustomEventArgs;
 using WhoScored.MVP.Views;
 using WhoScored.Services.Contracts;
 
 namespace WhoScored.MVP.Presenters
 {
-    public class AddFootballPlayerPresenter : Presenter<IAddFootballPlayerView>
+    public class ManageFootballPlayersPresenter : Presenter<IManageFootballPlayersView>
     {
         private readonly IFootballPlayerService footballPlayerService;
         private readonly ICountryService countryService;
         private readonly ITeamService teamService;
 
-        public AddFootballPlayerPresenter(
-            IAddFootballPlayerView view,
+        public ManageFootballPlayersPresenter(
+            IManageFootballPlayersView view,
             IFootballPlayerService footballPlayerService,
             ICountryService countryService,
             ITeamService teamService)

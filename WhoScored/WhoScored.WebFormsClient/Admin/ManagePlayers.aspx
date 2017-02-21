@@ -1,9 +1,8 @@
-﻿<%@ Page Language="C#"  Title="Manage Players" AutoEventWireup="true" MasterPageFile="~/Admin/Admin.Master" EnableEventValidation="false"
+﻿<%@ Page Language="C#" Title="Manage Players" AutoEventWireup="true" MasterPageFile="~/Admin/Admin.Master" EnableEventValidation="false"
     CodeBehind="ManagePlayers.aspx.cs" Inherits="WhoScored.WebFormsClient.ManagePlayers" %>
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderAdminArea" runat="server">
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <asp:TextBox runat="server" ID="random"></asp:TextBox>
         <h5>Football players</h5>
         <asp:GridView runat="server" SelectMethod="GetFootballPlayers" AutoGenerateColumns="False"
             ItemType="WhoScored.Models.Models.FootballPlayer"
@@ -23,7 +22,7 @@
                         <asp:FileUpload runat="server" />
                     </EditItemTemplate>
                     <FooterTemplate>
-                        <asp:FileUpload runat="server" ID="ImageUpload"/>
+                        <asp:FileUpload runat="server" ID="ImageUpload" />
                     </FooterTemplate>
                 </asp:TemplateField>
 
@@ -35,9 +34,6 @@
                     <EditItemTemplate>
                         <asp:TextBox runat="server" ID="FirstNameTextbox" Text='<%#: BindItem.FirstName %>' />
                     </EditItemTemplate>
-                    <FooterTemplate>
-                        <asp:TextBox runat="server" ID="FirstNameFooterTemplate" Text='<%#: BindItem.FirstName %>' />
-                    </FooterTemplate>
                 </asp:TemplateField>
 
                 <asp:TemplateField HeaderText="Last name">
@@ -47,9 +43,6 @@
                     <EditItemTemplate>
                         <asp:TextBox runat="server" ID="LastNameTextbox" Text='<%#: BindItem.LastName %>' />
                     </EditItemTemplate>
-                    <FooterTemplate>
-                        <asp:TextBox runat="server" ID="LastNameFooterTemplate" Text='<%#: BindItem.LastName %>' />
-                    </FooterTemplate>
                 </asp:TemplateField>
 
                 <asp:TemplateField HeaderText="Position">
@@ -68,10 +61,6 @@
                     <EditItemTemplate>
                         <asp:TextBox runat="server" ID="ShirtNumberTextbox" TextMode="Number" Text='<%#: BindItem.ShirtNumber %>' />
                     </EditItemTemplate>
-                    <FooterTemplate>
-                        <asp:TextBox runat="server" ID="ShirtNumberFooterTemplate" TextMode="Number" Text='<%#: BindItem.ShirtNumber %>' />
-
-                    </FooterTemplate>
                 </asp:TemplateField>
 
                 <asp:TemplateField HeaderText="Height">
@@ -81,10 +70,6 @@
                     <EditItemTemplate>
                         <asp:TextBox runat="server" ID="HeightTextbox" Text='<%#: BindItem.Height %>' />
                     </EditItemTemplate>
-                    <FooterTemplate>
-                        <asp:TextBox runat="server" ID="HeightFooterTemplate" Text='<%#: BindItem.Height %>' />
-
-                    </FooterTemplate>
                 </asp:TemplateField>
 
                 <asp:TemplateField HeaderText="Weight">
@@ -94,10 +79,6 @@
                     <EditItemTemplate>
                         <asp:TextBox runat="server" ID="WeightTextbox" TextMode="Number" Text='<%#: BindItem.Weight %>' />
                     </EditItemTemplate>
-                    <FooterTemplate>
-                        <asp:TextBox runat="server" ID="WeightFooterTemplate" TextMode="Number" Text='<%#: BindItem.Weight %>' />
-
-                    </FooterTemplate>
                 </asp:TemplateField>
 
                 <asp:TemplateField HeaderText="Country">
@@ -112,14 +93,6 @@
                             SelectedValue='<%# Bind("CountryId") %>'>
                         </asp:DropDownList>
                     </EditItemTemplate>
-                    <FooterTemplate>
-                        <asp:DropDownList runat="server" ID="SelectCountryDropdownFooterTemplate" DataTextField="Name" DataValueField="Id"
-                            DataSource="<%# GetCountries() %>"
-                            AutoPostBack="False" CssClass="player-selector"
-                            ItemType="WhoScored.Models.Models.Country"
-                            SelectedValue='<%# Bind("CountryId") %>'>
-                        </asp:DropDownList>
-                    </FooterTemplate>
                 </asp:TemplateField>
 
                 <asp:TemplateField HeaderText="Team">
@@ -133,13 +106,6 @@
                             AutoPostBack="False" CssClass="player-selector">
                         </asp:DropDownList>
                     </EditItemTemplate>
-                    <FooterTemplate>
-                        <asp:DropDownList runat="server" ID="SelectCurrentTeamDropdownFooterTemplate" DataSource="<%# GetTeams() %>"
-                            ItemType="WhoScored.Models.Models.Team" DataTextField="Name" DataValueField="Id"
-                            SelectedValue='<%# Bind("CurrentTeamId") %>'
-                            AutoPostBack="False" CssClass="player-selector">
-                        </asp:DropDownList>
-                    </FooterTemplate>
                 </asp:TemplateField>
 
                 <asp:TemplateField HeaderText="Birth date">
@@ -149,9 +115,6 @@
                     <EditItemTemplate>
                         <asp:TextBox runat="server" TextMode="Date" ID="BirthDateTextBox" Text="<%#: BindItem.BirthDate %>" />
                     </EditItemTemplate>
-                    <FooterTemplate>
-                        <asp:TextBox runat="server" TextMode="Date" ID="BirthDateFooterTemplate" Text="<%#: BindItem.BirthDate %>" />
-                    </FooterTemplate>
                 </asp:TemplateField>
 
                 <asp:TemplateField>
@@ -163,17 +126,64 @@
                         <asp:Button ID="btnUpdate" runat="server" CommandName="Update" Text="Update" CssClass="btn btn-xs blue-grey" />
                         <asp:Button ID="btnCancel" runat="server" CommandName="Cancel" Text="Cancel" CssClass="btn btn-xs red" />
                     </EditItemTemplate>
-               <%--     <InsertItemTemplate>
-                        <asp:Button ID="btnUpdate" runat="server" CommandName="Insert" Text="Insert" CssClass="btn btn-xs blue-grey" />
-                        <asp:Button ID="btnCancel" runat="server" CommandName="Cancel" Text="Cancel" CssClass="btn btn-xs red" />
-                    </InsertItemTemplate>--%>
-                    <FooterTemplate>
-                        <asp:Button ID="btnUpdate" runat="server" CommandName="Insert" Text="Insert" CssClass="btn btn-xs blue-grey" />
-                        <asp:Button ID="btnCancel" runat="server" CommandName="Cancel" Text="Cancel" CssClass="btn btn-xs red" />
-                    </FooterTemplate>
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
+        <div>
+            <h5>Add new player</h5>
+            <table>
+                <tr>
+                    <th>Image</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Position</th>
+                    <th>Shirt number</th>
+                    <th>Weight</th>
+                    <th>Height</th>
+                    <th>Country</th>
+                    <th>Team</th>
+                    <th>Birth date</th>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:FileUpload runat="server" ID="TextBox3" />
+                    </td>
+                    <td>
+                        <asp:TextBox runat="server" ID="FirstNameFooterTemplate" />
+                    </td>
+                    <td>
+                        <asp:TextBox runat="server" ID="TextBox2" />
+                    </td>
+                    <td>
+                        <asp:Label runat="server"></asp:Label>
+                    </td>
+                    <td>
+                        <asp:TextBox runat="server" ID="ShirtNumberFooterTemplate" TextMode="Number" />
+                    </td>
+
+                    <td>
+                        <asp:TextBox runat="server" ID="TextBox1" />
+                    </td>
+                    <td>
+                        <asp:TextBox runat="server" ID="WeightFooterTemplate" TextMode="Number" />
+                    </td>
+                    <td>
+                        <asp:DropDownList runat="server" ID="SelectCountryDropdownFooterTemplate" DataTextField="Name" DataValueField="Id"
+                            DataSource="<%# GetCountries() %>"
+                            AutoPostBack="False" CssClass="player-selector"
+                            ItemType="WhoScored.Models.Models.Country" /></td>
+                    <td>
+                        <asp:DropDownList runat="server" ID="SelectCurrentTeamDropdownFooterTemplate" DataSource="<%# GetTeams() %>"
+                            ItemType="WhoScored.Models.Models.Team" DataTextField="Name" DataValueField="Id"
+                            AutoPostBack="False" CssClass="player-selector">
+                        </asp:DropDownList></td>
+
+                    <td>
+                        <asp:TextBox runat="server" TextMode="Date" ID="BirthDateFooterTemplate" />
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </asp:Content>
 
