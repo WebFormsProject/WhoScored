@@ -109,13 +109,14 @@
     <Compile Include="WhoScored.Models\LeagueTests\CountryIdTests.cs" />
     <Compile Include="WhoScored.Models\LeagueTests\NameTests.cs" />
     <Compile Include="WhoScored.Models\TitleTests\TitleNameTests.cs" />
-    <Compile Include="WhoScored.Models\TrollPhotoTests\CategoryIdTests.cs" />
     <Compile Include="WhoScored.Models\TrollPhotoTests\PhotoPathTests.cs" />
-    <Compile Include="WhoScored.Models\TrollPhotoTests\UserIdTests.cs" />
     <Compile Include="WhoScored.Models\UserTests\FirstNameTests.cs" />
     <Compile Include="WhoScored.Models\UserTests\LastNameTests.cs" />
     <Compile Include="WhoScored.Models\ValidationConstants.cs" />
     <Compile Include="WhoScored.Services\CountryServiceTests\Constructor_Should.cs" />
+    <Compile Include="WhoScored.Services\LeaguesServiceTests\Constructor_Should.cs" />
+    <Compile Include="WhoScored.Services\LeaguesServiceTests\GetAll_Should.cs" />
+    <Compile Include="WhoScored.Services\LeaguesServiceTests\GetLeagueById_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="WhoScored.Data\" />
@@ -141,6 +142,10 @@
     <ProjectReference Include="..\WhoScored.Services\WhoScored.Services.csproj">
       <Project>{8381481d-97a5-49f2-a4f6-01c4599b22e5}</Project>
       <Name>WhoScored.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WhoScored.WebFormsClient\WhoScored.WebFormsClient.csproj">
+      <Project>{5776FD24-427D-4ED4-AC7F-E8FD2D9117AA}</Project>
+      <Name>WhoScored.WebFormsClient</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
