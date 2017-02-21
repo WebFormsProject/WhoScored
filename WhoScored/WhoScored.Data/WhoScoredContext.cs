@@ -59,7 +59,7 @@ namespace WhoScored.Data
 
         public void InitializeDb()
         {
-            this.InitializeIdentity();
+            //this.InitializeIdentity();
             //this.SeedCategories();
             //this.SaveChanges();
 
@@ -69,8 +69,8 @@ namespace WhoScored.Data
             //this.SeedCoaches();
             //this.SaveChanges();
 
-            //this.SeedTeams();
-            //this.SaveChanges();
+            ////this.SeedTeams();
+            ////this.SaveChanges();
 
             //this.SeedFootballPlayers();
             //this.SaveChanges();
