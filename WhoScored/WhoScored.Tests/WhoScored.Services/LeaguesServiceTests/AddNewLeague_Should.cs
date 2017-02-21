@@ -8,51 +8,43 @@ using WhoScored.Services.Contracts;
 namespace WhoScored.Tests.WhoScored.Services.LeaguesServiceTests
 {
     [TestFixture]
-    public class GetLeagueById_Should
+    public class AddNewLeague_Should
     {
         [Test]
-        public void ReturnCorrectLeague_WhenPassedIdIsValid()
+        public void CallRepositoryMethodOnce_WhenDataIsValid()
         {
             var repositoryMock = new Mock<IWhoScoredRepository<League>>();
             var unitOfWorkMock = new Mock<IUnitOfWork>();
-
-            League league = new League
-            {
-                Name = "Premier League",
-                CountryId = 2,
-                LeaugeLogo = "/photos/Leagues/premier-league.png"
-            };
-            repositoryMock.Setup(x => x.GetById(It.IsAny<int>())).Returns(league);
-
             ILeagueService leagueService = new LeagueService(repositoryMock.Object, unitOfWorkMock.Object);
-            League actualLeague = leagueService.GetLeagueById(It.IsAny<int>());
 
-            Assert.AreSame(league, actualLeague);
+            leagueService.AddNewLeague(It.IsAny<League>());
+
+            repositoryMock.Verify(x => x.Add(It.IsAny<League>()), Times.Once);
         }
 
         [Test]
-        public void ReturnNull_WhenPassedIdIsInvalid()
+        public void CallUnitOfWorkCommitMethodOnce()
         {
             var repositoryMock = new Mock<IWhoScoredRepository<League>>();
             var unitOfWorkMock = new Mock<IUnitOfWork>();
             ILeagueService leagueService = new LeagueService(repositoryMock.Object, unitOfWorkMock.Object);
 
-            int invalidLeagueId = 33;
-            League resultLeague = leagueService.GetLeagueById(invalidLeagueId);
+            leagueService.AddNewLeague(It.IsAny<League>());
 
-            Assert.IsNull(resultLeague);
+            unitOfWorkMock.Verify(x => x.Commit(), Times.Once);
         }
 
         [Test]
-        public void CallRepositoryMethodOnce_WhenPassedIdIsValid()
+        public void CallUnitOfWorkDisposeMethodOnce()
         {
             var repositoryMock = new Mock<IWhoScoredRepository<League>>();
             var unitOfWorkMock = new Mock<IUnitOfWork>();
             ILeagueService leagueService = new LeagueService(repositoryMock.Object, unitOfWorkMock.Object);
 
-            leagueService.GetLeagueById(It.IsAny<int>());
+            unitOfWorkMock.Setup(x => x.Dispose()).Verifiable();
+            leagueService.AddNewLeague(It.IsAny<League>());
 
-            repositoryMock.Verify(x => x.GetById(It.IsAny<int>()), Times.Once);
+            unitOfWorkMock.Verify(x => x.Dispose(), Times.Once);
         }
     }
 }
