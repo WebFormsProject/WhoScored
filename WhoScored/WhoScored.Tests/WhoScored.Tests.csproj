@@ -115,6 +115,12 @@
     <Compile Include="WhoScored.Models\ValidationConstants.cs" />
     <Compile Include="WhoScored.Services\CountryServiceTests\Constructor_Should.cs" />
     <Compile Include="WhoScored.Services\CountryServiceTests\GetAllCountries_Should.cs" />
+    <Compile Include="WhoScored.Services\FootballPlayerServiceTests\AddFootballPlayer_Should.cs" />
+    <Compile Include="WhoScored.Services\FootballPlayerServiceTests\Constructor_Should.cs" />
+    <Compile Include="WhoScored.Services\FootballPlayerServiceTests\DeleteFootballPlayer_Should.cs" />
+    <Compile Include="WhoScored.Services\FootballPlayerServiceTests\GetAllFootballPlayers_Should.cs" />
+    <Compile Include="WhoScored.Services\FootballPlayerServiceTests\GetFoorballPlayerById_Should.cs" />
+    <Compile Include="WhoScored.Services\FootballPlayerServiceTests\UpdateFootballPlayer_Should.cs" />
     <Compile Include="WhoScored.Services\LeaguesServiceTests\AddNewLeague_Should.cs" />
     <Compile Include="WhoScored.Services\LeaguesServiceTests\Constructor_Should.cs" />
     <Compile Include="WhoScored.Services\LeaguesServiceTests\DeleteLeague_Should.cs" />
@@ -126,6 +132,13 @@
     <Compile Include="WhoScored.Services\TeamServiceTests\Constructor_Should.cs" />
     <Compile Include="WhoScored.Services\TeamServiceTests\GetAll_Should.cs" />
     <Compile Include="WhoScored.Services\TeamServiceTests\GetTeamById_Shoud.cs" />
+    <Compile Include="WhoScored.Services\GameServiceTests\Constructor_Should.cs" />
+    <Compile Include="WhoScored.Services\GameServiceTests\GetGameById_Should.cs" />
+    <Compile Include="WhoScored.Services\GameServiceTests\GetGamesByLeague_Should.cs" />
+    <Compile Include="WhoScored.Services\TrollPhotoServiceTests\Constructor_Should.cs" />
+    <Compile Include="WhoScored.Services\TrollPhotoServiceTests\GetAllPaths_Should.cs" />
+    <Compile Include="WhoScored.Services\TrollPhotoServiceTests\GetAll_Should.cs" />
+    <Compile Include="WhoScored.Services\TrollPhotoServiceTests\UploadTrollPhoto_Should.cs" />
     <Compile Include="WhoScored.Services\UserServiceTests\Constructor_Should.cs" />
     <Compile Include="WhoScored.Services\UserServiceTests\GetAvatarFilePath_Should.cs" />
     <Compile Include="WhoScored.Services\UserServiceTests\GetById_Should.cs" />

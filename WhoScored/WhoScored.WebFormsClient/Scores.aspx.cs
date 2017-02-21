@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Services;
 using WebFormsMvp;
 using WebFormsMvp.Web;
@@ -26,7 +27,7 @@ namespace WhoScored.WebFormsClient
         {
             this.OnGetLeagues?.Invoke(this, null);
             var models = this.Model.Leagues;
-            return models;
+            return models.ToList();
         }
 
         public IEnumerable<Game> GetGamesByLeague(League league)

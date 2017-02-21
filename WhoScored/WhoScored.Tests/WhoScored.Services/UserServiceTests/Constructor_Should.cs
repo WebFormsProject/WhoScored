@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Moq;
 using NUnit.Framework;
 using WhoScored.Data.Contracts;
@@ -43,7 +39,7 @@ namespace WhoScored.Tests.WhoScored.Services.UserServiceTests
 
             IUserService userService = new UserService(mockedUnitOfWork.Object, mockedRepository.Object);
 
-            Assert.IsInstanceOf(typeof(UserService), userService);
+            Assert.IsInstanceOf<UserService>(userService);
         }
     }
 }
