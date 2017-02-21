@@ -115,6 +115,9 @@
     <Compile Include="WhoScored.Models\ValidationConstants.cs" />
     <Compile Include="WhoScored.Services\CountryServiceTests\Constructor_Should.cs" />
     <Compile Include="WhoScored.Services\CountryServiceTests\GetAllCountries_Should.cs" />
+    <Compile Include="WhoScored.Services\GameServiceTests\Constructor_Should.cs" />
+    <Compile Include="WhoScored.Services\GameServiceTests\GetGameById_Should.cs" />
+    <Compile Include="WhoScored.Services\GameServiceTests\GetGamesByLeague_Should.cs" />
     <Compile Include="WhoScored.Services\UserServiceTests\Constructor_Should.cs" />
     <Compile Include="WhoScored.Services\UserServiceTests\GetAvatarFilePath_Should.cs" />
     <Compile Include="WhoScored.Services\UserServiceTests\GetById_Should.cs" />

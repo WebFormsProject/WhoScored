@@ -25,7 +25,7 @@ namespace WhoScored.Tests.WhoScored.Services.CountryServiceTests
             var mockedCountryRepository = new Mock<IWhoScoredRepository<Country>>();
             ICountryService countryService = new CountryService(mockedCountryRepository.Object);
 
-            Assert.IsInstanceOf(typeof(CountryService), countryService);
+            Assert.IsInstanceOf<CountryService>(countryService);
         }
     }
 }

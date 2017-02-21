@@ -21,15 +21,9 @@ namespace WhoScored.Services
             this.gameRepository = gameRepository;
         }
 
-        public IEnumerable<League> GetGroupedLeagues()
-        {
-            var groupedLeagues = this.gameRepository.GetAll().GroupBy(x => x.League).Select(x => x.Key);
-
-            return groupedLeagues;
-        }
-
         public IEnumerable<Game> GetGamesByLeague(League league)
         {
+            Guard.WhenArgument(league, "league").IsNull().Throw();
             var groupedGames = this.gameRepository.GetAll().Where(x => x.League == league);
 
             return groupedGames;

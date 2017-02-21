@@ -10,12 +10,16 @@ namespace WhoScored.MVP.Presenters
     public class ScoresPresenter : Presenter<IScoresView>
     {
         private readonly IGameService gameService;
+        private readonly ILeagueService leagueService;
 
-        public ScoresPresenter(IScoresView view, IGameService gameService) 
+        public ScoresPresenter(IScoresView view, IGameService gameService, ILeagueService leagueService) 
             : base(view)
         {
             Guard.WhenArgument(gameService, "gameService").IsNull().Throw();
+            Guard.WhenArgument(leagueService, "leagueService").IsNull().Throw();
+
             this.gameService = gameService;
+            this.leagueService = leagueService;
 
             this.View.OnGetLeagues += View_OnGetLeagues;
             this.View.OnGetGameByLeague += View_OnGetGameByLeague;
@@ -34,7 +38,7 @@ namespace WhoScored.MVP.Presenters
 
         private void View_OnGetLeagues(object sender, EventArgs eventArgs)
         {
-            this.View.Model.Leagues = this.gameService.GetGroupedLeagues();
+            this.View.Model.Leagues = this.leagueService.GetAlLeagues();
         }
     }
 }
