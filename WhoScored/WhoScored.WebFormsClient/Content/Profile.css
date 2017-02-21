@@ -1,7 +1,11 @@
 ﻿img.avatar {
-    max-width: 20%;
-    margin: 15px;
+    max-width: 60%;
+    margin: 5px;
     box-shadow: 5px 5px 5px rgba(136, 153, 154, 0.98);
+}
+
+.profile-addon {
+    margin: 5px;
 }
 
 button.dropdown-link {
@@ -35,3 +39,4 @@ ul.profile-menu {
             background-color: rgba(13, 13, 11, 0.68);
             color: white;
         }
+

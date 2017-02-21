@@ -227,10 +227,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="400.html" />
-    <Content Include="404.html" />
-    <Content Include="403.html" />
-    <Content Include="500.html" />
+    <Content Include="Admin\AddNewPlayer.aspx" />
+    <Content Include="Admin\AdminHome.aspx" />
+    <Content Include="ErrorPages\400.html" />
+    <Content Include="ErrorPages\404.html" />
+    <Content Include="ErrorPages\403.html" />
+    <Content Include="ErrorPages\500.html" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Manage.aspx" />
     <Content Include="Account\ManageAvatar.aspx" />
@@ -312,6 +314,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
+    <Content Include="Admin\Admin.master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Home.aspx" />
     <Content Include="Scores.aspx" />
@@ -413,6 +416,27 @@
     </Compile>
     <Compile Include="Account\ResetPassword.aspx.designer.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddNewPlayer.aspx.cs">
+      <DependentUpon>AddNewPlayer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddNewPlayer.aspx.designer.cs">
+      <DependentUpon>AddNewPlayer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.master.cs">
+      <DependentUpon>Admin.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.master.designer.cs">
+      <DependentUpon>Admin.master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\DatabaseConfig.cs" />
