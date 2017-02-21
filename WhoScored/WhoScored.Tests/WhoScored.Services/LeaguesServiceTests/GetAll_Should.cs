@@ -18,14 +18,14 @@ namespace WhoScored.Tests.WhoScored.Services.LeaguesServiceTests
             var unitOfWorkMock = new Mock<IUnitOfWork>();
             ILeagueService leagueService = new LeagueService(repositoryMock.Object, unitOfWorkMock.Object);
 
-            IList<League> leagues = new List<League>()
+            IEnumerable<League> leagues = new List<League>()
             {
                 new League() { Name = "Premier League", CountryId = 2, LeaugeLogo = "/photos/Leagues/premier-league.png" },
                 new League() { Name = "La Liga", CountryId = 1, LeaugeLogo = "/photos/Leagues/la-liga.png" }
             };
 
             repositoryMock.Setup(x => x.GetAll()).Returns(leagues);
-            var actualLeagues = leagueService.GetAlLeagues();
+            IEnumerable<League> actualLeagues = leagueService.GetAlLeagues();
 
             CollectionAssert.AreEquivalent(leagues, actualLeagues);
         }

@@ -9,7 +9,7 @@ using WhoScored.Services.Contracts;
 namespace WhoScored.Tests.WhoScored.Services.LeaguesServiceTests
 {
     [TestFixture]
-    class Constructor_Should
+    public class Constructor_Should
     {
         [Test]
         public void ThrowArgumentNullException_WhenPassedRepositoryIsNull()
@@ -39,7 +39,7 @@ namespace WhoScored.Tests.WhoScored.Services.LeaguesServiceTests
 
             ILeagueService leagueService = new LeagueService(repositoryMock.Object, unitOfWorkMock.Object);
 
-            Assert.IsInstanceOf(typeof(LeagueService), leagueService);
+            Assert.IsInstanceOf<LeagueService>(leagueService);
         }
     }
 }

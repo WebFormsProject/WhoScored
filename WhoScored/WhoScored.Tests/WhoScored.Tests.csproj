@@ -121,6 +121,9 @@
     <Compile Include="WhoScored.Services\LeaguesServiceTests\GetAll_Should.cs" />
     <Compile Include="WhoScored.Services\LeaguesServiceTests\GetLeagueById_Should.cs" />
     <Compile Include="WhoScored.Services\LeaguesServiceTests\UpdateLeague_Should.cs" />
+    <Compile Include="WhoScored.Services\TeamServiceTests\Constructor_Should.cs" />
+    <Compile Include="WhoScored.Services\TeamServiceTests\GetAll_Should.cs" />
+    <Compile Include="WhoScored.Services\TeamServiceTests\GetTeamById_Shoud.cs" />
     <Compile Include="WhoScored.Services\UserServiceTests\Constructor_Should.cs" />
     <Compile Include="WhoScored.Services\UserServiceTests\GetAvatarFilePath_Should.cs" />
     <Compile Include="WhoScored.Services\UserServiceTests\GetById_Should.cs" />

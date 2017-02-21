@@ -11,12 +11,11 @@ namespace WhoScored.Tests.WhoScored.Services.LeaguesServiceTests
     public class GetLeagueById_Should
     {
         [Test]
-        public void ReturnLeague_WhenPassedIdIsValid()
+        public void ReturnCorrectLeague_WhenPassedIdIsValid()
         {
             var repositoryMock = new Mock<IWhoScoredRepository<League>>();
             var unitOfWorkMock = new Mock<IUnitOfWork>();
 
-            int leagueId = 1;
             League league = new League
             {
                 Name = "Premier League",
@@ -26,7 +25,7 @@ namespace WhoScored.Tests.WhoScored.Services.LeaguesServiceTests
             repositoryMock.Setup(x => x.GetById(It.IsAny<int>())).Returns(league);
 
             ILeagueService leagueService = new LeagueService(repositoryMock.Object, unitOfWorkMock.Object);
-            League actualLeague = leagueService.GetLeagueById(leagueId);
+            League actualLeague = leagueService.GetLeagueById(It.IsAny<int>());
 
             Assert.AreSame(league, actualLeague);
         }
