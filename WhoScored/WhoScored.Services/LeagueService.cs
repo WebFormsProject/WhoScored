@@ -38,5 +38,23 @@ namespace WhoScored.Services
                 this.unitOfWork.Commit();
             }
         }
+
+        public void UpdateLeague(League league)
+        {
+            using (this.unitOfWork)
+            {
+                this.leagueRepository.Update(league);
+                this.unitOfWork.Commit();
+            }
+        }
+
+        public void DeleteLeague(League league)
+        {
+            using (this.unitOfWork)
+            {
+                this.leagueRepository.Delete(league);
+                this.unitOfWork.Commit();
+            }
+        }
     }
 }

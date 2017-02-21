@@ -1,9 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Admin/Admin.Master" EnableEventValidation="false"
+﻿<%@ Page Language="C#"  Title="Manage Players" AutoEventWireup="true" MasterPageFile="~/Admin/Admin.Master" EnableEventValidation="false"
     CodeBehind="ManagePlayers.aspx.cs" Inherits="WhoScored.WebFormsClient.ManagePlayers" %>
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolderAdminArea" runat="server">
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <%--<div class="row player-container">--%>
         <asp:TextBox runat="server" ID="random"></asp:TextBox>
         <h5>Football players</h5>
         <asp:GridView runat="server" SelectMethod="GetFootballPlayers" AutoGenerateColumns="False"

@@ -21,7 +21,7 @@ namespace WhoScored.Services.Contracts
             int shirtNumber,
             int countryId,
             int teamId,
-            DateTime birthDate)
+            DateTime birthDate);
 
         void DeleteFootballPlayer(FootballPlayer footballPlayer);
     }

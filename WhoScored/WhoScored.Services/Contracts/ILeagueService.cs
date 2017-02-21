@@ -10,5 +10,9 @@ namespace WhoScored.Services.Contracts
         League GetLeagueById(int id);
 
         void AddNewLeague(League league);
+
+        void UpdateLeague(League league);
+
+        void DeleteLeague(League league);
     }
 }
