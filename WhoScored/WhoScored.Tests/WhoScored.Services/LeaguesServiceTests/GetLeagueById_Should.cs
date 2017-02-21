@@ -16,12 +16,7 @@ namespace WhoScored.Tests.WhoScored.Services.LeaguesServiceTests
             var repositoryMock = new Mock<IWhoScoredRepository<League>>();
             var unitOfWorkMock = new Mock<IUnitOfWork>();
 
-            League league = new League
-            {
-                Name = "Premier League",
-                CountryId = 2,
-                LeaugeLogo = "/photos/Leagues/premier-league.png"
-            };
+            League league = new League();
             repositoryMock.Setup(x => x.GetById(It.IsAny<int>())).Returns(league);
 
             ILeagueService leagueService = new LeagueService(repositoryMock.Object, unitOfWorkMock.Object);

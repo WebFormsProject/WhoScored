@@ -16,24 +16,9 @@ namespace WhoScored.Tests.WhoScored.Services.TeamServiceTests
             var repositoryMock = new Mock<IWhoScoredRepository<Team>>();
             ITeamService teamService = new TeamService(repositoryMock.Object);
 
-            IEnumerable<Team> teams = new List<Team>()
-            {
-                new Team()
-                {
-                    Name = "Real Madrid",
-                    CountryId = 1,
-                    Coach = It.IsAny<Coach>(),
-                    EmblemImagePath = "/photos/Teams/real-madrid-la-liga.jpg"
-                },
-                new Team()
-                {
-                    Name = "Arsenal",
-                    CountryId = 1,
-                    Coach = It.IsAny<Coach>(),
-                    EmblemImagePath = "/photos/Teams/arsenal-premier-league.png"
-                }};
-
+            IEnumerable<Team> teams = new List<Team>();
             repositoryMock.Setup(x => x.GetAll()).Returns(teams);
+
             IEnumerable<Team> actualTeams = teamService.GetAllTeams();
 
             CollectionAssert.AreEquivalent(teams, actualTeams);

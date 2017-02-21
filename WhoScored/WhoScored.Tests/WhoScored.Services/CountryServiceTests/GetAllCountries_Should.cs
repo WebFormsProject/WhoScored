@@ -17,13 +17,9 @@ namespace WhoScored.Tests.WhoScored.Services.CountryServiceTests
             var mockedCountryRepository = new Mock<IWhoScoredRepository<Country>>();
             ICountryService countryService = new CountryService(mockedCountryRepository.Object);
 
-            IEnumerable<Country> countries = new List<Country>()
-            {
-                new Country() {Id = 1, Name = "Spain"},
-                new Country() {Id = 1, Name = "Buglaria"}
-            };
-
+            IEnumerable<Country> countries = new List<Country>();
             mockedCountryRepository.Setup(x => x.GetAll()).Returns(countries);
+
             var actualCountries = countryService.GetAllCountries();
 
             CollectionAssert.AreEquivalent(countries, actualCountries);

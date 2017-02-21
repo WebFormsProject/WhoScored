@@ -14,14 +14,7 @@ namespace WhoScored.Tests.WhoScored.Services.TeamServiceTests
         public void ReturnCorrectTeam_WhenPassedIdIsValid()
         {
             var repositoryMock = new Mock<IWhoScoredRepository<Team>>();
-            Team team = new Team()
-            {
-                Name = "Real Madrid",
-                CountryId = 1,
-                Coach = It.IsAny<Coach>(),
-                EmblemImagePath = "/photos/Teams/real-madrid-la-liga.jpg"
-            };
-
+            Team team = new Team();
             repositoryMock.Setup(x => x.GetById(It.IsAny<int>())).Returns(team);
 
             ITeamService teamService = new TeamService(repositoryMock.Object);
