@@ -19,16 +19,18 @@ namespace WhoScored.Services
             this.userRepository = userRepository;
         }
 
-        public User GetUserById(object id)
+        public User GetUserById(object userId)
         {
-            return this.userRepository.GetById(id);
+            Guard.WhenArgument(userId, "userId").IsNull().Throw();
+
+            return this.userRepository.GetById(userId);
         }
 
         public string GetAvatarFilePath(string userId)
         {
             Guard.WhenArgument(userId, "userId").IsNullOrEmpty().Throw();
 
-            return this.userRepository.GetById(userId).AvatarPath;
+            return this.userRepository.GetById(userId)?.AvatarPath;
         }
 
         public void UploadAvatar(string userId, string filePath)

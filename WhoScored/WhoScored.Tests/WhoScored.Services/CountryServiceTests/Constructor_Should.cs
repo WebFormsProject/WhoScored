@@ -15,7 +15,8 @@ namespace WhoScored.Tests.WhoScored.Services.CountryServiceTests
         public void ThrowArgumentNullException_WhenPassedArgumentIsNull()
         {
             var actualMessage = Assert.Throws<ArgumentNullException>(() => new CountryService(null));
-            StringAssert.Contains("countryRepository", actualMessage.Message);
+
+            StringAssert.IsMatch("countryRepository", actualMessage.ParamName);
         }
 
         [Test]
