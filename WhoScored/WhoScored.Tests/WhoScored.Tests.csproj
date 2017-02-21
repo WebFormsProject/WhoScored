@@ -115,6 +115,7 @@
     <Compile Include="WhoScored.Models\UserTests\FirstNameTests.cs" />
     <Compile Include="WhoScored.Models\UserTests\LastNameTests.cs" />
     <Compile Include="WhoScored.Models\ValidationConstants.cs" />
+    <Compile Include="WhoScored.Services\CountryServiceTests\Constructor_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="WhoScored.Data\" />
@@ -125,9 +126,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WhoScored.Data\WhoScored.Data.csproj">
+      <Project>{bd385fba-a232-48d7-9440-6626b8162249}</Project>
+      <Name>WhoScored.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WhoScored.Models\WhoScored.Models.csproj">
       <Project>{8eb1e289-5218-4171-a916-b1c3852914fd}</Project>
       <Name>WhoScored.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WhoScored.MVP\WhoScored.MVP.csproj">
+      <Project>{df7de976-bd71-423f-a0f2-b4f3ce8f14ac}</Project>
+      <Name>WhoScored.MVP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WhoScored.Services\WhoScored.Services.csproj">
+      <Project>{8381481d-97a5-49f2-a4f6-01c4599b22e5}</Project>
+      <Name>WhoScored.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
