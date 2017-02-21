@@ -52,7 +52,18 @@ namespace WhoScored.MVP.Admin
         {
             League league = this.leagueService.GetLeagueById(e.Id);
 
-            this.leagueService.DeleteLeague(league);
+            if (league == null)
+            {
+                this.View.ModelState.
+                     AddModelError("", String.Format("Item with id {0} was not found", e.Id));
+                return;
+            }
+
+            this.View.TryUpdateModel(league);
+            if (this.View.ModelState.IsValid)
+            {
+                this.leagueService.DeleteLeague(league);
+            }
         }
 
         private void View_OnAddLeague(object sender, EventArgs eventArgs)

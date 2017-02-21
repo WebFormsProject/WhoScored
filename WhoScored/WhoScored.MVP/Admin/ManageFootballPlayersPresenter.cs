@@ -4,7 +4,6 @@ using WebFormsMvp;
 using WhoScored.Models.Models;
 using WhoScored.MVP.Admin;
 using WhoScored.MVP.Models.CustomEventArgs;
-using WhoScored.MVP.Views;
 using WhoScored.Services.Contracts;
 
 namespace WhoScored.MVP.Presenters
