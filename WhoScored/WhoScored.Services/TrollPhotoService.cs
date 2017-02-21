@@ -42,8 +42,11 @@ namespace WhoScored.Services
                 PhotoPath = filePath
             };
 
-            this.trollPhotoRepository.Add(trollPhoto);
-            this.unitOfWork.Commit();
+            using (this.unitOfWork)
+            {
+                this.trollPhotoRepository.Add(trollPhoto);
+                this.unitOfWork.Commit();
+            }
         }
     }
 }

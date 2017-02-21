@@ -32,6 +32,7 @@ namespace WhoScored.Services
 
         public void AddNewLeague(League league)
         {
+            Guard.WhenArgument(league, "league").IsNull().Throw();
             using (this.unitOfWork)
             {
                 this.leagueRepository.Add(league);
@@ -41,6 +42,7 @@ namespace WhoScored.Services
 
         public void UpdateLeague(League league)
         {
+            Guard.WhenArgument(league, "league").IsNull().Throw();
             using (this.unitOfWork)
             {
                 this.leagueRepository.Update(league);
@@ -50,6 +52,7 @@ namespace WhoScored.Services
 
         public void DeleteLeague(League league)
         {
+            Guard.WhenArgument(league, "league").IsNull().Throw();
             using (this.unitOfWork)
             {
                 this.leagueRepository.Delete(league);

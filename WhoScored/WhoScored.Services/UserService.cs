@@ -41,8 +41,11 @@ namespace WhoScored.Services
             User user = this.userRepository.GetById(userId);
             if (user != null)
             {
-                user.AvatarPath = filePath;
-                this.unitOfWork.Commit();
+                using (this.unitOfWork)
+                {
+                    user.AvatarPath = filePath;
+                    this.unitOfWork.Commit();
+                }
             }
         }
     }
