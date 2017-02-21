@@ -2,6 +2,7 @@
 using Ninject.Web.Common;
 using WhoScored.Data;
 using WhoScored.Data.Contracts;
+using WhoScored.MVP.Admin;
 using WhoScored.MVP.Presenters;
 using WhoScored.MVP.Presenters.Auth;
 using WhoScored.Services;
@@ -32,6 +33,7 @@ namespace WhoScored.WebFormsClient
             this.Bind<ScoresPresenter>().ToSelf();
             this.Bind<FootballPlayerPresenter>().ToSelf();
             this.Bind<AddFootballPlayerPresenter>().ToSelf();
+            this.Bind<ManageLeaguePresenter>().ToSelf();
 
             this.Bind<IGameService>().To<GameService>();
             this.Bind<IFootballPlayerService>().To<FootballPlayerService>();

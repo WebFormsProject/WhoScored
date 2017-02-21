@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using WhoScored.Models.Models;
+using WhoScored.Models.Models.Enums;
 
 namespace WhoScored.Services.Contracts
 {
@@ -10,7 +12,16 @@ namespace WhoScored.Services.Contracts
 
         void UpdateFootballPlayer(FootballPlayer footballPlayer);
 
-        void AddFootballPlayer(FootballPlayer footballPlayer);
+        void AddFootballPlayer(string firstName,
+            string lastName,
+            string imagePath,
+            PlayerPositionType position,
+            int height,
+            int weight,
+            int shirtNumber,
+            int countryId,
+            int teamId,
+            DateTime birthDate)
 
         void DeleteFootballPlayer(FootballPlayer footballPlayer);
     }

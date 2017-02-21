@@ -10,17 +10,30 @@ using WhoScored.MVP.Models.CustomEventArgs;
 using WhoScored.MVP.Presenters;
 using WhoScored.MVP.Views;
 
+using System;
+using System.Web;
+using System.IO;
+using System.Linq;
+using WhoScored.MVP.Identity;
+using WebFormsMvp.Web;
+using WhoScored.MVP.Models.Auth;
+using WhoScored.MVP.Views.Auth;
+using WebFormsMvp;
+using WhoScored.MVP.Models.CustomEventArgs;
+using WhoScored.MVP.Presenters.Auth;
+
+
 namespace WhoScored.WebFormsClient
 {
     [PresenterBinding(typeof(AddFootballPlayerPresenter))]
-    public partial class AddNewPlayer : MvpPage<AddFootballPlayerViewModel>, IAddFootballPlayerView
+    public partial class ManagePlayers : MvpPage<AddFootballPlayerViewModel>, IAddFootballPlayerView
     {
         public event EventHandler OnGetAllPlayers;
         public event EventHandler OnGetAllCoutries;
         public event EventHandler OnGetAllTeams;
         public event EventHandler<IdEventArgs> OnUpdateFootballPlayer;
         public event EventHandler<IdEventArgs> OnDeleteFootballPlayer;
-        public event EventHandler<IdEventArgs> OnAddFootballPlayer;
+        public event EventHandler<AddPlayerEventArgs> OnAddFootballPlayer;
 
         public IEnumerable<FootballPlayer> GetFootballPlayers()
         {
@@ -52,7 +65,7 @@ namespace WhoScored.WebFormsClient
 
         public void InsertFootballPlayer()
         {
-            
+            // this.OnAddFootballPlayer?.Invoke(this, new AddPlayerEventArgs());
         }
     }
 }

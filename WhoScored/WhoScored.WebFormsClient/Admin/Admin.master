@@ -9,8 +9,8 @@
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar">
                     <li><a href="AdminHome">Admin Home Page</a></li>
-                    <li><a href="AddNewPlayer">Manage Players</a></li>
-                    <li><a href="#">Manage Leagues</a></li>
+                    <li><a href="ManagePlayers">Manage Players</a></li>
+                    <li><a href="ManageLeagues">Manage Leagues</a></li>
                     <li><a href="#">Manage Tables</a></li>
                     <li><a href="#">Manage Teams</a></li>
                     <li><a href="#">Manage Users</a></li>

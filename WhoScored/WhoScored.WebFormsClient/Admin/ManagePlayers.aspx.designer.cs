@@ -10,6 +10,7 @@
 namespace WhoScored.WebFormsClient {
     
     
-    public partial class AddNewPlayer {
+    public partial class ManagePlayers
+    {
     }
 }

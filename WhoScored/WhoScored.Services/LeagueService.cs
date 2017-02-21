@@ -9,12 +9,15 @@ namespace WhoScored.Services
     public class LeagueService : ILeagueService
     {
         private readonly IWhoScoredRepository<League> leagueRepository;
+        private readonly IUnitOfWork unitOfWork;
 
-        public LeagueService(IWhoScoredRepository<League> leagueRepository)
+        public LeagueService(IWhoScoredRepository<League> leagueRepository, IUnitOfWork unitOfWork)
         {
             Guard.WhenArgument(leagueRepository, "leagueRepository").IsNull().Throw();
+            Guard.WhenArgument(unitOfWork, "unitOfWork").IsNull().Throw();
 
             this.leagueRepository = leagueRepository;
+            this.unitOfWork = unitOfWork;
         }
 
         public IEnumerable<League> GetAlLeagues()
@@ -25,6 +28,15 @@ namespace WhoScored.Services
         public League GetLeagueById(int id)
         {
             return this.leagueRepository.GetById(id);
+        }
+
+        public void AddNewLeague(League league)
+        {
+            using (this.unitOfWork)
+            {
+                this.leagueRepository.Add(league);
+                this.unitOfWork.Commit();
+            }
         }
     }
 }

@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Bytes2you.Validation;
 using WhoScored.Data.Contracts;
 using WhoScored.Models.Models;
+using WhoScored.Models.Models.Enums;
 using WhoScored.Services.Contracts;
 
 namespace WhoScored.Services
@@ -42,8 +44,31 @@ namespace WhoScored.Services
             }
         }
 
-        public void AddFootballPlayer(FootballPlayer footballPlayer)
+        public void AddFootballPlayer(string firstName,
+            string lastName,
+            string imagePath,
+            PlayerPositionType position,
+            int height,
+            int weight,
+            int shirtNumber,
+            int countryId,
+            int teamId,
+            DateTime birthDate)
         {
+            FootballPlayer footballPlayer = new FootballPlayer()
+            {
+                FirstName = firstName,
+                LastName = lastName,
+                ImagePath = imagePath,
+                Height = height,
+                Weight = weight,
+                ShirtNumber = shirtNumber,
+                Position = position,
+                CountryId = countryId,
+                CurrentTeamId = teamId,
+                BirthDate = birthDate
+            };
+
             using (this.unitOfWork)
             {
                 this.footballPlayerRepository.Add(footballPlayer);

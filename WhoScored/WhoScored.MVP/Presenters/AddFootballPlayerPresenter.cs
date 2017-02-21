@@ -34,6 +34,20 @@ namespace WhoScored.MVP.Presenters
             this.View.OnGetAllTeams += View_OnGetAllTeams;
             this.View.OnUpdateFootballPlayer += View_OnUpdateFootballPlayer;
             this.View.OnDeleteFootballPlayer += View_OnDeleteFootballPlayer;
+            this.View.OnAddFootballPlayer += View_OnAddFootballPlayer;
+        }
+
+        private void View_OnAddFootballPlayer(object sender, AddPlayerEventArgs addPlayerEventArgs)
+        {
+            this.footballPlayerService.AddFootballPlayer(addPlayerEventArgs.FirstName, addPlayerEventArgs.LastName,
+                addPlayerEventArgs.ImagePath,
+                addPlayerEventArgs.Position,
+                addPlayerEventArgs.Height,
+                addPlayerEventArgs.Weight,
+                addPlayerEventArgs.ShirtNumber,
+                addPlayerEventArgs.CountryId,
+                addPlayerEventArgs.TeamId,
+                addPlayerEventArgs.BirthDate.Value);
         }
 
         private void View_OnUpdateFootballPlayer(object sender, IdEventArgs e)

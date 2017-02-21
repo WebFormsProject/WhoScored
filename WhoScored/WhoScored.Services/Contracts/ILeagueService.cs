@@ -8,5 +8,7 @@ namespace WhoScored.Services.Contracts
         IEnumerable<League> GetAlLeagues();
 
         League GetLeagueById(int id);
+
+        void AddNewLeague(League league);
     }
 }

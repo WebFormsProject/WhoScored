@@ -101,6 +101,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\IManageLeagueView.cs" />
+    <Compile Include="Admin\ManageLeaguePresenter.cs" />
+    <Compile Include="Admin\ManageLeagueViewModel.cs" />
     <Compile Include="Models\AddFootballPlayerViewModel.cs" />
     <Compile Include="Identity\ApplicationSignInManager.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />

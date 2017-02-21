@@ -18,7 +18,7 @@ namespace WhoScored.MVP.Views
 
         event EventHandler<IdEventArgs> OnDeleteFootballPlayer;
 
-        event EventHandler<IdEventArgs> OnAddFootballPlayer;
+        event EventHandler<AddPlayerEventArgs> OnAddFootballPlayer;
 
         ModelStateDictionary ModelState { get; }
 
