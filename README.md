@@ -1,7 +1,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/qh6fo9nnkhcq6e9l?svg=true)](https://ci.appveyor.com/project/petya/whoscored)
 
 ## Who Scored ##
-A simple football-related ASP.NEY WebForms application.
+A simple football-related ASP.NET WebForms application.
 
  All of the users can see our football leagues, teams, scores, players
  and trolling photos. 
