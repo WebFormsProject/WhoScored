@@ -33,10 +33,10 @@ namespace WhoScored.WebFormsClient.Account
             if (IsValid)
             {
                 this.Logging?.Invoke(this, new LoginEventArgs(
-                    this.Context, 
-                    this.Username.Text, 
-                    this.Password.Text, 
-                    this.RememberMe.Checked, 
+                    this.Context,
+                    Server.HtmlEncode(this.Username.Text),
+                    Server.HtmlEncode(this.Password.Text),
+                    this.RememberMe.Checked,
                     shouldLockout: false));
 
                 switch (this.Model.SignInStatus)

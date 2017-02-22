@@ -69,8 +69,8 @@ namespace WhoScored.Data
             //this.SeedCoaches();
             //this.SaveChanges();
 
-            ////this.SeedTeams();
-            ////this.SaveChanges();
+            //this.SeedTeams();
+            //this.SaveChanges();
 
             //this.SeedFootballPlayers();
             //this.SaveChanges();

@@ -32,11 +32,11 @@ namespace WhoScored.WebFormsClient.Account
 
                 this.Registering?.Invoke(this, new RegisterEventArgs(
                 this.Context,
-                this.Username.Text,
-                this.Password.Text,
-                this.Email.Text,
-                this.FirstName.Text,
-                this.LastName.Text,
+                Server.HtmlEncode(this.Username.Text),
+                Server.HtmlEncode(this.Password.Text),
+                Server.HtmlEncode(this.Email.Text),
+                Server.HtmlEncode(this.FirstName.Text),
+                Server.HtmlEncode(this.LastName.Text),
                 fileBase,
                 avatarFilePath,
                 storageLocation));

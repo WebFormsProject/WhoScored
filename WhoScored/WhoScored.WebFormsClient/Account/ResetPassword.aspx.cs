@@ -19,8 +19,8 @@ namespace WhoScored.WebFormsClient.Account
             this.ChangePassword?.Invoke(this, new PasswordChangeEventArgs(
                 this.Context,
                 this.User.Identity,
-                this.Password.Text,
-                this.ConfirmPassword.Text
+                Server.HtmlEncode(this.Password.Text),
+                Server.HtmlEncode(this.ConfirmPassword.Text)
                 ));
 
             if (this.Model.IdentityResult.Succeeded)

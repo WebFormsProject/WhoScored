@@ -21,8 +21,8 @@ namespace WhoScored.WebFormsClient.Account
             this.ManagingPassword?.Invoke(this, new ManagePasswordEventArgs(
                 this.Context,
                 this.User.Identity,
-                this.CurrentPassword.Text,
-                this.NewPassword.Text,
+                Server.HtmlEncode(this.CurrentPassword.Text),
+                Server.HtmlEncode(this.NewPassword.Text),
                 false,
                 false));
 

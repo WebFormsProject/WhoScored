@@ -47,7 +47,7 @@ namespace WhoScored.WebFormsClient
                 HttpPostedFileBase fileBase = new HttpPostedFileWrapper(postedFile);
 
                 string trollPhotoName = this.TrollPhotoNameTextBox.Text + extension;
-                string filename = this.TrollPhotoNameTextBox.Text != string.Empty ? trollPhotoName : defaultTrollPhotoName;
+                string filename = Server.HtmlEncode(this.TrollPhotoNameTextBox.Text) != string.Empty ? trollPhotoName : defaultTrollPhotoName;
                 string filePath = "/photos/TrollPhotos/" + filename;
                 string storageLocation = Server.MapPath($"~{filePath}");
 

@@ -1,6 +1,5 @@
 ﻿using System.Data.Entity;
 using WhoScored.Data;
-using WhoScored.Data.Contracts;
 
 namespace WhoScored.WebFormsClient
 {
@@ -8,9 +7,8 @@ namespace WhoScored.WebFormsClient
     {
         public static void InitializeDatabase()
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<WhoScoredContext, Data.Migrations.Configuration>());
-            IWhoScoredContext context = new WhoScoredContext();
-            context.InitializeDb();
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<WhoScoredContext, WhoScored.Data.Migrations.Configuration>());
+            WhoScoredContext.Create().Database.Initialize(true);
         }
     }
 }
