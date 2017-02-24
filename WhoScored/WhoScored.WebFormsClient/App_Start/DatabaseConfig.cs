@@ -8,7 +8,7 @@ namespace WhoScored.WebFormsClient
         public static void InitializeDatabase()
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<WhoScoredContext, WhoScored.Data.Migrations.Configuration>());
-            WhoScoredContext.Create().Database.Initialize(true);
+            WhoScoredContext.Create().InitializeDb();
         }
     }
 }

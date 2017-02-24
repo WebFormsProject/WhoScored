@@ -61,6 +61,7 @@ namespace WhoScored.Data
         {
             //this.InitializeIdentity();
             //this.SeedCategories();
+            //this.SeedTrollPhotos();
             //this.SaveChanges();
 
             //this.SeedCountries();
@@ -82,7 +83,6 @@ namespace WhoScored.Data
             //this.SaveChanges();
 
             //this.SeedStatisitcs();
-            //this.SeedTrollPhotos();
             //this.SaveChanges();
         }
 
