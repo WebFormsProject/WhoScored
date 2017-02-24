@@ -1,5 +1,5 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/qh6fo9nnkhcq6e9l?svg=true)](https://ci.appveyor.com/project/petya/whoscored)
-
+[![Coverage Status](https://coveralls.io/repos/github/WebFormsProject/WhoScored/badge.svg?branch=master)](https://coveralls.io/github/WebFormsProject/WhoScored?branch=master)
 ## Who Scored ##
 A simple football-related ASP.NET WebForms application.
 
