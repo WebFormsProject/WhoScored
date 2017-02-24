@@ -13,5 +13,5 @@ environment:
   COVERALLS_REPO_TOKEN:
     secure: EXArQR33dPljcQfHIeLsE2p10C4h2/piS86vN1h64s2sjOhZxO5G+kCqpm+XfUbL
 after_test: 
-  - WhoScored\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]* -[WebFormsMvp]*" -target:"SchoolSystem\packages\NUnit.ConsoleRunner.3.6.0\tools\nunit3-console.exe" -targetargs:"/domain:single WhoScored\WhoScored.Tests\bin\Debug\WhoScored.Tests.dll" -output:cover.xml
+  - WhoScored\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]* -[WebFormsMvp]*" -target:"WhoScored\packages\NUnit.ConsoleRunner.3.6.0\tools\nunit3-console.exe" -targetargs:"/domain:single WhoScored\WhoScored.Tests\bin\Debug\WhoScored.Tests.dll" -output:cover.xml
   - WhoScored\packages\coveralls.io.1.3.4\tools\coveralls.net.exe --opencover cover.xml
