@@ -3,7 +3,7 @@ branches:
   only:
   - master
 before_build:
-- cmd: nuget restore /WhoScored/WhoScored.sln
+- cmd: nuget restore ./WhoScored/WhoScored.sln
 build:
   project: ./WhoScored/WhoScored.sln
   publish_nuget: true
