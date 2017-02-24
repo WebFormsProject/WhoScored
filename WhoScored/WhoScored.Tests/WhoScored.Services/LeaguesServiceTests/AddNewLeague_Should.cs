@@ -13,13 +13,16 @@ namespace WhoScored.Tests.WhoScored.Services.LeaguesServiceTests
         [Test]
         public void CallRepositoryMethodOnce_WhenDataIsValid()
         {
+            // Arrange
             var leagueMock = new Mock<League>();
             var repositoryMock = new Mock<IWhoScoredRepository<League>>();
             var unitOfWorkMock = new Mock<IUnitOfWork>();
             ILeagueService leagueService = new LeagueService(repositoryMock.Object, unitOfWorkMock.Object);
 
+            // Act
             leagueService.AddNewLeague(leagueMock.Object);
 
+            // Assert
             repositoryMock.Verify(x => x.Add(It.IsAny<League>()), Times.Once);
         }
 
